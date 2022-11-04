@@ -1,0 +1,58 @@
+@use "../abstracts" as *;
+
+.sidebar {
+  background-color: $theme-light;
+  box-shadow: $inspect;
+  border-radius: 0.25rem;
+
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 0.5rem;
+}
+
+.sidebar__links {
+  margin: 0;
+  padding: 0.35rem;
+  list-style-type: none;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar__item {
+  padding-inline: 0.25rem;
+  display: flex;
+  border-radius: 0.25rem;
+  align-items: center;
+  justify-content: center;
+  color: $text;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.15s ease
+  ;
+
+  &:hover {
+    background: linear-gradient($theme, $highlight);
+    box-shadow: $inspect;
+    color: $text-highlight;
+  }
+
+  &:active {
+    background: $highlight-active;
+  }
+
+  a {
+    // sidebar icons
+    &:nth-child(1) {
+      font-size: 1.5rem;
+      color: currentColor;
+    }
+
+    .sidebar__label {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+// a blueish white color for the background
+$theme: #f5fafa;
+$theme-light: #fff;
+
+$highlight: #ecfcff;
+$highlight-active: #ddf8fc;
+
+$line: rgb(168, 180, 183);
+
+$text: rgb(63, 63, 63);
+$text-highlight: rgb(20, 45, 62);
+
+@media (prefers-color-scheme: dark) {
+  $theme-color: #070707;
+  $line: #fff;
+}
