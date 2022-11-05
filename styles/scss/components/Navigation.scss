@@ -14,7 +14,7 @@
 
 .header.sticky {
   position: sticky;
-  top: -0.05px;
+  top: -0.1px;
   background-color: $header-scroll;
   backdrop-filter: blur(5px);
   box-shadow: 0 0 0.5rem $shadow;
@@ -46,6 +46,7 @@
 
     a {
       font-size: 0.9rem;
+      text-transform: uppercase;
       font-weight: 400;
       text-decoration: none;
       opacity: 0.8;

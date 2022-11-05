@@ -6,7 +6,7 @@ const SideBar: React.FC = () => {
   return (
     <nav className="sidebar" aria-roledescription="side navigation">
       <ul className="sidebar__links">
-          <li className="sidebar__item">
+          <li className="sidebar__item" title="Twitter">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -18,52 +18,40 @@ const SideBar: React.FC = () => {
               </div>
             </a>
           </li>
-          <li className="sidebar__item">
+          <li className="sidebar__item" title="Github">
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://github.com/OkoyeCharles"
             >
               <FaGithub />
-              <div className="sidebar__label">
-                <span>Github</span>
-              </div>
             </a>
           </li>
-          <li className="sidebar__item">
+          <li className="sidebar__item" title="LinkedIn">
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.linkedin.com/in/charles-k-okoye/"
             >
               <FaLinkedinIn />
-              <div className="sidebar__label">
-                <span>LinkedIn</span>
-              </div>
             </a>
           </li>
-          <li className="sidebar__item">
+          <li className="sidebar__item" title="AngelList">
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://angel.co/u/charles-k-okoye"
             >
               <FaAngellist />
-              <div className="sidebar__label">
-                <span>AngelList</span>
-              </div>
             </a>
           </li>
-          <li className="sidebar__item">
+          <li className="sidebar__item" title="Gmail">
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="mailto:okoyecharles509@gmail.com"
             >
               <SiGmail />
-              <div className="sidebar__label">
-                <span>Gmail</span>
-              </div>
             </a>
           </li>
       </ul>

@@ -1,0 +1,132 @@
+@use "../abstracts" as *;
+
+.m_navigation {
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  margin-inline: auto;
+
+  .logo {
+    margin-right: auto;
+  }
+}
+
+.m_navigation__toggle {
+  background: none;
+  margin-left: 1rem;
+  border: none;
+  width: 1.5rem;
+  padding: 0;
+  cursor: pointer;
+
+  .hamburger {
+    // box-shadow: $inspect;
+    height: 100%;
+    position: relative;
+
+    &::after, &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      height: 0.05rem;
+      width: 100%;
+      background-color: $text;
+      transition:
+        transform 0.25s ease,
+        top 0.25s ease,
+        bottom 0.25s ease,
+      ;
+    }
+
+    &::before {
+      top: 25%;
+      transform: rotate(0deg) translateY(0px);
+    }
+
+    &::after {
+      bottom: 25%;
+      transform: rotate(0deg) translateY(0px);
+    }
+  }
+}
+
+.m_navigation__links {
+  position: fixed;
+  list-style: none;
+  background-color: $header-scroll;
+  margin: 0;
+  top: 4rem;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  width: 100%;
+  height: 0;
+  padding: 0;
+
+  transition:
+    height 0.3s 0.25s ease-in
+  ;
+
+  li {
+    transition:
+      transform 0.45s ease-out,
+      opacity 0.25s ease,
+      margin-bottom 0.35s ease
+    ;
+      
+    display: flex;
+    border-bottom: 1px solid $line;
+    margin-inline: 2rem;
+    transform: translateY(-1rem) rotateX(10deg);
+    opacity: 0;
+
+    &:nth-of-type(1) {
+      margin-top: 1rem;
+    }
+
+    a {
+      width: 100%;
+      font-weight: 400;
+      text-decoration: none;
+      padding: 0.5rem;
+    }
+  }
+
+  * {
+    font-size: 18px;
+  }
+}
+
+.m_navigation__toggle.active {
+  .hamburger {
+    &::before {
+      top: 47.5%;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      bottom: 47.5%;
+      transform: rotate(-45deg);
+    }
+  }
+
+  + .m_navigation__links {
+    transition:
+      height 0.5s ease-out
+    ;
+    opacity: 1;
+    pointer-events: all;
+    height: calc(100vh - 4rem);
+
+    li {
+      transition:
+        transform 0.45s 0.15s ease-out,
+        opacity 0.25s ease,
+        margin-bottom 0.25s ease
+      ;
+      margin-bottom: 1rem;
+      opacity: 1;
+      transform: translateY(0) rotateX(0deg);
+    }
+  }
+}
+
