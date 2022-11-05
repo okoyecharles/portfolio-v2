@@ -1,19 +1,50 @@
-// a blueish white color for the background
-$theme: #f5fafa;
-$theme-light: #fff;
+:root {
+  --theme: #f5fafa;
+  --theme-light: #fff;
 
-$highlight: #ecfcff;
-$highlight-active: #ddf8fc;
+  --header-scroll: rgba(255, 255, 255, 0.9);
 
-$line: rgb(168, 180, 183);
+  --hover: #f5fafa;
+  --highlight: #ecfcff;
+  --highlight-active: #ddf8fc;
 
-$text: rgb(63, 63, 63);
-$text-light: rgb(70, 70, 70);
-$text-highlight: rgb(20, 45, 62);
+  --line: rgb(168, 180, 183);
 
-$shadow: rgba(104, 112, 114, 0.14);
+  --text: rgb(63, 63, 63);
+  --text-light: rgb(70, 70, 70);
+  --text-highlight: rgb(20, 45, 62);
 
-@media (prefers-color-scheme: dark) {
-  $theme-color: #070707;
-  $line: #fff;
+  --shadow: rgba(104, 112, 114, 0.14);
 }
+
+:root.dark {
+  --theme: #121212;
+  --theme-light: #242424;
+
+  --header-scroll: rgba(36, 36, 36, 0.9);
+
+  --line: rgb(71, 76, 76);
+
+  --text: rgb(195, 195, 195);
+  --text-light: rgb(175, 175, 175);
+  --text-highlight: rgb(230, 230, 230);
+
+  --shadow: rgb(15, 15, 15);
+}
+
+$theme: var(--theme);
+$theme-light: var(--theme-light);
+
+$header-scroll: var(--header-scroll);
+
+$hover: var(--hover);
+$highlight: var(--highlight);
+$highlight-active: var(--highlight-active);
+
+$line: var(--line);
+
+$text: var(--text);
+$text-light: var(--text-light);
+$text-highlight: var(--text-highlight);
+
+$shadow: var(--shadow);

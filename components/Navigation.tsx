@@ -1,16 +1,19 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
+import toggleDarkMode from "../utils/darkModeHelper";
 
 const Navigation = () => {
   const [sticky, setSticky] = useState<boolean>(false);
   const headerRef = useRef(null);
+
+  const [isDarkMode, setDarkMode] = useState<boolean>(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
         setSticky(entry.intersectionRatio < 1);
-        console.log(entry.intersectionRatio);
       },
       { threshold: 1 }
     );
@@ -41,6 +44,12 @@ const Navigation = () => {
           </li>
           <li>
             <Link href='/'>Contact</Link>
+          </li>
+          <li>
+            <DarkModeSwitch
+              checked={isDarkMode}
+              onChange={(checked) => {toggleDarkMode(setDarkMode, checked)}}
+            />
           </li>
         </ul>
       </nav>

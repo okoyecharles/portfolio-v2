@@ -15,9 +15,10 @@
 .header.sticky {
   position: sticky;
   top: -0.05px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: $header-scroll;
   backdrop-filter: blur(5px);
   box-shadow: 0 0 0.5rem $shadow;
+  transition: background-color 0.25s ease;
 }
 
 .navigation {

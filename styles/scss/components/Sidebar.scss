@@ -9,6 +9,8 @@
   transform: translateY(-50%);
   top: 50%;
   left: 0.5rem;
+
+  transition: background-color 0.25s ease;
 }
 
 .sidebar__links {
@@ -30,18 +32,19 @@
   color: $text;
   transition:
     background 0.25s ease,
+    background-color 0.25s ease,
     color 0.25s ease,
     box-shadow 0.15s ease
   ;
+
+  &:active {
+    background-color: $highlight-active;
+  }
 
   &:hover {
     background: linear-gradient($theme, $highlight);
     box-shadow: $inspect;
     color: $text-highlight;
-  }
-
-  &:active {
-    background: $highlight-active;
   }
 
   a {
@@ -53,6 +56,19 @@
 
     .sidebar__label {
       display: none;
+    }
+  }
+}
+
+:root.dark {
+  .sidebar {
+    box-shadow: none;
+  }
+
+  .sidebar__item {
+    &:hover {
+      background: none;
+      background-color: $line;
     }
   }
 }

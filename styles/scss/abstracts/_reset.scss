@@ -1,4 +1,4 @@
-@use './colors';
+@use './colors' as *;
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&display=swap');
 
 html {
@@ -17,9 +17,10 @@ html {
 }
 
 body {
-  background: colors.$theme;
+  background-color: $theme;
   display: flex;
   flex-direction: column;
+  transition: background-color 0.25s ease;
 }
 
 /* Remove default margin */
