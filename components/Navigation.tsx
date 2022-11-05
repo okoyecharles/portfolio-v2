@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const Navigation = () => {
@@ -29,10 +30,18 @@ const Navigation = () => {
       <nav className="navigation">
         <div className="logo">Logo</div>
         <ul className="navigation__links">
-          <li>Home</li>
-          <li>About</li>
-          <li>Projects</li>
-          <li>Contact</li>
+          <li>
+            <Link href='/'>Home</Link>
+          </li>
+          <li>
+            <Link href='/'>About</Link>
+          </li>
+          <li>
+            <Link href='/'>Projects</Link>
+          </li>
+          <li>
+            <Link href='/'>Contact</Link>
+          </li>
         </ul>
       </nav>
     </header>
