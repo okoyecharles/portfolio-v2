@@ -1,6 +1,8 @@
-import Head from 'next/head'
-import React from 'react'
-import Layout from '../components/Layout'
+import Head from "next/head";
+import Image from "next/image";
+import React from "react";
+import Layout from "../components/Layout";
+import Section from "../components/Section";
 
 function Home() {
   return (
@@ -9,10 +11,18 @@ function Home() {
         <title>Okoye Charles - Home</title>
       </Head>
       <Layout>
-        <div>Home</div>
+        <Section className="hero">
+          <h1>Hi, my name is</h1>
+          <h2>Okoye Charles.</h2>
+          <h3>I embrace the digital world.</h3>
+          <p>I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and need help on a project, I am available for hire.</p>
+          <button>
+            Check out my work!
+          </button>
+        </Section>
       </Layout>
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;

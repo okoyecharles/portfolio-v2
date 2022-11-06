@@ -1,0 +1,33 @@
+@use "../abstracts" as *;
+
+section {
+  max-width: calc(1000px + 5rem);
+  margin-block: 2rem;
+  margin-inline: auto;
+  padding-right: 3.75rem;
+  padding-left: 4rem;
+}
+
+section {
+  p {
+    color: $text-light;
+  }
+  
+  :is(h2) {
+    color: $text-highlight;
+  }
+  
+  :is(h3, h4, h5) {
+    color: $text;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    padding-inline: 2rem;
+  }
+}

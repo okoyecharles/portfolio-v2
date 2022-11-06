@@ -14,7 +14,6 @@ export const Layout = ({ children }: LayoutProps) => {
     <main className="layout">
       {navBreakPoint ? <MobileNavigation /> : <Navigation />}
       {!navBreakPoint && <SideBar />}
-      <div className="space"></div>
       {children}
     </main>
   );

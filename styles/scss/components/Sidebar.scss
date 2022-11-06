@@ -44,7 +44,7 @@
   &:hover {
     background: linear-gradient($theme, $highlight);
     box-shadow: $inspect;
-    color: $text-highlight;
+    color: $accent;
   }
 
   a {
@@ -68,7 +68,8 @@
   .sidebar__item {
     &:hover {
       background: none;
-      background-color: $line;
+      background-color: $highlight;
+      box-shadow: none;
     }
   }
 }

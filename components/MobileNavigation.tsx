@@ -31,7 +31,7 @@ const MobileNavigation = () => {
 
   return (
     <header className={sticky ? "header sticky" : "header"} ref={headerRef}>
-      <nav className="m_navigation">
+      <nav className="m_navigation" aria-label="Navigation">
         <div className="logo">Logo</div>
         <DarkModeSwitch
           checked={isDarkMode}
@@ -40,6 +40,7 @@ const MobileNavigation = () => {
           }}
         />
         <button
+          aria-label="Open Navigation Menu"
           className={
             isActive ? "m_navigation__toggle active" : "m_navigation__toggle"
           }

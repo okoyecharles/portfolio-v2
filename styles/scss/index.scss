@@ -3,3 +3,12 @@
 @use "./components/Navigation";
 @use "./components/MobileNavigation";
 @use "./components/Sidebar";
+@use "./components/Section";
+@use "./components/Home";
+
+
+@media screen and (max-width: 768px) {
+  .navigation, .sidebar {
+    opacity: 0;
+  }
+}

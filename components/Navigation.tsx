@@ -30,7 +30,7 @@ const Navigation = () => {
       ref={headerRef}
       className={sticky ? "header sticky" : "header"}
     >
-      <nav className="navigation">
+      <nav className="navigation" aria-label="Navigation">
         <div className="logo">Logo</div>
         <ul className="navigation__links">
           <li>
@@ -45,7 +45,7 @@ const Navigation = () => {
           <li>
             <Link href='/'>Contact</Link>
           </li>
-          <li>
+          <li aria-label="Toggle dark mode">
             <DarkModeSwitch
               checked={isDarkMode}
               onChange={(checked) => {toggleDarkMode(setDarkMode, checked)}}

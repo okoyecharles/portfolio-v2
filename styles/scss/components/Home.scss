@@ -1,0 +1,44 @@
+@use '../abstracts' as *;
+
+.hero {
+  padding-top: 5rem;
+  height: calc(100vh - 4rem);
+  > {
+    h1 {
+      font-family: $open-sans;
+      font-weight: 400;
+      font-size: 18px;
+      padding: 0;
+      margin: 0;
+      color: $accent;
+      line-height: 0.9;
+    }
+  
+    h2, h3 {
+      font-size: 4rem;
+      font-size: clamp(35px, 6vw, 4rem);
+    }
+
+    h3 {
+      line-height: 1.1;
+    }
+    
+    p {
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+      width: min(500px, 100%);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero {
+    > h1 {
+      font-size: 14px;
+    }
+
+    > p {
+      font-size: 15px;
+    }
+  }
+}
