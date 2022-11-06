@@ -10,6 +10,9 @@ const Navigation = () => {
   const [isDarkMode, setDarkMode] = useState<boolean>(false);
 
   useEffect(() => {
+    setDarkMode(
+      !!JSON.parse(localStorage?.getItem('okoye-charles-web-config') || '{}')?.darkMode
+    )
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
