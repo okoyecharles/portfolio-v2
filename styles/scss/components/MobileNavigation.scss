@@ -19,7 +19,6 @@
   cursor: pointer;
 
   .hamburger {
-    // box-shadow: $inspect;
     height: 100%;
     position: relative;
 
@@ -66,7 +65,48 @@
     height 0.3s 0.25s ease-in
   ;
 
-  li {
+  li.social-links {
+    display: flex;
+    margin: 2rem;
+    gap: 0.8rem;
+
+    a {
+      padding-inline: 0.25rem;
+      padding-top: 0.25rem;
+      border-radius: 0.25rem;
+      opacity: 0;
+
+      @for $i from 0 to 5 {
+        &:nth-child(#{5 - $i}) {
+          transform: translateX(calc(#{$i * 1.05}rem + 5px));
+        }
+      }
+
+      transition: 0.35s ease;
+
+      * {
+        color: $text;
+
+        transition: color 0.25s ease-in;
+      }
+
+      &:first-child {
+        margin-left: auto;
+      }
+
+      &:hover {
+        * {
+          color: $text-highlight;
+        }
+      }
+    }
+    
+    svg {
+      font-size: 1.5rem;
+    }
+  }
+
+  li:not(.social-links) {
     transition:
       transform 0.45s ease-out,
       opacity 0.25s ease,
@@ -117,7 +157,7 @@
     pointer-events: all;
     height: calc(100vh - 4rem);
 
-    li {
+    li:not(.social-links) {
       transition:
         transform 0.45s 0.15s ease-out,
         opacity 0.25s ease,
@@ -126,6 +166,23 @@
       margin-bottom: 1rem;
       opacity: 1;
       transform: translateY(0) rotateX(0deg);
+    }
+
+    li.social-links {
+      a {
+        @for $i from 0 to 5 {
+          &:nth-child(#{$i}) {
+            transition:
+              transform #{$i * 0.1s} ease-out
+            ;
+          }
+        }
+        transition:
+          opacity 0.25s ease
+        ;
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
   }
 }

@@ -14,9 +14,6 @@ const SideBar: React.FC = () => {
             href="https://twitter.com/OkoyeCharles_"
           >
             <FaTwitter />
-            <div className="sidebar__label">
-              <span>Twitter</span>
-            </div>
           </a>
         </li>
         <li className="sidebar__item">
