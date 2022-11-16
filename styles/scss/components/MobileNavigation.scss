@@ -65,24 +65,18 @@
     height 0.3s 0.25s ease-in
   ;
 
-  li.social-links {
+  > li.social-links {
     display: flex;
     margin: 2rem;
     gap: 0.8rem;
+    overflow: hidden;
 
     a {
+      padding-top: 0.5rem;
       padding-inline: 0.25rem;
-      padding-top: 0.25rem;
       border-radius: 0.25rem;
       opacity: 0;
-
-      @for $i from 0 to 5 {
-        &:nth-child(#{5 - $i}) {
-          transform: translateX(calc(#{$i * 1.05}rem + 5px));
-        }
-      }
-
-      transition: 0.35s ease;
+      transform: translateY(1.5rem);
 
       * {
         color: $text;
@@ -170,16 +164,6 @@
 
     li.social-links {
       a {
-        @for $i from 0 to 5 {
-          &:nth-child(#{$i}) {
-            transition:
-              transform #{$i * 0.1s} ease-out
-            ;
-          }
-        }
-        transition:
-          opacity 0.25s ease
-        ;
         opacity: 1;
         transform: translateX(0);
       }

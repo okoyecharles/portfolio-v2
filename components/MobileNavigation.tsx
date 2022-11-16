@@ -1,8 +1,8 @@
+import { useTrail, animated, config } from "@react-spring/web";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
-import { FaAngellist, FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
+import socialLinks from "../db/social_links";
 import toggleDarkMode from "../utils/darkModeHelper";
 
 const MobileNavigation = () => {
@@ -14,6 +14,25 @@ const MobileNavigation = () => {
   function handleNavToggle() {
     setIsActive(!isActive);
   }
+
+  const [trails, api] = useTrail(socialLinks.length, () => ({
+    opacity: 0,
+    y: 25,
+    rotateX: '45deg',
+    config: {
+      mass: 5,
+      tension: 2000,
+      friction: 140
+    }
+  }))
+
+  api.start({
+    to: {
+      opacity: isActive ? 1: 0,
+      y: isActive ? 0 : 15,
+      rotateX: isActive ? '0deg' : '45deg'
+    }
+  })
 
   useEffect(() => {
     setDarkMode(
@@ -55,47 +74,22 @@ const MobileNavigation = () => {
           <div className="hamburger"></div>
         </button>
         <ul className="m_navigation__links">
-          <li className="social-links" aria-label="social-links">
-            <a
-              title="Twitter"
+          <li className="social-links" aria-label="social-links">{
+            trails.map((style, i) => (
+              <animated.a
+              title={socialLinks[i].title}
               target="_blank"
               rel="noopener noreferrer"
-              href="https://twitter.com/OkoyeCharles_"
-            >
-              <FaTwitter />
-            </a>
-            <a
-              title="Github"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://github.com/OkoyeCharles"
-            >
-              <FaGithub />
-            </a>
-            <a
-              title="LinkedIn"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.linkedin.com/in/charles-k-okoye/"
-            >
-              <FaLinkedinIn />
-            </a>
-            <a
-              title="AngelList"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://angel.co/u/charles-k-okoye"
-            >
-              <FaAngellist />
-            </a>
-            <a
-              title="Gmail"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="mailto:okoyecharles509@gmail.com"
-            >
-              <SiGmail />
-            </a>
+              href={socialLinks[i].href}
+              style={{
+                perspective: '3d',
+                ...style
+              }}
+              >
+                {socialLinks[i].icon}
+              </animated.a>
+            ))
+          }
           </li>
           <li>
             <Link href="/">Home</Link>

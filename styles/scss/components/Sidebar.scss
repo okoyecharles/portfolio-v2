@@ -44,7 +44,7 @@
   &:hover {
     background: linear-gradient($theme, $highlight);
     box-shadow: $inspect;
-    color: $accent;
+    color: $text-highlight;
   }
 
   a {
