@@ -19,6 +19,11 @@ function Home() {
             Check out my work!
           </button>
         </Section>
+        <Section className="projects__preview">
+          <header>
+            <h2>Featured Projects</h2>
+          </header>
+        </Section>
       </Layout>
     </>
   );

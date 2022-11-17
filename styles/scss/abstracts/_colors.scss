@@ -3,6 +3,7 @@
   --theme-light: #fff;
 
   --accent: rgb(0, 110, 235);
+  --accent-dark: rgb(0, 83, 177);
 
   --header-scroll: rgba(255, 255, 255, 0.9);
 
@@ -26,14 +27,15 @@
   --theme: #141618;
   --theme-light: #212427;
 
-  --accent: hsl(212, 84%, 58%);
+  --accent: rgb(58, 142, 238);
+  --accent-dark: rgb(42, 109, 186);
 
   --highlight: #31353c;
 
   --btn-hover: #0c1c2e;
   --btn-active: #132a45;
 
-  --header-scroll: hsl(215, 17%, 14%);
+  --header-scroll: hsla(215, 17%, 14%, 0.975);
 
   --line: rgb(71, 76, 76);
 
@@ -48,6 +50,7 @@ $theme: var(--theme);
 $theme-light: var(--theme-light);
 
 $accent: var(--accent);
+$accent-dark: var(--accent-dark);
 
 
 $header-scroll: var(--header-scroll);
