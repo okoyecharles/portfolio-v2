@@ -18,18 +18,19 @@ const FeaturedProject: React.FC<projectType> = props => {
           <a href={props.links.github}>
             <FaGithub />
           </a>
-          <a href={props.links.github}>
+          <a href={props.links.live}>
             <FiExternalLink />
           </a>
         </div>
       </div>
+      <div className="featuredProject__image">
       <img
-        className="featuredProject__image"
         src={props.image}
         alt={`${props.title}'s image`}
         width={+props.imgDims.width / 3}
         height={+props.imgDims.height / 3}
       />
+      </div>
     </article>
   );
 };
