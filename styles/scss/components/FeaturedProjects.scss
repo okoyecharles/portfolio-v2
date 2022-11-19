@@ -1,0 +1,70 @@
+@use '../abstracts' as *;
+
+.featuredProjects {
+  margin-top: 3rem;
+}
+
+.featuredProject__container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.75rem;
+  position: relative;
+  isolation: isolate;
+  margin-bottom: 5rem;
+
+  .featuredProject__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-row: -1 / 1;
+    grid-column: 1 / 8;
+
+    h3 {
+      font-size: 25px;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      background: $theme;
+      padding: 1rem;
+      border-radius: 0.25rem;
+      font-size: 15px;
+    }
+  }
+
+  .featuredProject__techStack {
+    display: flex;
+    gap: 0.5rem;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .featuredProject__image {
+    z-index: -1;
+    grid-row: -1 / 1;
+    grid-column: 6 / 13;
+    height: fit-content;
+  }
+
+  &:nth-child(odd) {
+    .featuredProject__content {
+      grid-column: 6 / 13;
+
+      h3, p {
+        text-align: right;
+      }
+    }
+  
+    .featuredProject__techStack {
+      flex-direction: row-reverse;
+    }
+
+    .featuredProject__links {
+      align-self: flex-end;
+    }
+  
+    .featuredProject__image {
+      grid-column: 1 / 8;
+    }
+  }
+}

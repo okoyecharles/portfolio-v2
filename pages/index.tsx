@@ -1,7 +1,9 @@
 import Head from "next/head";
 import React from "react";
+import FeaturedProject from "../components/FeaturedProject";
 import Layout from "../components/Layout";
 import Section from "../components/Section";
+import projects from "../db/projects";
 
 function Home() {
   return (
@@ -14,15 +16,22 @@ function Home() {
           <h1>Hi, my name is</h1>
           <h2>Okoye Charles.</h2>
           <h3>I embrace the digital world.</h3>
-          <p>I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and need help on a project, I am available for hire.</p>
-          <button>
-            Check out my work!
-          </button>
+          <p>
+            I can help you build a product , feature or website Look through
+            some of my work and experience! If you like what you see and need
+            help on a project, I am available for hire.
+          </p>
+          <button>Check out my work!</button>
         </Section>
-        <Section className="projects__preview">
+        <Section className="projects">
           <header>
             <h2>Featured Projects</h2>
           </header>
+          <div className="featuredProjects">
+          {projects.slice(0,3).map((projectProp) => (
+            <FeaturedProject {...projectProp} />
+          ))}
+          </div>
         </Section>
       </Layout>
     </>

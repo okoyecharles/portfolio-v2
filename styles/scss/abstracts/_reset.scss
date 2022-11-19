@@ -50,7 +50,6 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
@@ -73,6 +72,16 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */

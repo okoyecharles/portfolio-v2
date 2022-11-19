@@ -43,21 +43,10 @@ section {
 
     &::after {
       content: "";
-      background: linear-gradient(90deg, $text-light, $accent);
-      background-size: 200vw;
-      border-radius: 0.025rem;
+      background: $highlight-active;
       height: 0.05rem;
       flex: 1;
-      animation: line-change 30s ease infinite alternate-reverse;
-    }
-
-    @keyframes line-change {
-      0% {
-        background-position: right;
-      }
-      100% {
-        background-position: 0%;
-      }
+      max-width: 30rem;
     }
   }
 }

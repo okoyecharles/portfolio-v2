@@ -20,12 +20,15 @@
     }
 
     h2 {
-      background: linear-gradient(90deg, $accent, $accent-dark);
+      background: linear-gradient(to right, $accent-dark, $accent, $accent-dark);
+      background-size: 200%;
       background-clip: text;
       color: transparent;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      white-space: nowrap;
       width: fit-content;
+      animation: background-pan 10s linear infinite;
     }
 
     h3 {
@@ -40,14 +43,11 @@
   }
 }
 
+
 @media screen and (max-width: 600px) {
   .hero {
     > h1 {
-      font-size: 14px;
-    }
-
-    > p {
-      font-size: 15px;
+      font-size: 16px;
     }
   }
 }

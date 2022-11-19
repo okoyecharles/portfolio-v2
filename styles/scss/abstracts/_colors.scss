@@ -2,6 +2,7 @@
   --theme: #f5fafa;
   --theme-light: #fff;
 
+  --accent-light: rgb(31, 128, 240);
   --accent: rgb(0, 110, 235);
   --accent-dark: rgb(0, 83, 177);
 
@@ -15,8 +16,8 @@
   --btn-hover: rgb(0, 101, 217);
   --btn-active: rgb(5, 106, 222);
 
-  --highlight: #ecfcff;
-  --highlight-active: #ddf8fc;
+  --highlight: rgb(236, 244, 255);
+  --highlight-active: rgb(148, 180, 220);
 
   --line: rgb(168, 180, 183);
 
@@ -27,10 +28,12 @@
   --theme: #141618;
   --theme-light: #212427;
 
+  --accent-light: rgb(102, 157, 220);
   --accent: rgb(58, 142, 238);
   --accent-dark: rgb(42, 109, 186);
 
-  --highlight: #31353c;
+  --highlight: rgb(45, 56, 68);
+  --highlight-active: rgb(45, 56, 68);
 
   --btn-hover: #0c1c2e;
   --btn-active: #132a45;
@@ -49,6 +52,7 @@
 $theme: var(--theme);
 $theme-light: var(--theme-light);
 
+$accent-light: var(--accent-light);
 $accent: var(--accent);
 $accent-dark: var(--accent-dark);
 
