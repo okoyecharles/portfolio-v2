@@ -10,7 +10,7 @@
   top: 50%;
   left: 0.5rem;
 
-  transition: background-color 0.25s ease;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .sidebar__links {
@@ -34,6 +34,7 @@
     background 0.25s ease,
     background-color 0.25s ease,
     color 0.25s ease,
+    scale 0.15s ease,
     box-shadow 0.15s ease
   ;
 
@@ -42,9 +43,10 @@
   }
 
   &:hover {
-    background: linear-gradient($theme, $highlight);
+    background: linear-gradient(to top, $highlight, $theme-light);
     box-shadow: $inspect;
     color: $text-highlight;
+    scale: 1.05;
   }
 
   a {
@@ -66,10 +68,12 @@
   }
 
   .sidebar__item {
+    color: $text;
+
     &:hover {
       background: none;
-      background-color: $highlight;
       box-shadow: none;
+      color: $text-highlight;
     }
   }
 }

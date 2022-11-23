@@ -48,7 +48,7 @@ const projects = [
       height: '1335',
     },
     description: 'A Movie WebApp that extracts information from the TV Maze API. Including functionalities like comments, likes, search, categories, and extra app info.',
-    stack: ['Webpack', 'JavaScript', 'TV Shows API'],
+    stack: ['Webpack', 'JavaScript', 'TV Maze API'],
     links: {
       github: 'https://github.com/OkoyeCharles/Nethub',
       live: 'https://okoyecharles.github.io/Nethub/',

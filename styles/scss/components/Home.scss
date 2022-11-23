@@ -2,7 +2,7 @@
 
 .hero {
   padding-top: 5rem;
-  height: calc(100vh - 8rem);
+  min-height: calc(100vh - 8rem);
   > {
     h1 {
       font-weight: 600;
@@ -38,6 +38,7 @@
     p {
       margin-top: 2rem;
       margin-bottom: 3rem;
+      font-size: 1rem !important;
       width: min(500px, 100%);
     }
   }

@@ -4,7 +4,7 @@ import { SiGmail } from "react-icons/si";
 
 const SideBar: React.FC = () => {
   return (
-    <nav className="sidebar" aria-roledescription="social links">
+    <aside className="sidebar" aria-roledescription="social links">
       <ul className="sidebar__links">
         <li className="sidebar__item">
           <a
@@ -57,7 +57,7 @@ const SideBar: React.FC = () => {
           </a>
         </li>
       </ul>
-    </nav>
+    </aside>
   );
 };
 
