@@ -44,10 +44,20 @@ section {
 
     &::after {
       content: "";
-      background: $highlight-active;
+      background-color: $highlight-active;
       height: 0.05rem;
       flex: 1;
       max-width: 30rem;
+
+      transition: background-color 0.25s ease;
+    }
+  }
+}
+
+:root.dark {
+  section {
+    header::after {
+      background-color: $theme-light;
     }
   }
 }

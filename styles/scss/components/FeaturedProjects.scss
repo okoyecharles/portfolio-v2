@@ -35,14 +35,14 @@
       --dynamic-fade-color: var(--accent);
       --dynamic-border-color: var(--accent);
 
-      background: $theme;
+      background-color: $theme;
       padding: 1rem;
       border-radius: 0.25rem;
       position: relative;
       box-shadow: 0 0 0.05rem $accent;
       isolation: auto;
 
-      transition: box-shadow 0.15s ease;
+      transition: box-shadow 0.15s ease, background-color 0.25s ease;
 
       &::after, &::before {
         position: absolute;
@@ -120,7 +120,7 @@
     position: relative;
     border-radius: 0.25rem;
     overflow: hidden;
-    z-index: -1;
+    z-index: -2;
     height: fit-content;
 
     &::after {
@@ -195,7 +195,7 @@ Below are the styles for the light mode
         background: $theme-light;
 
         &:hover {
-          box-shadow: -0.5rem 0.5rem 0.75rem $shadow-light, 0 0 0 0.05rem $shadow;
+          box-shadow: 0rem 0rem 0.75rem $shadow, 0 0 0 0.05rem $shadow;
         }
       }
 

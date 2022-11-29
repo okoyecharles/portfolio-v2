@@ -59,9 +59,15 @@
     }
 
     a:hover {
-      color: $accent-light;
+      color: $accent;
       opacity: 1;
     }
+  }
+}
+
+:root.dark {
+  .navigation__links li a:hover {
+    color: $accent-light;
   }
 }
 

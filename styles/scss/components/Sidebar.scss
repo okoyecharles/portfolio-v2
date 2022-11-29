@@ -40,13 +40,13 @@
 
   &:active {
     background-color: $highlight-active;
+    scale: 0.95;
   }
 
   &:hover {
     background: linear-gradient(to top, $highlight, $theme-light);
     box-shadow: $inspect;
     color: $text-highlight;
-    scale: 1.05;
   }
 
   a {
@@ -74,6 +74,7 @@
       background: none;
       box-shadow: none;
       color: $text-highlight;
+      scale: 1.05;
     }
   }
 }

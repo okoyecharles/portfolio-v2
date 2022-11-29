@@ -2,12 +2,12 @@ import React from 'react';
 
 interface SectionProps {
   children?: React.ReactNode;
-  className: string;
+  label: string;
 }
 
-function Section({ children, className }: SectionProps) {
+function Section({ children, label }: SectionProps) {
   return (
-    <section className={className}>
+    <section className={label} id={label}>
       { children }
     </section>
   )
