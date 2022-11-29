@@ -29,10 +29,10 @@ function Home() {
             <h2>About Me</h2>
           </header>
           <div className="about__container">
-            <article className="about_content">
-              <p>Hello! My name is Okoye Charles Kosisochukwu and I'm a creative developer who loves to work on appealing websites with a passion for User Interfaces and Experience. I love spending my time coding, creating things for the web and learning new things.</p>
+            <article className="about__content">
+              <p>Hello! My name is <b>Okoye Charles Kaosisochukwu</b> and I'm a creative developer who loves to work on appealing websites with a passion for User Interfaces and Experience. I love spending my time coding, creating things for the web and learning new things.</p>
 
-              <p>I'm relatively new to the software development world and since May 2022 I've been building my technical, leadership, and collaborative skills at <a href="https://www.microverse.org/?grsf=wtedvt" rel="noreferrer noopener" target="_blank">microverse</a> through collaborating and pair-programming with other students in real time.</p>
+              <p>I'm relatively new to the software development world and since May 2022 I've been building my technical, leadership, and collaborative skills at <a href="https://www.microverse.org/?grsf=wtedvt" rel="noreferrer noopener" target="_blank">microverse</a> through collaborating and pair programming with other students from all over the world.</p>
 
               <p>My main aim is to create and deliver unique, high-end and innovative products for a variety of clients. If you are in need of an experienced Software Engineer, I am <a href="mailto:okoyecharles509@gmail.com?subject=Hire%20Okoye%20Charles!">available for hire.</a></p>
 
@@ -47,9 +47,9 @@ function Home() {
                 <li>Ruby on Rails</li>
               </ul>
 
-              <span className="extra-info">HAVE A COOL PROJECT IN MIND? I'D LOVE TO <a href="#contact" >HEAR ABOUT IT</a></span>
+              <span className="extra-info">HAVE A COOL WEBSITE OR APPLICATION IN MIND? I'D LOVE TO <a href="#contact" >HEAR ABOUT IT</a></span>
             </article>
-            <div className="about_image">
+            <div className="about__image">
               <Image src='/OkoyeCharles.webp' width={2960} height={2960} alt='portrait'/>
             </div>
           </div>
