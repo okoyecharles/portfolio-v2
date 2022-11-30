@@ -28,7 +28,7 @@ const FeaturedProject: React.FC<projectType> = (props) => {
     <article className="featuredProject__container">
       <div className="featuredProject__content" ref={contentRef}>
         <h3>{props.title}</h3>
-        <p onMouseMove={handleMouseMove}>{props.description}</p>
+        <p onMouseMove={handleMouseMove} dangerouslySetInnerHTML={{__html: props.description}} />
         <ul className="featuredProject__techStack">
           {props.stack.map((item) => (
             <li key={item}>{item}</li>

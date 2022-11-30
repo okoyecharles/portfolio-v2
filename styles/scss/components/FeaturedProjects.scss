@@ -133,24 +133,24 @@
       width: 100%;
       background: $accent;
       border-radius: 0.25rem;
-      transition: opacity 0.15s;
+      transition: opacity 0.25s 0.15s ease;
     }
     
     img {
       height: fit-content;
       opacity: 0.9;
       filter: grayscale(90%);
-      transition: filter 0.05s;
+      transition: filter 0.25s 0s ease;
     }
 
     &:hover {
       &::after {
-        transition: opacity 0.15s ease;
+        transition: opacity 0.25s 0.15s ease;
         opacity: 0;
       }
 
       img {
-        transition: filter 0.05s ease;
+        transition: filter 0.25s 0s ease;
         filter: grayscale(0%);
       }
     }
