@@ -240,7 +240,7 @@ Below are the styles for the light mode
       grid-column: -1 / 1;
       grid-row: 3 / span 5;
       padding: 1rem;
-      box-shadow: inset 0 var(--height, -240px) 2.5rem $theme;
+      box-shadow: inset 0 var(--height, -240px) 2.5rem $theme-light;
       backdrop-filter: blur(1px);
       transition: box-shadow 0.25s ease;
 
