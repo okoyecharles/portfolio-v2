@@ -32,19 +32,16 @@
     }
 
     p {
-      --dynamic-fade-color: var(--accent);
-      --dynamic-border-color: var(--accent);
+      --dynamic-fade-color: var(--accent-light);
 
-      background-color: $theme;
+      background-color: $theme-light;
       padding: 1rem;
       border-radius: 0.25rem;
       position: relative;
-      box-shadow: 0 0 0.05rem $accent;
-      isolation: auto;
 
       transition: box-shadow 0.15s ease, background-color 0.25s ease;
 
-      &::after, &::before {
+      &::before {
         position: absolute;
         content: '';
         width: 100%;
@@ -53,26 +50,10 @@
         top: 0;
         left: 0;
         opacity: 0;
-        transition: opacity 0.5s;
-      }
-      
-      &::after {
-        background: $accent;
-        z-index: -1;
-        top: -0.05rem;
-        left: -0.05rem;
-        width: calc(100% + 0.1rem);
-        height: calc(100% + 0.1rem);
+        transition: opacity 500ms;
+
         background: radial-gradient(
-          500px circle at var(--mouse-x) var(--mouse-y),
-          var(--dynamic-border-color),
-          transparent 40%
-        );
-      }
-      
-      &::before {
-        background: radial-gradient(
-          500px circle at var(--mouse-x) var(--mouse-y),
+          800px circle at var(--mouse-x) var(--mouse-y),
           var(--dynamic-fade-color),
           transparent 30%
         );
@@ -80,10 +61,6 @@
 
       &:hover::before {
         opacity: 0.1;
-      }
-
-      &:hover::after {
-        opacity: 1;
       }
     }
   }
@@ -191,11 +168,11 @@ Below are the styles for the light mode
         --dynamic-border-color: var(--accent);
         --dynamic-fade-color: transparent;
 
-        box-shadow: 0 0 0.5rem $shadow, 0 0 0 0.05rem $shadow;
+        box-shadow: 0 0 0 0.05rem $shadow;
         background: $theme-light;
 
         &:hover {
-          box-shadow: 0rem 0rem 0.75rem $shadow, 0 0 0 0.05rem $shadow;
+          box-shadow: 0 0 0 0.05rem $shadow, 0rem 0rem 0.75rem $shadow-light;
         }
       }
 
@@ -232,7 +209,6 @@ Below are the styles for the light mode
     border-radius: 0.25rem;
     overflow: hidden;
     margin-bottom: 5rem;
-    box-shadow: $inspect;
     max-width: 500px;
     margin-inline: auto;
 

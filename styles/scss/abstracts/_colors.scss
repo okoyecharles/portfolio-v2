@@ -21,7 +21,7 @@
 
   --line: rgb(168, 180, 183);
 
-  --shadow: rgba(104, 112, 114, 0.14);
+  --shadow: rgba(13, 43, 50, 0.168);
   --shadow-light: rgba(148, 160, 163, 0.074);
 }
 
@@ -50,6 +50,7 @@
 
 $theme: var(--theme);
 $theme-light: var(--theme-light);
+$theme-light-x: var(--theme-light-x);
 
 $accent-light: var(--accent-light);
 $accent: var(--accent);
