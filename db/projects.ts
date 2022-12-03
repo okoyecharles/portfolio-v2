@@ -14,7 +14,7 @@ const projects = [
   },
   {
     title: 'Recipe App',
-    note: 'A full-stack application that allows users to create and manage recipes.',
+    note: 'A full-stack application that allows users to create and manage recipes',
     image: '/projects/recipe-app.webp',
     imgDims: { width: '2465', height: '1409' },
     description: 'The Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe.',
@@ -26,7 +26,7 @@ const projects = [
   },
   {
     title: 'Lavish Cuisine',
-    note: 'A meal-based website that gives you all the information you need about your favourite meals.',
+    note: 'A meal-based website that gives you all the information you need about your favourite meals',
     image: '/projects/lavish-cuisine.webp',
     imgDims: {
       width: '2377',
@@ -41,14 +41,14 @@ const projects = [
   },
   {
     title: 'Nethub',
-    note: 'A Movie application that extracts information from the TV Maze API.',
+    note: 'A Movie application that extracts information from the TV Maze API',
     image: '/projects/nethub.webp',
     imgDims: {
       width: '2337',
       height: '1335',
     },
     description: 'A Movie WebApp that extracts information from the TV Maze API. Including functionalities like comments, likes, search, categories, and extra app info.',
-    stack: ['Webpack', 'JavaScript', 'TV Maze API'],
+    stack: ['Webpack', 'JavaScript'],
     links: {
       github: 'https://github.com/OkoyeCharles/Nethub',
       live: 'https://okoyecharles.github.io/Nethub/',
@@ -56,7 +56,7 @@ const projects = [
   },
   {
     title: 'Wallet Detective',
-    note: 'A full-stack application where you can manage your budget, where you have a list of payments associated with a category',
+    note: 'A full-stack application where you can manage your budget',
     image: '/projects/wallet-inspector.webp',
     imgDims: { width: '2742', height: '1576' },
     description: 'A full-stack application where you can manage your budget: you have a list of payments associated with a category, so you can see how much money you spent and on what',
@@ -68,7 +68,7 @@ const projects = [
   },
   {
     title: 'Save A Child',
-    note: 'A website built with JavaScript... focused on preserving the life of children who suffered during the COVID-19 outbreak.',
+    note: 'A website focused on preserving the life of sick children',
     image: '/projects/save-a-child.webp',
     imgDims: {
       width: '2337',
@@ -83,7 +83,7 @@ const projects = [
   },
   {
     title: 'Todo List',
-    note: 'A Todo list website created with HTML, Sass and JavaScript that saves user\'s tasks in Local Storage.',
+    note: 'A Todo list website that saves user\'s tasks in Local Storage',
     image: '/projects/todo-list.webp',
     imgDims: {
       width: '2345',
