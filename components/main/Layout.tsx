@@ -1,7 +1,7 @@
-import useMediaQuery from "../hooks/useMediaQuery";
-import MobileNavigation from "./MobileNavigation";
-import Navigation from "./Navigation";
-import SideBar from "./Sidebar";
+import useMediaQuery from "../../hooks/useMediaQuery";
+import MobileNavigation from "../navigation/MobileNavigation";
+import Navigation from "../navigation/Navigation";
+import SideBar from "../navigation/Sidebar";
 
 interface LayoutProps {
   children?: React.ReactNode;

@@ -1,13 +1,13 @@
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
-import { projectType } from "../db/projects";
+import { projectType } from "../../db/projects";
 
 const FeaturedProject: React.FC<projectType> = (props) => {
   const contentRef = useRef<HTMLDivElement | null>(null);
 
   const handleMouseMove = (event: any) => {
-    const { target } = event;
+    const { currentTarget: target } = event;
 
     const rect = target.getBoundingClientRect(),
       x = event.clientX - rect.left,
@@ -22,7 +22,7 @@ const FeaturedProject: React.FC<projectType> = (props) => {
     if (rect) {
       contentRef.current?.style.setProperty("--height", `${(rect.height / 1.1) * -1}px`);
     }
-  }, []);
+  }, [contentRef]);
 
   return (
     <article className="featuredProject__container">

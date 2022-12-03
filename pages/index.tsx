@@ -1,10 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
-import FeaturedProject from "../components/FeaturedProject";
-import Layout from "../components/Layout";
-import Section from "../components/Section";
+import FeaturedProject from "../components/projects/FeaturedProject";
+import Layout from "../components/main/Layout";
+import Section from "../components/main/Section";
 import projects from "../db/projects";
+import ProjectCard from "../components/projects/ProjectCard";
+import Projects from "../components/projects/Projects";
 
 function Home() {
   return (
@@ -54,7 +56,7 @@ function Home() {
             </div>
           </div>
         </Section>
-        <Section label="projects">
+        <Section label="featured">
           <header>
             <h2>Featured Projects</h2>
           </header>
@@ -63,6 +65,12 @@ function Home() {
             <FeaturedProject key={projectProp.title} {...projectProp} />
           ))}
           </div>
+        </Section>
+        <Section label="projects">
+          <header>
+            <h2>Other Projects</h2>
+          </header>
+          <Projects />
         </Section>
       </Layout>
     </>

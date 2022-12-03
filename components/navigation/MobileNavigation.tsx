@@ -2,8 +2,8 @@ import { useTrail, animated, config } from "@react-spring/web";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
-import socialLinks from "../db/social_links";
-import toggleDarkMode from "../utils/darkModeHelper";
+import socialLinks from "../../db/social_links";
+import toggleDarkMode from "../../utils/darkModeHelper";
 
 const MobileNavigation = () => {
   const [isDarkMode, setDarkMode] = useState<boolean>(false);

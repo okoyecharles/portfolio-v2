@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
-import toggleDarkMode from "../utils/darkModeHelper";
+import toggleDarkMode from "../../utils/darkModeHelper";
 
 const Navigation = () => {
   const [sticky, setSticky] = useState<boolean>(false);
