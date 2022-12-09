@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { emailVerificationKey, formSubmissionKey } from "../../config/apiKeys";
 import { IoSend } from "react-icons/io5";
 import { useSpring, animated } from "@react-spring/web";
 import { ThreeDots } from "react-loader-spinner";
@@ -55,7 +54,7 @@ const ContactForm = () => {
     const response = axios.get(
       `https://api.apilayer.com/email_verification/${email}`,
       {
-        headers: { apikey: emailVerificationKey }
+        headers: { apikey: process.env.EMAIL_VERIFICATION_KEY }
       }
     );
     const { data, status } = await response;
@@ -65,7 +64,7 @@ const ContactForm = () => {
 
   const submitData = async (formData: any) => {
     const { data } = await axios.post(
-      `https://getform.io/f/${formSubmissionKey}`,
+      `https://getform.io/f/${process.env.FORM_SUBMISSION_KEY}`,
       formData,
       { headers: { Accept: "application/json" } }
     );
