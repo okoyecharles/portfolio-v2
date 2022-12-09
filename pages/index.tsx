@@ -7,6 +7,7 @@ import Section from "../components/main/Section";
 import projects from "../db/projects";
 import ProjectCard from "../components/projects/ProjectCard";
 import Projects from "../components/projects/Projects";
+import ContactForm from "../components/contact/ContactForm";
 
 function Home() {
   return (
@@ -71,6 +72,13 @@ function Home() {
             <h2>Other Projects</h2>
           </header>
           <Projects />
+        </Section>
+        <Section label="contact">
+            <header>
+              <h2>Contact Me</h2>
+            </header>
+            <p>If you have an application you are interested in <b>developing</b>, a feature that you need built or a project that needs <b>coding</b>. I'd love to help with it.</p>
+            <ContactForm />
         </Section>
       </Layout>
     </>
