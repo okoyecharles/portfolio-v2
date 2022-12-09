@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { emailVerificationKey, formSubmissionKey } from "../../config/apiKeys";
 import { IoSend } from "react-icons/io5";
-import { config, useSpring, animated } from "@react-spring/web";
+import { useSpring, animated } from "@react-spring/web";
 import { ThreeDots } from "react-loader-spinner";
 
 const ContactForm = () => {
@@ -36,17 +36,14 @@ const ContactForm = () => {
     // Disable all previous errors
     clearErrors();
     setProcessing(false);
-
-    // Clear previous timeouts
     if (typeof errorTimeoutID === "number") {
       clearTimeout(errorTimeoutID);
     }
 
     // Stop if no error was specified
     if (error === null) return;
-    setSuccess(false);
 
-    // Set error for 5 seconds
+    setSuccess(false);
     setError(error);
     const timeOutID = setTimeout(() => {
       setError(null);
@@ -54,17 +51,17 @@ const ContactForm = () => {
     setErrorTimeoutID(timeOutID);
   };
 
-  // const verifyEmail = async (email: string) => {
-  //   const response = axios.get(
-  //     `https://api.apilayer.com/email_verification/${email}`,
-  //     {
-  //       headers: { apikey: emailVerificationKey }
-  //     }
-  //   );
-  //   const { data, status } = await response;
-  //   if (status === 429) return { error: "expired" };
-  //   return data;
-  // };
+  const verifyEmail = async (email: string) => {
+    const response = axios.get(
+      `https://api.apilayer.com/email_verification/${email}`,
+      {
+        headers: { apikey: emailVerificationKey }
+      }
+    );
+    const { data, status } = await response;
+    if (status === 429) return { error: "expired" };
+    return data;
+  };
 
   const submitData = async (formData: any) => {
     const { data } = await axios.post(
@@ -91,7 +88,7 @@ const ContactForm = () => {
       return;
     }
 
-    // Veriy email using regex
+    // Manual verification using regex
     const EMAIL_REGEX =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!EMAIL_REGEX.test(email)) {
@@ -112,17 +109,17 @@ const ContactForm = () => {
       return;
     }
 
-    // // Verify email using API Layer email-auth
-    // const emailVerification = await verifyEmail(email);
-    // if (emailVerification.error) {
-    //   raiseError("Sorry... Something went wrong!");
-    //   return;
-    // }
-    // if (emailVerification.can_connect_smtp === false) {
-    //   raiseError("The email you entered doesn't exist");
-    //   setEmailError(true);
-    //   return;
-    // }
+    // Verify email using API Layer's email-auth provider
+    const emailVerification = await verifyEmail(email);
+    if (emailVerification.error) {
+      raiseError("Sorry... Something went wrong!");
+      return;
+    }
+    if (emailVerification.can_connect_smtp === false) {
+      raiseError("The email you entered doesn't exist");
+      setEmailError(true);
+      return;
+    }
 
     const submitResponse = await submitData({ name, email, message });
     if (submitResponse.success) {
