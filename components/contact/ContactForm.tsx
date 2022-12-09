@@ -1,6 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { emailVerificationKey, formSubmissionKey } from "../../config/apiKeys";
+import { IoSend } from "react-icons/io5";
+import { config, useSpring, animated } from "@react-spring/web";
+import { ThreeDots } from "react-loader-spinner";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
@@ -15,17 +18,24 @@ const ContactForm = () => {
     NodeJS.Timeout | undefined
   >(undefined);
   const [error, setError] = useState<string | null>(null);
+
+  const [successTimeoutID, setSuccessTimeoutID] = useState<
+    NodeJS.Timeout | undefined
+  >(undefined);
+  const [success, setSuccess] = useState<boolean>(false);
+
   const [processing, setProcessing] = useState(false);
 
   const clearErrors = () => {
     setNameError(false);
     setEmailError(false);
     setMessageError(false);
-  }
+  };
 
   const raiseError = async (error: string | null) => {
     // Disable all previous errors
     clearErrors();
+    setProcessing(false);
 
     // Clear previous timeouts
     if (typeof errorTimeoutID === "number") {
@@ -34,6 +44,7 @@ const ContactForm = () => {
 
     // Stop if no error was specified
     if (error === null) return;
+    setSuccess(false);
 
     // Set error for 5 seconds
     setError(error);
@@ -43,17 +54,17 @@ const ContactForm = () => {
     setErrorTimeoutID(timeOutID);
   };
 
-  const verifyEmail = async (email: string) => {
-    const response = axios.get(
-      `https://api.apilayer.com/email_verification/${email}`,
-      {
-        headers: { apikey: emailVerificationKey }
-      }
-    );
-    const { data, status } = await response;
-    if (status === 429) return { error: "expired" };
-    return data;
-  };
+  // const verifyEmail = async (email: string) => {
+  //   const response = axios.get(
+  //     `https://api.apilayer.com/email_verification/${email}`,
+  //     {
+  //       headers: { apikey: emailVerificationKey }
+  //     }
+  //   );
+  //   const { data, status } = await response;
+  //   if (status === 429) return { error: "expired" };
+  //   return data;
+  // };
 
   const submitData = async (formData: any) => {
     const { data } = await axios.post(
@@ -66,6 +77,7 @@ const ContactForm = () => {
 
   const handleSubmission = async (submitEvent: any) => {
     submitEvent.preventDefault();
+    setProcessing(true);
 
     if (name.trim().length < 1) {
       raiseError("Name cannot be blank");
@@ -75,6 +87,15 @@ const ContactForm = () => {
 
     if (email.trim().length < 1) {
       raiseError("Email cannot be blank");
+      setEmailError(true);
+      return;
+    }
+
+    // Veriy email using regex
+    const EMAIL_REGEX =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!EMAIL_REGEX.test(email)) {
+      raiseError("Please enter a valid email address");
       setEmailError(true);
       return;
     }
@@ -91,79 +112,128 @@ const ContactForm = () => {
       return;
     }
 
-    // Veriy email using regex
-    const EMAIL_REGEX =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!EMAIL_REGEX.test(email)) {
-      raiseError("Please enter a valid email address");
-      setEmailError(true);
-      return;
-    }
-
-    // Verify email using API Layer email-auth
-    const emailVerification = await verifyEmail(email);
-    if (emailVerification.error) {
-      raiseError("Sorry... Something went wrong!");
-      return;
-    }
-    if (emailVerification.can_connect_smtp === false) {
-      raiseError("The email you entered doesn't exist");
-      setEmailError(true);
-      return;
-    }
+    // // Verify email using API Layer email-auth
+    // const emailVerification = await verifyEmail(email);
+    // if (emailVerification.error) {
+    //   raiseError("Sorry... Something went wrong!");
+    //   return;
+    // }
+    // if (emailVerification.can_connect_smtp === false) {
+    //   raiseError("The email you entered doesn't exist");
+    //   setEmailError(true);
+    //   return;
+    // }
 
     const submitResponse = await submitData({ name, email, message });
     if (submitResponse.success) {
-      setName('');
-      setEmail('');
-      setMessage('');
+      setSuccess(true);
+      setName("");
+      setEmail("");
+      setMessage("");
+
+      clearTimeout(successTimeoutID);
+      const timeoutID = setTimeout(() => {
+        setSuccess(false);
+      }, 3000);
+      setSuccessTimeoutID(timeoutID);
+
       raiseError(null);
-    };
+    }
   };
 
+  const errorSprings = useSpring({
+    y: error ? -40 : 0,
+    opacity: error ? 0.9 : 0,
+    config: {
+      friction: 20,
+      tension: 200,
+    },
+  });
+
+  const successSprings = useSpring({
+    y: success ? -40 : 0,
+    opacity: success ? 1 : 0,
+    config: {
+      friction: 20,
+      tension: 200,
+    },
+  });
+
   return (
-    <div className="form__container">
+    <div className="contactForm__container">
       <form className="contactForm" action="" onSubmit={handleSubmission}>
-        <div>{error}</div>
-        <div>
-          <label htmlFor="contactForm__name">Name *</label>
-          <br />
-          <input
-            type="text"
-            id="contactForm__name"
-            className="contactForm__name"
-            value={name}
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
-          />
-        </div>
-        <div>
-          <label htmlFor="contactForm__email">Email *</label>
-          <br />
-          <input
-            type="email"
-            id="contactForm__email"
-            className="contactForm__email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-          />
-        </div>
-        <div>
-          <label htmlFor="contactForm__message">Message *</label>
-          <br />
-          <textarea
-            id="contactForm__message"
-            className="contactForm__message"
-            value={message}
-            onChange={(e) => {
-              setMessage(e.target.value);
-            }}
-          />
-        </div>
-        <button type="submit">Send</button>
+        <animated.div
+          className="error"
+          style={{
+            zIndex: "-1",
+            top: "0",
+            transform: "translateX(-50%)",
+            ...errorSprings,
+          }}
+        >
+          {error}
+        </animated.div>
+
+        <animated.div
+          className="success"
+          style={{
+            zIndex: "-1",
+            top: "0",
+            transform: "translateX(-50%)",
+            ...successSprings,
+          }}
+        >
+          Message sent successfully
+        </animated.div>
+
+        <input
+          type="text"
+          id="contactForm__name"
+          className={`contactForm__name ${nameError ? "invalid" : ""}`}
+          value={name}
+          placeholder="Full Name"
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+        />
+
+        <input
+          type="email"
+          id="contactForm__email"
+          className={`contactForm__email ${emailError ? "invalid" : ""}`}
+          value={email}
+          placeholder="Email"
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+
+        <textarea
+          id="contactForm__message"
+          className={`contactForm__message ${messageError ? "invalid" : ""}`}
+          rows={5}
+          value={message}
+          placeholder="Type your message here..."
+          onChange={(e) => {
+            setMessage(e.target.value);
+          }}
+        />
+        <button type="submit" disabled={processing}>
+          Send
+          {processing ? (
+            <ThreeDots
+              height="15"
+              width="20"
+              radius="9"
+              color="var(--loading)"
+              ariaLabel="three-dots-loading"
+              wrapperStyle={{}}
+              visible={true}
+            />
+          ) : (
+            <IoSend />
+          )}
+        </button>
       </form>
     </div>
   );

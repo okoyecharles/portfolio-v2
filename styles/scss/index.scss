@@ -8,6 +8,8 @@
 @use "./components/FeaturedProjects";
 @use "./components/ProjectCard";
 @use "./components/About";
+@use "./components/Contact.scss";
+@use "./components/ContactForm.scss";
 
 
 @media screen and (max-width: 768px) {

@@ -18,7 +18,7 @@ section button {
   ;
 
 
-  &:hover {
+  &:not(:disabled):hover {
     background-color: $btn-hover;
     box-shadow: 0 0 0.5rem $shadow;
   }

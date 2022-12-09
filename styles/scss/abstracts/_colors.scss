@@ -12,6 +12,10 @@
   --text: rgb(43, 53, 63);
   --text-light: rgb(58, 72, 86);
 
+  --input-highlight: rgba(86, 203, 249, 0.224);
+  --input-border: rgb(168, 180, 183);
+  --input-border-active: rgba(36, 69, 86, 0.688);
+
   --hover: #f5fafa;
   --btn-hover: rgb(0, 101, 217);
   --btn-active: rgb(5, 106, 222);
@@ -23,6 +27,7 @@
 
   --shadow: rgba(13, 43, 50, 0.168);
   --shadow-light: rgba(148, 160, 163, 0.074);
+  --loading: rgb(253, 255, 255);
 }
 
 :root.dark {
@@ -44,8 +49,11 @@
   --text: rgb(180, 197, 203);
   --text-light: rgb(141, 154, 156);
 
+  --input-highlight: rgba(65, 189, 238, 0.344);
+  
   --shadow: rgb(0, 9, 12);
   --shadow-light: rgb(0, 19, 25);
+  --loading: rgb(0, 173, 231);
 }
 
 $theme: var(--theme);
@@ -71,6 +79,10 @@ $line: var(--line);
 $text: var(--text);
 $text-light: var(--text-light);
 $text-highlight: var(--text-highlight);
+
+$input-highlight: var(--input-highlight);
+$input-border: var(--input-border);
+$input-border-active: var(--input-border-active);
 
 $shadow: var(--shadow);
 $shadow-light: var(--shadow-light);
