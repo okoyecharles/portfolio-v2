@@ -77,6 +77,13 @@ function Home() {
           </header>
           <Projects />
         </Section>
+        <Section label="recommendations">
+            <header>
+              <h2>Recommendations</h2>
+            </header>
+            <p>I work with people from places all over the world through <b>remote pair-programming</b>... on amazing, high-end applications and websites. Continuosly improving my communicative, organizational, and collaborative skills.</p>
+            <p>Here are a couple recommendations left by previous co-workers:</p>
+        </Section>
         <Section label="contact">
             <header>
               <h2>Contact Me</h2>
