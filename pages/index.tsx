@@ -7,12 +7,10 @@ import Section from "../components/main/Section";
 import projects from "../db/projects";
 import Projects from "../components/projects/Projects";
 import ContactForm from "../components/contact/ContactForm";
-import SkipToContent from "../components/anchors/skipToContent";
+import SkipToContent from "../components/anchors/SkipToContent";
 
 
 function Home() {
-  
-
   return (
     <>
       <Head>
@@ -29,7 +27,9 @@ function Home() {
             some of my work and experience! If you like what you see and need
             help on a project, I am available for hire.
           </p>
-          <button>Check out my work!</button>
+          <a href="#featured">
+          <button tabIndex={-1}>Check out my work!</button>
+          </a>
         </Section>
         <Section label="about">
           <header>

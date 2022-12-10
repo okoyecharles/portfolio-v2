@@ -54,7 +54,7 @@ const ProjectCard: React.FC<{ project: projectType }> = ({ project }) => {
             ))}
           </ul>
         </div>
-        <a href={project.links.live} className="projectCard__wrapper2">
+        <a href={project.links.live} className="projectCard__wrapper2" tabIndex={-1}>
           <div className="projectCard__content">
             <h3>{project.title}</h3>
             <p>{project.note}</p>

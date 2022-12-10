@@ -11,7 +11,6 @@
   position: relative;
   isolation: isolate;
   margin-bottom: 5rem;
-  box-shadow: $inspect;
 
   --left-grid-pos: 1 / 8;
   --right-grid-pos: 7 / 13;
@@ -85,6 +84,7 @@
       font-size: 1.25rem;
       color: $text;
       transition: color 0.25s ease;
+      outline-offset: 3px;
     }
 
     a:hover {
@@ -212,6 +212,7 @@ Below are the styles for the light mode
     margin-bottom: 5rem;
     max-width: 500px;
     margin-inline: auto;
+    box-shadow: $inspect;
 
     .featuredProject__content {
       grid-column: -1 / 1;

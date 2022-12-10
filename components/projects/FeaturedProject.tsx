@@ -22,7 +22,7 @@ const FeaturedProject: React.FC<projectType> = (props) => {
     if (rect) {
       contentRef.current?.style.setProperty("--height", `${(rect.height / 1.1) * -1}px`);
     }
-  }, [contentRef]);
+  }, [contentRef.current]);
 
   return (
     <article className="featuredProject__container">
@@ -48,7 +48,7 @@ const FeaturedProject: React.FC<projectType> = (props) => {
         </div>
       </div>
       <div className="featuredProject__image">
-        <a href={props.links.live} target="_blank" rel="noreferrer noopener">
+        <a href={props.links.live} target="_blank" rel="noreferrer noopener" tabIndex={-1}>
           <Image
             src={props.image}
             alt={`${props.title}'s image`}

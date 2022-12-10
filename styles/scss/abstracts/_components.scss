@@ -34,6 +34,7 @@ section :is(p, span) a {
   text-decoration: none;
   position: relative;
   white-space: nowrap;
+  outline-offset: 1px !important;
 
   transition: color 0.25s ease;
 
@@ -46,12 +47,12 @@ section :is(p, span) a {
     height: 0.05rem;
     bottom: 0;
     left: 0;
-    transform: translateY(0.05rem);
+    transform: translateY(0.1rem);
 
     transition: transform 0.1s ease;
   }
 
-  &:hover::after {
+  &:is(:hover, :focus-visible)::after {
     transform: translateY(0);
   }
 }

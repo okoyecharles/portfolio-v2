@@ -43,10 +43,14 @@
     scale: 0.95;
   }
 
-  &:hover {
+  &:hover, &:has(a:focus-within) {
     background: linear-gradient(to top, $highlight, $theme-light);
     box-shadow: $inspect;
     color: $text-highlight;
+  }
+
+  &:has(a:focus-within) a {
+    outline: none;
   }
 
   a {
@@ -70,11 +74,17 @@
   .sidebar__item {
     color: $text;
 
-    &:hover {
+    &:hover, &:has(a:focus-within) {
       background: none;
       box-shadow: none;
       color: $text-highlight;
       scale: 1.05;
+    }
+
+    &:has(a:focus-within) {
+      outline: 2px dashed $accent;
+      outline-offset: 2.5px;
+      border-radius: 0;
     }
   }
 }

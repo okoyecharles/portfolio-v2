@@ -12,8 +12,14 @@ const skipToContent = () => {
     },
   });
 
+  const handleFocus = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    setFocus(true)
+  }
+
   return (
-    <animated.a href="#content" id="skip-to-content" aria-label="Skip to Content" style={springs} onFocus={() => {setFocus(true)}} onBlur={() => {setFocus(false)}}>Skip to Content</animated.a>
+    <animated.a href="#content" id="skip-to-content" aria-label="Skip to Content" style={springs} onFocus={handleFocus} onBlur={() => {setFocus(false)}}>Skip to Content</animated.a>
   )
 }
 
