@@ -1,22 +1,26 @@
 import Head from "next/head";
 import Image from "next/image";
-import React from "react";
+import React, { useRef, useState } from "react";
 import FeaturedProject from "../components/projects/FeaturedProject";
 import Layout from "../components/main/Layout";
 import Section from "../components/main/Section";
 import projects from "../db/projects";
-import ProjectCard from "../components/projects/ProjectCard";
 import Projects from "../components/projects/Projects";
 import ContactForm from "../components/contact/ContactForm";
+import SkipToContent from "../components/anchors/skipToContent";
+
 
 function Home() {
+  
+
   return (
     <>
       <Head>
         <title>Okoye Charles - Home</title>
       </Head>
+      <SkipToContent />
       <Layout>
-        <Section label="hero">
+        <Section label="hero" id="content">
           <h1>Hi, my name is</h1>
           <h2>Okoye Charles.</h2>
           <h3>I embrace the digital world.</h3>

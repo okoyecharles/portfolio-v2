@@ -8,12 +8,15 @@
 @use "./components/FeaturedProjects";
 @use "./components/ProjectCard";
 @use "./components/About";
-@use "./components/Contact.scss";
-@use "./components/ContactForm.scss";
+@use "./components/Contact";
+@use "./components/ContactForm";
+@use "./components/SkipToContent";
+
 
 
 @media screen and (max-width: 768px) {
-  .navigation, .sidebar {
+  .navigation,
+  .sidebar {
     opacity: 0;
   }
 }
