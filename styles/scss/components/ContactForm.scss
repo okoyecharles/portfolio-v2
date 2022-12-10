@@ -23,8 +23,8 @@
 
   transition: background-color 0.25s ease, box-shadow 0.25s ease;
 
-  .error,
-  .success {
+  > .error,
+  > .success {
     border-radius: 0.25rem;
     color: white;
     padding: 0.35rem 0.5rem;
@@ -37,12 +37,28 @@
     transform: translateX(-50%);
   }
 
-  .error {
+  > .error {
     background-color: var(--error);
   }
 
-  .success {
+  > .success {
     background-color: var(--success);
+  }
+
+  label {
+    font-size: 0.9rem;
+
+    span {
+      color: $text-highlight;
+      font-size: 900;
+      opacity: 0.75;
+
+      transition: color 0.15s ease;
+    }
+
+    span.error {
+      color: var(--error);
+    }
   }
 
   :is(input, textarea) {

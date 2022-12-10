@@ -77,6 +77,7 @@ const MobileNavigation = () => {
           <li className="social-links" aria-label="social-links">{
             trails.map((style, i) => (
               <animated.a
+              key={i}
               title={socialLinks[i].title}
               target="_blank"
               rel="noopener noreferrer"

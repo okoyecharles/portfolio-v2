@@ -55,7 +55,7 @@ const ContactForm = () => {
     const response = axios.get(
       `https://api.apilayer.com/email_verification/${email}`,
       {
-        headers: { apikey: emailVerificationKey }
+        headers: { apikey: emailVerificationKey },
       }
     );
     const { data, status } = await response;
@@ -180,41 +180,56 @@ const ContactForm = () => {
             ...successSprings,
           }}
         >
-          Message sent successfully
+          {success ? 'Message sent successfully' : ''}
         </animated.div>
 
-        <input
-          type="text"
-          id="contactForm__name"
-          className={`contactForm__name ${nameError ? "invalid" : ""}`}
-          value={name}
-          placeholder="Full Name"
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
-        />
+        <div>
+          <label htmlFor="contactForm__name">
+            Name <span aria-hidden className={nameError ? "error" : ''}>*</span>
+          </label>
+          <input
+            type="text"
+            id="contactForm__name"
+            className={`contactForm__name ${nameError ? "invalid" : ""}`}
+            value={name}
+            placeholder="Full Name"
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          />
+        </div>
 
-        <input
-          type="email"
-          id="contactForm__email"
-          className={`contactForm__email ${emailError ? "invalid" : ""}`}
-          value={email}
-          placeholder="Email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
+        <div>
+          <label htmlFor="contactForm__email">
+            Email <span aria-hidden className={emailError ? "error" : ''}>*</span>
+          </label>
+          <input
+            type="email"
+            id="contactForm__email"
+            className={`contactForm__email ${emailError ? "invalid" : ""}`}
+            value={email}
+            placeholder="Email address"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+        </div>
 
-        <textarea
-          id="contactForm__message"
-          className={`contactForm__message ${messageError ? "invalid" : ""}`}
-          rows={5}
-          value={message}
-          placeholder="Type your message here..."
-          onChange={(e) => {
-            setMessage(e.target.value);
-          }}
-        />
+        <div>
+          <label htmlFor="contactForm__message">
+            Message <span aria-hidden className={messageError ? "error" : ''}>*</span>
+          </label>
+          <textarea
+            id="contactForm__message"
+            className={`contactForm__message ${messageError ? "invalid" : ""}`}
+            rows={5}
+            value={message}
+            placeholder="Type your message here..."
+            onChange={(e) => {
+              setMessage(e.target.value);
+            }}
+          />
+        </div>
         <button type="submit" disabled={processing}>
           Send
           {processing ? (

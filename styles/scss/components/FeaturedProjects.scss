@@ -121,6 +121,13 @@
       transition: filter 0.25s 0s ease;
     }
 
+    a::before {
+      content: '';
+      z-index: 1;
+      position: absolute;
+      inset: 0;
+    }
+
     &:hover {
       &::after {
         transition: opacity 0.25s 0.15s ease;

@@ -36,6 +36,7 @@ const ProjectCard: React.FC<{ project: projectType }> = ({ project }) => {
                 href={project.links.github}
                 target="_blank"
                 rel="noreferrer noopener"
+                title={`${project.title}'s source code (github)`}
               >
                 <FiGithub />
               </a>
@@ -43,6 +44,7 @@ const ProjectCard: React.FC<{ project: projectType }> = ({ project }) => {
                 href={project.links.live}
                 target="_blank"
                 rel="noreferrer noopener"
+                title={`${project.title}'s live link`}
               >
                 <FiExternalLink />
               </a>
@@ -54,7 +56,7 @@ const ProjectCard: React.FC<{ project: projectType }> = ({ project }) => {
             ))}
           </ul>
         </div>
-        <a href={project.links.live} className="projectCard__wrapper2" tabIndex={-1}>
+        <a href={project.links.live} className="projectCard__wrapper2" tabIndex={-1} aria-hidden>
           <div className="projectCard__content">
             <h3>{project.title}</h3>
             <p>{project.note}</p>
