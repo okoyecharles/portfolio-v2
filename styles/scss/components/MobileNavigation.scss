@@ -121,7 +121,34 @@
       width: 100%;
       font-weight: 400;
       text-decoration: none;
-      padding: 0.5rem;
+      padding: 0.5rem 0.5rem 0.75rem;
+      font-family: $nunito-sans;
+      font-weight: 600;
+      position: relative;
+
+      &.active {
+        color: $accent;
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 0.12rem;
+        background: $accent;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        border-radius: 0.2rem;
+        transform: translateX(-0.75rem) scaleY(0.75);
+
+        transition: opacity 0.25s;
+      }
+
+      &.active::before {
+        opacity: 0.5;
+        transition: transform 0.35s ease 0.15s;
+      }
     }
   }
 
@@ -160,6 +187,10 @@
       margin-bottom: 1rem;
       opacity: 1;
       transform: translateY(0) rotateX(0deg);
+
+      a.active::before {
+        transform: translateX(-1rem) scaleY(0.8);
+      }
     }
 
     li.social-links {

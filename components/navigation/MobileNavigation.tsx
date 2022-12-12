@@ -1,8 +1,10 @@
 import { useTrail, animated, config } from "@react-spring/web";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import socialLinks from "../../db/social_links";
+import { storeType } from "../../redux/configureStore";
 import toggleDarkMode from "../../utils/darkModeHelper";
 
 const MobileNavigation = () => {
@@ -10,6 +12,11 @@ const MobileNavigation = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [sticky, setSticky] = useState<boolean>(false);
   const headerRef = useRef(null);
+  const currentSection = useSelector(
+    (store: storeType) => store.currentSection
+  );
+  const sectionActiveFor = (arr: any[]) => 
+    arr.includes(currentSection.name) ? 'active' : '';
 
   function handleNavToggle() {
     setIsActive(!isActive);
@@ -93,16 +100,16 @@ const MobileNavigation = () => {
           }
           </li>
           <li>
-            <Link href="/">Home</Link>
+            <a href="#content" className={sectionActiveFor(['hero'])} onClick={handleNavToggle}>Home</a>
           </li>
           <li>
-            <Link href="/about">About</Link>
+            <a href="#about" className={sectionActiveFor(['about'])} onClick={handleNavToggle}>About</a>
           </li>
           <li>
-            <Link href="/projects">Projects</Link>
+            <a href="#featured" className={sectionActiveFor(['featured', 'projects'])} onClick={handleNavToggle}>Projects</a>
           </li>
           <li>
-            <Link href="/contact">Contact</Link>
+            <a href="#contact" className={sectionActiveFor(['contact'])} onClick={handleNavToggle}>Contact</a>
           </li>
         </ul>
       </nav>

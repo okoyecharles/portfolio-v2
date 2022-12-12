@@ -42,36 +42,41 @@ const Navigation = () => {
         <div className="logo">Logo</div>
         <ul className="navigation__links">
           <li>
-            <Link
-              href="/"
+            <a
+              href="#content"
               className={sectionActiveFor(["hero"])}
             >
               Home
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              href="/about"
+            <a
+              href="#about"
               className={sectionActiveFor(["about"])}
             >
               About
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              href="/projects"
-              className={sectionActiveFor(["projects", "featured"])}
+            <a
+              href="#featured"
+              className={sectionActiveFor(["featured", "projects"])}
             >
               Projects
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              href="/contact"
+            <a
+              href="#contact"
               className={sectionActiveFor(["contact"])}
             >
               Contact
-            </Link>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <button>Resume</button>
+            </a>
           </li>
           <li aria-label="Toggle dark mode">
             <DarkModeSwitch
