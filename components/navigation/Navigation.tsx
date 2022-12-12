@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
+import { storeType } from "../../redux/configureStore";
 import toggleDarkMode from "../../utils/darkModeHelper";
 
 const Navigation = () => {
@@ -8,11 +10,17 @@ const Navigation = () => {
   const headerRef = useRef(null);
 
   const [isDarkMode, setDarkMode] = useState<boolean>(false);
+  const currentSection = useSelector(
+    (store: storeType) => store.currentSection
+  );
+  const sectionActiveFor = (arr: any[]) => 
+    arr.includes(currentSection.name) ? 'active' : '';
 
   useEffect(() => {
     setDarkMode(
-      !!JSON.parse(localStorage?.getItem('okoye-charles-web-config') || '{}')?.darkMode
-    )
+      !!JSON.parse(localStorage?.getItem("okoye-charles-web-config") || "{}")
+        ?.darkMode
+    );
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
@@ -29,29 +37,48 @@ const Navigation = () => {
   }, []);
 
   return (
-    <header
-      ref={headerRef}
-      className={sticky ? "header sticky" : "header"}
-    >
+    <header ref={headerRef} className={sticky ? "header sticky" : "header"}>
       <nav className="navigation" aria-label="Navigation">
         <div className="logo">Logo</div>
         <ul className="navigation__links">
           <li>
-            <Link href='/'>Home</Link>
+            <Link
+              href="/"
+              className={sectionActiveFor(["hero"])}
+            >
+              Home
+            </Link>
           </li>
           <li>
-            <Link href='/about'>About</Link>
+            <Link
+              href="/about"
+              className={sectionActiveFor(["about"])}
+            >
+              About
+            </Link>
           </li>
           <li>
-            <Link href='/projects'>Projects</Link>
+            <Link
+              href="/projects"
+              className={sectionActiveFor(["projects", "featured"])}
+            >
+              Projects
+            </Link>
           </li>
           <li>
-            <Link href='/contact'>Contact</Link>
+            <Link
+              href="/contact"
+              className={sectionActiveFor(["contact"])}
+            >
+              Contact
+            </Link>
           </li>
           <li aria-label="Toggle dark mode">
             <DarkModeSwitch
               checked={isDarkMode}
-              onChange={(checked) => {toggleDarkMode(setDarkMode, checked)}}
+              onChange={(checked) => {
+                toggleDarkMode(setDarkMode, checked);
+              }}
             />
           </li>
         </ul>
