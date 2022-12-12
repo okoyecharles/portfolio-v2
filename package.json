@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@react-spring/web": "^9.5.5",
+    "@reduxjs/toolkit": "^1.9.1",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.8",
@@ -19,6 +20,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
     "react-loader-spinner": "^5.3.4",
+    "react-redux": "^8.0.5",
     "react-toggle-dark-mode": "^1.1.0",
     "sass": "^1.56.0",
     "sharp": "^0.31.2",

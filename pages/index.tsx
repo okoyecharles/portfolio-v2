@@ -8,6 +8,8 @@ import projects from "../db/projects";
 import Projects from "../components/projects/Projects";
 import ContactForm from "../components/contact/ContactForm";
 import SkipToContent from "../components/anchors/SkipToContent";
+import store from "../redux/configureStore";
+import { updateCurrentSection } from "../redux/slices/current-section_slice";
 
 function Home() {
   const heroRef = useRef(null);
@@ -30,7 +32,7 @@ function Home() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log(entry.target.className, ' activated ...');
+          store.dispatch(updateCurrentSection(entry.target.className));
         };
       });
     }, {
