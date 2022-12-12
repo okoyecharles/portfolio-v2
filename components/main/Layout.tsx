@@ -5,17 +5,19 @@ import SideBar from "../navigation/Sidebar";
 
 interface LayoutProps {
   children?: React.ReactNode;
+  layoutRef?: React.MutableRefObject<null>;
 }
 
-export const Layout = ({ children }: LayoutProps) => {
+export const Layout = ({ children, layoutRef }: LayoutProps) => {
   const navBreakPoint = useMediaQuery(768);
-
   return (
-    <main className="layout">
+    <>
       {navBreakPoint ? <MobileNavigation /> : <Navigation />}
       {!navBreakPoint && <SideBar />}
-      {children}
-    </main>
+      <main className="layout" ref={layoutRef}>
+        {children}
+      </main>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 @use '../abstracts' as *;
 
 .hero {
+  margin-top: 0rem;
   padding-top: 5rem;
   min-height: calc(100vh - 8rem);
   > {

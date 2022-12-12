@@ -56,7 +56,7 @@ const ProjectCard: React.FC<{ project: projectType }> = ({ project }) => {
             ))}
           </ul>
         </div>
-        <a href={project.links.live} className="projectCard__wrapper2" tabIndex={-1} aria-hidden>
+        <a href={project.links.live} target="_blank" rel="noreferrer noopener" className="projectCard__wrapper2" tabIndex={-1} aria-hidden>
           <div className="projectCard__content">
             <h3>{project.title}</h3>
             <p>{project.note}</p>

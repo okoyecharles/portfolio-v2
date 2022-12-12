@@ -5,6 +5,7 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
   padding: 0;
+  margin-block-end: 0;
 }
 
 .projectCard {

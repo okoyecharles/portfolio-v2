@@ -10,7 +10,10 @@
   gap: 0.75rem;
   position: relative;
   isolation: isolate;
-  margin-bottom: 5rem;
+  
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
 
   --left-grid-pos: 1 / 8;
   --right-grid-pos: 7 / 13;
