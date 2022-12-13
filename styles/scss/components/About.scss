@@ -45,7 +45,7 @@
   
     img {
       height: fit-content;
-      box-shadow: 0 0 0 0.025rem $line, 0 0 0.5rem $shadow;
+      box-shadow: 0 0 0 0.025rem $line, 0 0.25rem 0.5rem 0 $shadow;
       background-color: $theme-light;
       border-radius: 0.25rem;
       object-fit: contain;
@@ -54,7 +54,7 @@
 
       &:hover {
         scale: 1.0025;
-        box-shadow: 0 0 0 0.025rem $line, -0.25rem 0.25rem 1rem $shadow;
+        box-shadow: 0 0 0 0.025rem $line, 0 0.25rem 1rem 0 $shadow;
       }
     }
   }

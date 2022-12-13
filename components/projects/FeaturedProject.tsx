@@ -20,7 +20,7 @@ const FeaturedProject: React.FC<projectType> = (props) => {
   useEffect(() => {
     const rect = contentRef.current?.getBoundingClientRect();
     if (rect) {
-      contentRef.current?.style.setProperty("--height", `${(rect.height / 1.1) * -1}px`);
+      contentRef.current?.style.setProperty("--height", `${(rect.height / 1.05) * -1}px`);
     }
   }, [contentRef.current]);
 
@@ -53,8 +53,8 @@ const FeaturedProject: React.FC<projectType> = (props) => {
           <Image
             src={props.image}
             alt={`${props.title}'s image`}
-            width={+props.imgDims.width / 3}
-            height={+props.imgDims.height / 3}
+            width={+props.imgDims.width}
+            height={+props.imgDims.height}
           />
         </a>
       </div>

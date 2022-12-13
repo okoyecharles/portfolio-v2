@@ -73,6 +73,7 @@
     transition: 0.25s ease box-shadow;
   }
 
+
   :is(input, textarea):is(:focus, :focus-within) {
     box-shadow: 0 0 0 0.025rem $input-border-active,
       0 0 0 0.25rem $input-highlight;
@@ -80,6 +81,11 @@
 
   :is(input, textarea):is(:active) {
     box-shadow: 0 0 0 0.025rem $input-border-active;
+  }
+
+  :is(input, textarea).invalid:is(:focus, :focus-within) {
+    box-shadow: 0 0 0 0.025rem $input-border-active,
+      0 0 0 0.25rem rgba(255, 0, 0, 0.2);
   }
 
   :is(input, textarea).invalid {
@@ -92,6 +98,7 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    box-shadow: none !important;
 
     transition: opacity 0.25s ease;
   }
@@ -131,9 +138,19 @@
     :is(input, textarea).invalid {
       border: 1px solid var(--error);
     }
+
+    :is(input, textarea).invalid:is(:focus, :focus-within) {
+      box-shadow: 0 0 0 0.025rem $input-border-active,
+        0 0 0 0.25rem rgba(195, 49, 0, 0.371);
+    }
+  
     input:-webkit-autofill,
     input:-webkit-autofill:focus {
         transition: background-color 600000s 0s, color 600000s 0s;
+    }
+
+    button {
+      box-shadow: inset 0 0 0 0.05rem $accent !important;
     }
 
     button:disabled {

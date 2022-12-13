@@ -3,24 +3,26 @@
 
 section button {
   font-family: $nunito-sans;
-  padding: 1rem 1.2rem;
+  padding: 0.75rem 2rem;
   font-weight: 500;
   border: none;
   background-color: $accent;
   color: $theme;
-  border-radius: 0.25rem;
+  border-radius: 0.35rem;
   cursor: pointer;
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 96, 206, 0.39);
+  border: none;
+  outline: none;
 
   transition:
     background-color 0.25s ease,
     color 0.25s ease,
-    box-shadow 0.05s ease
+    box-shadow 0.25s ease
   ;
 
 
   &:not(:disabled):hover {
-    background-color: $btn-hover;
-    box-shadow: 0 0 0.5rem $shadow;
+    box-shadow: 0 0.25rem 1rem 0 rgb(0 118 255 / 39%);
   }
 
   &:active {

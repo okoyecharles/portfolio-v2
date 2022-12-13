@@ -22,18 +22,15 @@
     height: 100%;
     position: relative;
 
-    &::after, &::before {
-      content: '';
+    &::after,
+    &::before {
+      content: "";
       position: absolute;
       left: 0;
       height: 0.05rem;
       width: 100%;
       background-color: $text;
-      transition:
-        transform 0.25s ease,
-        top 0.25s ease,
-        bottom 0.25s ease,
-      ;
+      transition: transform 0.25s ease, top 0.25s ease, bottom 0.25s ease;
     }
 
     &::before {
@@ -61,9 +58,7 @@
   height: 0;
   padding: 0;
 
-  transition:
-    height 0.3s 0.25s ease-in
-  ;
+  transition: height 0.3s 0.25s ease-in;
 
   > li.social-links {
     display: flex;
@@ -94,19 +89,16 @@
         }
       }
     }
-    
+
     svg {
       font-size: 1.5rem;
     }
   }
 
   li:not(.social-links) {
-    transition:
-      transform 0.45s ease-out,
-      opacity 0.25s ease,
-      margin-bottom 0.35s ease
-    ;
-      
+    transition: transform 0.45s ease-out, opacity 0.25s ease,
+      margin-bottom 0.35s ease;
+
     display: flex;
     border-bottom: 1px solid $line;
     margin-inline: 2rem;
@@ -132,7 +124,7 @@
 
       &::before {
         position: absolute;
-        content: '';
+        content: "";
         height: 100%;
         width: 0.12rem;
         background: $accent;
@@ -155,6 +147,42 @@
   * {
     font-size: 18px;
   }
+
+  .navigation__linkResume {
+    padding: 0 !important;
+    border: 0 !important;
+    margin-top: 2.5rem;
+
+    a {
+      padding: 0 !important;
+
+      button {
+        color: #fff;
+        font-weight: 400;
+
+        border: none;
+        padding: 0.35rem 1rem;
+        border-radius: 0.25rem;
+        background-color: $accent;
+        cursor: pointer;
+        opacity: 1;
+        border: 1px solid $accent;
+        margin: 0;
+        width: 100%;
+        box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 96, 206, 0.39);
+
+        transition: background-color 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      button:hover {
+        box-shadow: 0 0.25rem 1rem 0 rgb(0 118 255 / 39%);
+      }
+
+      &:active {
+        background-color: $btn-active;
+      }
+    }
+  }
 }
 
 .m_navigation__toggle.active {
@@ -171,19 +199,14 @@
   }
 
   + .m_navigation__links {
-    transition:
-      height 0.5s ease-out
-    ;
+    transition: height 0.5s ease-out;
     opacity: 1;
     pointer-events: all;
     height: calc(100vh - 4rem);
 
     li:not(.social-links) {
-      transition:
-        transform 0.45s 0.15s ease-out,
-        opacity 0.25s ease,
-        margin-bottom 0.25s ease
-      ;
+      transition: transform 0.45s 0.15s ease-out, opacity 0.25s ease,
+        margin-bottom 0.25s ease;
       margin-bottom: 1rem;
       opacity: 1;
       transform: translateY(0) rotateX(0deg);
@@ -202,3 +225,12 @@
   }
 }
 
+:root.dark {
+  .m_navigation {
+    .navigation__linkResume {
+      a button {
+        box-shadow: none;
+      }
+    }
+  }
+}

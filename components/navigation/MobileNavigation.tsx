@@ -29,7 +29,7 @@ const MobileNavigation = () => {
     config: {
       mass: 5,
       tension: 2000,
-      friction: 140
+      friction: 130
     }
   }))
 
@@ -110,6 +110,11 @@ const MobileNavigation = () => {
           </li>
           <li>
             <a href="#contact" className={sectionActiveFor(['contact'])} onClick={handleNavToggle}>Contact</a>
+          </li>
+          <li className="navigation__linkResume">
+            <a href="/resume.pdf" rel="noreferrer noopener" target={'_blank'}>
+              <button tabIndex={-1}>Resume</button>
+            </a>
           </li>
         </ul>
       </nav>

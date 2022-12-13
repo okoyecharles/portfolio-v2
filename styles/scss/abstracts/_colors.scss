@@ -3,10 +3,10 @@
   --theme-light: rgb(253, 255, 255);
 
   --accent-light: rgb(86, 203, 249);
-  --accent: rgb(0, 100, 219);
-  --accent-dark: rgb(0, 70, 219);
+  --accent: #0070f3;
+  --accent-dark: rgb(0, 63, 199);
 
-  --header-scroll: rgb(253, 255, 255);
+  --header-scroll: rgba(253, 255, 255, 0.9);
 
   --text-highlight: rgb(25, 31, 37);
   --text: rgb(43, 53, 63);
@@ -25,7 +25,7 @@
 
   --line: rgb(168, 180, 183);
 
-  --shadow: rgba(13, 43, 50, 0.168);
+  --shadow: #00479725;
   --shadow-light: rgba(148, 160, 163, 0.074);
   --loading: rgb(253, 255, 255);
 }

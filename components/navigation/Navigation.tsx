@@ -73,9 +73,9 @@ const Navigation = () => {
               Contact
             </a>
           </li>
-          <li>
-            <a href="">
-              <button>Resume</button>
+          <li className="navigation__linkResume">
+            <a href="/resume.pdf" rel="noreferrer noopener" target={'_blank'}>
+              <button tabIndex={-1}>Resume</button>
             </a>
           </li>
           <li aria-label="Toggle dark mode">
