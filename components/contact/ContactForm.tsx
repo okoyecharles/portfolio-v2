@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import React, { useState } from "react";
 import { emailVerificationKey, formSubmissionKey } from "../../config/apiKeys";
 import { IoSend } from "react-icons/io5";
@@ -52,15 +52,22 @@ const ContactForm = () => {
   };
 
   const verifyEmail = async (email: string) => {
-    const response = axios.get(
-      `https://api.apilayer.com/email_verification/${email}`,
-      {
-        headers: { apikey: emailVerificationKey },
+    try {
+      const { data: AxiosData } = await axios.get(
+        `https://api.apilayer.com/email_verification/${email}`,
+        { headers: { apikey: emailVerificationKey } }
+      );
+      return AxiosData;
+    } catch (error: any) {
+      if (error.response) {
+        raiseError("Internal Server Error");
+      } else {
+        if (error.message === "Network Error")
+          raiseError("Check your connection and try again");
+        else raiseError("Sorry... Something went wrong");
       }
-    );
-    const { data, status } = await response;
-    if (status === 429) return { error: "expired" };
-    return data;
+      return;
+    }
   };
 
   const submitData = async (formData: any) => {
@@ -111,10 +118,7 @@ const ContactForm = () => {
 
     // Verify email using API Layer's email-auth provider
     const emailVerification = await verifyEmail(email);
-    if (emailVerification.error) {
-      raiseError("Sorry... Something went wrong!");
-      return;
-    }
+    if (!emailVerification) return;
     if (emailVerification.can_connect_smtp === false) {
       raiseError("The email you entered doesn't exist");
       setEmailError(true);
@@ -180,12 +184,15 @@ const ContactForm = () => {
             ...successSprings,
           }}
         >
-          {success ? 'Message sent successfully' : ''}
+          {success ? "Message sent successfully" : ""}
         </animated.div>
 
         <div>
           <label htmlFor="contactForm__name">
-            Name <span aria-hidden className={nameError ? "error" : ''}>*</span>
+            Name{" "}
+            <span aria-hidden className={nameError ? "error" : ""}>
+              *
+            </span>
           </label>
           <input
             type="text"
@@ -201,7 +208,10 @@ const ContactForm = () => {
 
         <div>
           <label htmlFor="contactForm__email">
-            Email <span aria-hidden className={emailError ? "error" : ''}>*</span>
+            Email{" "}
+            <span aria-hidden className={emailError ? "error" : ""}>
+              *
+            </span>
           </label>
           <input
             type="email"
@@ -217,7 +227,10 @@ const ContactForm = () => {
 
         <div>
           <label htmlFor="contactForm__message">
-            Message <span aria-hidden className={messageError ? "error" : ''}>*</span>
+            Message{" "}
+            <span aria-hidden className={messageError ? "error" : ""}>
+              *
+            </span>
           </label>
           <textarea
             id="contactForm__message"
