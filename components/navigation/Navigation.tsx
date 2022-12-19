@@ -67,6 +67,14 @@ const Navigation = () => {
           </li>
           <li>
             <a
+              href="#testimonials"
+              className={sectionActiveFor(["testimonials"])}
+            >
+              Testimonials
+            </a>
+          </li>
+          <li>
+            <a
               href="#contact"
               className={sectionActiveFor(["contact"])}
             >

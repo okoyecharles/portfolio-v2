@@ -109,6 +109,9 @@ const MobileNavigation = () => {
             <a href="#featured" className={sectionActiveFor(['featured', 'projects'])} onClick={handleNavToggle}>Projects</a>
           </li>
           <li>
+            <a href="#testimonials" className={sectionActiveFor(['testimonials'])} onClick={handleNavToggle}>Testimonials</a>
+          </li>
+          <li>
             <a href="#contact" className={sectionActiveFor(['contact'])} onClick={handleNavToggle}>Contact</a>
           </li>
           <li className="navigation__linkResume">

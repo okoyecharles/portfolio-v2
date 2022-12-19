@@ -159,7 +159,7 @@ function Home() {
         </Section>
         <Section label="projects" sectionRef={projectsRef}>
           <header>
-            <h2>Other Projects</h2>
+            <h2>More Projects</h2>
           </header>
           <Projects />
         </Section>

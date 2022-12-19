@@ -36,7 +36,6 @@ const TestimonialsSwiper = () => {
           delay: 5000,
           disableOnInteraction: false,
         }}
-        className="mySwiper"
       >
         {testimonials.map((testimonial) => (
           <SwiperSlide>
