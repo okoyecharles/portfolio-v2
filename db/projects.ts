@@ -98,6 +98,6 @@ const projects = [
   },
 ];
 
-export type projectType = typeof projects[0]
+export type projectType = typeof projects[0];
 
 export default projects

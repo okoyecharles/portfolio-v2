@@ -10,6 +10,8 @@ import ContactForm from "../components/contact/ContactForm";
 import SkipToContent from "../components/anchors/SkipToContent";
 import store from "../redux/configureStore";
 import { updateCurrentSection } from "../redux/slices/current-section_slice";
+import TestimonialCard from "../components/testimonials/TestimonialCard";
+import testimonials from "../db/testimonials";
 
 function Home() {
   const heroRef = useRef(null);
@@ -162,9 +164,9 @@ function Home() {
           </header>
           <Projects />
         </Section>
-        <Section label="recommendations" sectionRef={recomendationRef}>
+        <Section label="testimonials" sectionRef={recomendationRef}>
           <header>
-            <h2>Recommendations</h2>
+            <h2>Testimonials</h2>
           </header>
           <p>
             I work with people from places all over the world through{" "}
@@ -172,7 +174,8 @@ function Home() {
             and websites. Continuosly improving my communicative,
             organizational, and collaborative skills.
           </p>
-          <p>Here are a couple recommendations left by previous co-workers:</p>
+          <p>Here are a couple commendations I've recieved from previous co-workers:</p>
+          <TestimonialCard {...testimonials[5]} />
         </Section>
         <Section label="contact" sectionRef={contactRef}>
           <header>
