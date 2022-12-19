@@ -27,6 +27,7 @@
 
   --shadow: #00479725;
   --shadow-light: rgba(148, 160, 163, 0.074);
+  --carousel-shadow: #001a3868;
   --loading: rgb(253, 255, 255);
 }
 
@@ -53,6 +54,7 @@
   
   --shadow: rgb(0, 9, 12);
   --shadow-light: rgb(0, 19, 25);
+  --carousel-shadow: rgba(0, 19, 25, 0.643);
   --loading: rgb(0, 173, 231);
 }
 
@@ -86,3 +88,4 @@ $input-border-active: var(--input-border-active);
 
 $shadow: var(--shadow);
 $shadow-light: var(--shadow-light);
+$carousel-shadow: var(--carousel-shadow);

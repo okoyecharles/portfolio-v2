@@ -13,6 +13,7 @@
 @use "./components/ContactForm";
 @use "./components/SkipToContent";
 @use "./components/TestimonialCard";
+@use "./components/TestimonialSwiper";
 
 @media screen and (max-width: 768px) {
   .navigation,

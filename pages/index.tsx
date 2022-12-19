@@ -10,8 +10,7 @@ import ContactForm from "../components/contact/ContactForm";
 import SkipToContent from "../components/anchors/SkipToContent";
 import store from "../redux/configureStore";
 import { updateCurrentSection } from "../redux/slices/current-section_slice";
-import TestimonialCard from "../components/testimonials/TestimonialCard";
-import testimonials from "../db/testimonials";
+import TestimonialsSwiper from "../components/testimonials/TestimonialsSwiper";
 
 function Home() {
   const heroRef = useRef(null);
@@ -175,7 +174,7 @@ function Home() {
             organizational, and collaborative skills.
           </p>
           <p>Here are a couple commendations I've recieved from previous co-workers:</p>
-          <TestimonialCard {...testimonials[5]} />
+          <TestimonialsSwiper />
         </Section>
         <Section label="contact" sectionRef={contactRef}>
           <header>

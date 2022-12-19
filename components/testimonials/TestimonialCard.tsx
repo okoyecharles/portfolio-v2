@@ -8,8 +8,8 @@ const TestimonialCard: React.FC<testimonialType> = (testimonial) => {
     <article className="testimonialCard">
       <div className="testimonialCard__content">
         <blockquote>
-          {testimonial.text.map((paragragh) => (
-            <p>{paragragh}</p>
+          {testimonial.text.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
           ))}
         </blockquote>
         <a

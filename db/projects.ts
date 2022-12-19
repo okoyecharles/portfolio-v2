@@ -33,7 +33,7 @@ const projects = [
       height: '1358',
     },
     description: 'A meal-based website that gives you all the information you need about your favourite breakfast, lunch and dinner. built with react-typescript & redux.',
-    stack: ['React', 'Redux'],
+    stack: ['React', 'Redux', 'TypeScript'],
     links: {
       github: 'https://github.com/OkoyeCharles/lavish-cuisine',
       live: 'https://lavish-cuisine.web.app/',
@@ -47,8 +47,8 @@ const projects = [
       width: '2337',
       height: '1335',
     },
-    description: 'A Movie WebApp that extracts information from the TV Maze API. Including functionalities like comments, likes, search, categories, and extra app info.',
-    stack: ['Webpack', 'JavaScript'],
+    description: 'A Movie website that displays an arranged list of movies and related information on each one. A place to go when you need to get extra info and discuss with others on a movie.',
+    stack: ['Webpack', 'JavaScript', 'TV Maze API'],
     links: {
       github: 'https://github.com/OkoyeCharles/Nethub',
       live: 'https://okoyecharles.github.io/Nethub/',
