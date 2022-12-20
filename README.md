@@ -10,7 +10,7 @@
 
   <h5 align="center">  
     <br />
-    <a href="https://okoyecharles.netlify.app" target="_blank">View Live</a>
+    <a href="https://okoyecharles-jkf8r47er-okoyecharles.vercel.app/" target="_blank">View Live</a>
     ·
     <a href="https://github.com/OkoyeCharles/portfolio/issues/new" target="_blank">Report Bug</a>
     ·
@@ -54,6 +54,9 @@ This website serves as a collection of my most recent, expertly crafted, and inn
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Live link
+Here is the [live link](https://okoyecharles-jkf8r47er-okoyecharles.vercel.app/) of my portfolio.
 
 ### Built With
 
@@ -146,8 +149,7 @@ Distributed under the [MIT](./LICENSE) License.
  <a href="https://twitter.com/okoyecharles_"><img src="https://img.shields.io/badge/Twitter-%230070f3.svg?style=for-the-badge&logo=Twitter&logoColor=white" alt="Twitter"></a> 
  <a href="https://github.com/OkoyeCharles/"><img src="https://img.shields.io/badge/github-%230070f3.svg?style=for-the-badge&logo=github&logoColor=white" alt="Github"></a> 
  <a href="https://angel.co/u/charles-k-okoye"><img src="https://img.shields.io/badge/AngelList-%230070f3.svg?style=for-the-badge&logo=AngelList&logoColor=white" alt="AngelList"></a> 
- <a href="mailto:okoyecharles509@gmail.com"><img src="https://img.shields.io/badge/Gmail-
-0070f3?style=for-the-badge&logo=gmail&logoColor=white" alt="Linkedin"></a>
+ <a href="mailto:okoyecharles509@gmail.com"><img src="https://img.shields.io/badge/Gmail-0070f3?style=for-the-badge&logo=gmail&logoColor=white" alt="Linkedin"></a>
  </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
