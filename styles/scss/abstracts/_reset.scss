@@ -5,6 +5,10 @@ html {
   scroll-behavior: smooth;
 }
 
+#__next {
+  overflow: hidden;
+}
+
 /* Box sizing rules */
 *,
 *::before,
