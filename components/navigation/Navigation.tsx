@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { storeType } from "../../redux/configureStore";
 import toggleDarkMode from "../../utils/darkModeHelper";
+import Logo from "./Logo";
 
 const Navigation = () => {
   const [sticky, setSticky] = useState<boolean>(false);
@@ -39,7 +40,7 @@ const Navigation = () => {
   return (
     <header ref={headerRef} className={sticky ? "header sticky" : "header"}>
       <nav className="navigation" aria-label="Navigation">
-        <div className="logo">Logo</div>
+        <div className="logo"><Logo /></div>
         <ul className="navigation__links">
           <li>
             <a

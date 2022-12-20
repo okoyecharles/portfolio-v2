@@ -1,0 +1,11 @@
+@use "../abstracts" as *;
+
+#h-mask, #c-mask, #period {
+  fill: $accent;
+}
+
+#period-shadow {
+  fill: $accent-dark;
+
+  transition:  fill 0.25s ease;
+}

@@ -6,6 +6,7 @@ import { DarkModeSwitch } from "react-toggle-dark-mode";
 import socialLinks from "../../db/social_links";
 import { storeType } from "../../redux/configureStore";
 import toggleDarkMode from "../../utils/darkModeHelper";
+import Logo from "./Logo";
 
 const MobileNavigation = () => {
   const [isDarkMode, setDarkMode] = useState<boolean>(false);
@@ -64,7 +65,7 @@ const MobileNavigation = () => {
   return (
     <header className={sticky ? "header sticky" : "header"} ref={headerRef}>
       <nav className="m_navigation" aria-label="Navigation">
-        <div className="logo">Logo</div>
+        <div className="logo"><Logo /></div>
         <DarkModeSwitch
           checked={isDarkMode}
           onChange={(checked) => {
