@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/OkoyeCharles/portfolio">
+  <a href="https://github.com/OkoyeCharles/portfolio-v2">
     <img src="./public/logo.svg" alt="portfolio-logo" height="40">
   </a>
 
