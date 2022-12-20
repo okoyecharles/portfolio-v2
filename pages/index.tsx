@@ -11,6 +11,7 @@ import SkipToContent from "../components/anchors/SkipToContent";
 import store from "../redux/configureStore";
 import { updateCurrentSection } from "../redux/slices/current-section_slice";
 import TestimonialsSwiper from "../components/testimonials/TestimonialsSwiper";
+import Hero from "../components/hero/Hero";
 
 function Home() {
   const heroRef = useRef(null);
@@ -30,17 +31,20 @@ function Home() {
       contactRef,
     ];
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          store.dispatch(updateCurrentSection(entry.target.className));
-        };
-      });
-    }, {
-      threshold: 0,
-      root: null,
-      rootMargin: '0px 0px -90%'
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            store.dispatch(updateCurrentSection(entry.target.className));
+          }
+        });
+      },
+      {
+        threshold: 0,
+        root: null,
+        rootMargin: "0px 0px -90%",
+      }
+    );
 
     sections.forEach((section) => {
       if (section?.current) {
@@ -70,19 +74,7 @@ function Home() {
       </Head>
       <SkipToContent />
       <Layout>
-        <Section label="hero" id="content" sectionRef={heroRef}>
-          <h1>Hi, my name is</h1>
-          <h2>Okoye Charles.</h2>
-          <h3>I embrace the digital world.</h3>
-          <p>
-            I can help you build a product, feature, or website Look through
-            some of my work and experience! If you like what you see and need
-            help on a project, I am available for hire.
-          </p>
-          <a href="#featured">
-            <button tabIndex={-1}>Check out my work!</button>
-          </a>
-        </Section>
+        <Hero heroRef={heroRef} />
         <Section label="about" sectionRef={aboutRef}>
           <header>
             <h2>About Me</h2>
@@ -174,7 +166,10 @@ function Home() {
             and websites. Continuosly improving my communicative,
             organizational, and collaborative skills.
           </p>
-          <p>Here are a couple commendations I've recieved from previous co-workers:</p>
+          <p>
+            Here are a couple commendations I've recieved from previous
+            co-workers:
+          </p>
           <TestimonialsSwiper />
         </Section>
         <Section label="contact" sectionRef={contactRef}>
