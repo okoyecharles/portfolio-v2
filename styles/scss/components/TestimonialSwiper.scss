@@ -5,6 +5,7 @@
   padding-bottom: 2rem;
   margin-top: 1rem;
   position: relative;
+  height: 500px;
 
   // Add fade to left and right
   &::before {
@@ -67,6 +68,13 @@
 }
 
 @media screen and (max-width: 768px) {
+  .testimonials__swiper {
+    overflow: visible;
+
+    &::before {
+      display: none;
+    }
+  }
   .testimonials__swiper::before {
     box-shadow: inset 0 0.2rem 0.25rem 0.25rem $theme;
   }

@@ -27,14 +27,21 @@
       }
     }
 
-    blockquote p:first-of-type::before {
-      color: $accent;
-      content: open-quote;
-      font-size: 5em;
-      line-height: 0.09em;
-      margin-right: 0.05em;
-      vertical-align: -0.4em;
-      opacity: 0.7;
+    blockquote p:first-of-type {
+      &::before {
+        color: $accent;
+        content: open-quote;
+        font-size: 5em;
+        line-height: 0.09em;
+        margin-right: 0.05em;
+        vertical-align: -0.4em;
+        opacity: 0.5;
+      }
+
+      &::after {
+        content: close-quote;
+        opacity: 0;
+      }
     }
 
     .testimonialCard__image {
@@ -133,5 +140,11 @@
         fill: $accent-light;
       }
     }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .testimonialCard {
+    width: 17.5rem;
   }
 }

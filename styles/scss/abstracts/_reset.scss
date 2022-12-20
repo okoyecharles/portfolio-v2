@@ -22,6 +22,7 @@ body {
   display: flex;
   flex-direction: column;
   transition: background-color 0.25s ease;
+  overflow-x: hidden !important;
 }
 
 /* Remove default margin */
