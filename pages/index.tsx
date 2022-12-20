@@ -66,6 +66,7 @@ function Home() {
     <>
       <Head>
         <title>Okoye Charles - Home</title>
+        <link rel="icon" href="/logo.svg"></link>
       </Head>
       <SkipToContent />
       <Layout>
