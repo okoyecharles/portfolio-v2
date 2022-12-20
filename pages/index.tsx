@@ -13,7 +13,7 @@ import { updateCurrentSection } from "../redux/slices/current-section_slice";
 import TestimonialsSwiper from "../components/testimonials/TestimonialsSwiper";
 import Hero from "../components/hero/Hero";
 
-function Home() {
+const Home = () => {
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
   const featuredRef = useRef(null);

@@ -21,6 +21,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
     "react-loader-spinner": "^5.3.4",
+    "react-pdf": "^6.2.0",
     "react-redux": "^8.0.5",
     "react-toggle-dark-mode": "^1.1.0",
     "react-wavify": "^1.6.3",
@@ -28,5 +29,8 @@
     "sharp": "^0.31.2",
     "swiper": "^8.4.5",
     "typescript": "4.8.4"
+  },
+  "devDependencies": {
+    "@types/react-pdf": "^6.2.0"
   }
 }

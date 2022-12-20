@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
@@ -92,7 +91,7 @@ const Navigation = () => {
             </a>
           </a.li>
           <a.li className="navigation__linkResume" style={springs[5]}>
-            <a href="/resume.pdf" rel="noreferrer noopener" target={"_blank"}>
+            <a href="/assets/resume.pdf" rel="noreferrer noopener" target={"_blank"} download>
               <button tabIndex={-1}>Resume</button>
             </a>
           </a.li>

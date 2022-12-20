@@ -1,5 +1,4 @@
-import { useTrail, animated, config } from "@react-spring/web";
-import Link from "next/link";
+import { useTrail, animated } from "@react-spring/web";
 import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
@@ -116,7 +115,7 @@ const MobileNavigation = () => {
             <a href="#contact" className={sectionActiveFor(['contact'])} onClick={handleNavToggle}>Contact</a>
           </li>
           <li className="navigation__linkResume">
-            <a href="/resume.pdf" rel="noreferrer noopener" target={'_blank'}>
+            <a href="/assets/resume.pdf" rel="noreferrer noopener" download target={'_blank'}>
               <button tabIndex={-1}>Resume</button>
             </a>
           </li>
