@@ -1,10 +1,27 @@
-import React from "react";
+import { useSpring, a } from "@react-spring/web";
+import React, { useEffect } from "react";
 import { FaAngellist, FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 const SideBar: React.FC = () => {
+  const [spring, api] = useSpring(() => ({
+    from: {
+      opacity: 0,
+    },
+    config: {
+      tension: 200,
+      friction: 28,
+    },
+  }));
+
+  useEffect(() => {
+    api.start({
+      opacity: 1,
+    });
+  }, []);
+
   return (
-    <aside className="sidebar" aria-roledescription="social links">
+    <a.aside className="sidebar" aria-roledescription="social links" style={spring}>
       <ul className="sidebar__links">
         <li className="sidebar__item">
           <a
@@ -57,7 +74,7 @@ const SideBar: React.FC = () => {
           </a>
         </li>
       </ul>
-    </aside>
+    </a.aside>
   );
 };
 
