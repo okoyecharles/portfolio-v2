@@ -90,7 +90,7 @@ const projects = [
       height: '1340',
     },
     description: 'A Todo list website created with HTML, Sass and JavaScript that saves user\'s tasks in Local Storage. This app also allows swapping/reordering of tasks implemented utilizing the Javascript Drag & Drop API',
-    stack: ['JavaScript'],
+    stack: ['JavaScript', 'HTML5'],
     links: {
       github: 'https://github.com/okoyecharles/Todo-List',
       live: 'https://okoyecharles.github.io/Todo-Lis',
@@ -134,7 +134,7 @@ const projects = [
       width: '2300',
       height: '1314'
     },
-    descrription: 'A light-weight, open-source typing-effect library that enables potential users to add a typing effect to mere DOM elements, including features for optimizing typing behavior and speed',
+    description: 'A light-weight, open-source typing-effect library that enables potential users to add a typing effect to mere DOM elements, including features for optimizing typing behavior and speed',
     stack: ['JavaScript', 'HTML5'],
     links: {
       github: 'https://github.com/okoyecharles/Type-Effect-Library',
