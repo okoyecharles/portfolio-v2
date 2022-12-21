@@ -12,6 +12,7 @@ import store from "../redux/configureStore";
 import { updateCurrentSection } from "../redux/slices/current-section_slice";
 import TestimonialsSwiper from "../components/testimonials/TestimonialsSwiper";
 import Hero from "../components/hero/Hero";
+import PageHead from "../components/hero/PageHead";
 
 const Home = () => {
   const heroRef = useRef(null);
@@ -68,10 +69,7 @@ const Home = () => {
 
   return (
     <>
-      <Head>
-        <title>Okoye Charles - Home</title>
-        <link rel="icon" href="/logo.svg"></link>
-      </Head>
+      <PageHead />
       <SkipToContent />
       <Layout>
         <Hero heroRef={heroRef} />
@@ -186,6 +184,6 @@ const Home = () => {
       </Layout>
     </>
   );
-}
+};
 
 export default Home;
