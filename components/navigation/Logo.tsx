@@ -1,87 +1,129 @@
-import { animated, config, useSpring, useTrail } from "@react-spring/web";
-import React, { useEffect, useRef } from "react";
+import { a, useSpring } from "@react-spring/web";
+import React, { useEffect } from "react";
+
+const initialStroke = (stroke: number) => ({
+  strokeDasharray: stroke,
+  strokeDashoffset: stroke,
+});
+const endStroke = () => ({
+  strokeDashoffset: 0,
+});
 
 const Logo = () => {
-  const springs = useTrail(2, {
-    from: {
-      strokeDasharray: 164,
-      strokeDashoffset: 164,
-    },
-    to: {
-      strokeDashoffset: 0,
-    },
-    config: {
-      duration: 750,
-    }
+  const cSpring = useSpring({
+    from: initialStroke(151.3169403076172),
+    to: endStroke(),
   });
 
-  const dotSpring = useSpring({
-    from: {
-      y: -100,
+  const [verticalHSpring, api1] = useSpring(() => ({
+    ...initialStroke(83)
+  }));
+
+  const [curvedHSpring, api2] = useSpring(() => ({
+    ...initialStroke(71.51106262207031),
+  }));
+
+  const [dotSpring, api3] = useSpring(() => ({
+    y: -100,
+    config: {
+      tension: 200,
+      friction: 15
     },
-    to: {
-      y: 0
-    },
-    config: config.wobbly,
-  })
-  
+  }));
+
+  useEffect(() => {
+    setTimeout(() => {api1.start(endStroke())}, 300);
+    setTimeout(() => {api2.start(endStroke())}, 500);
+    setTimeout(() => {api3.start({ y: 0 })}, 700);
+  }, []);
+
   return (
     <svg
-      width="169"
-      height="111"
-      viewBox="0 0 169 111"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      width="169"
+      height="95"
+      viewBox="0 0 169 95"
+      fill="none"
     >
       <g id="logo-img">
-        <animated.g style={dotSpring} id="periodGroup">
-          <circle id="period" cx="157" cy="85" r="12" fill="#0070F3" />
-          <circle id="period-shadow" cx="157" cy="88" r="9" fill="#408EE9" />
-        </animated.g>
+        <a.g id="periodGroup" style={dotSpring}>
+          <circle id="period" cx="155.982" cy="72" r="12" />
+          <circle
+            id="period-shadow"
+            cx="155.982"
+            cy="75"
+            r="8"
+          />
+        </a.g>
         <g id="initial">
-          <animated.mask
+          <mask
             id="mask0_1_2"
-            style={{maskType: 'alpha', ...springs[1]}}
+            style={{ maskType: "alpha" }}
             maskUnits="userSpaceOnUse"
-            x="78"
-            y="14"
-            width="58"
-            height="84"
-            >
-            <path
-              id="h"
-              d="M88 14V68.5M88 98V68.5M88 68.5C95.4188 55 124.105 44.5 125.589 68.5C126.514 83.4708 125.589 93 125.589 98"
+            x="85"
+            y="32"
+            width="49"
+            height="52"
+          >
+            <a.path
+              id="curved-h"
+              style={curvedHSpring}
+              d="M94.4821 53C97.4821 41.5 124.482 35 124.482 54.5C124.482 61 124.482 77 124.482 84"
               stroke="black"
-              strokeWidth="20"
-              />
-          </animated.mask>
+              stroke-width="19"
+            />
+          </mask>
           <g mask="url(#mask0_1_2)">
             <path
-              id="h-mask"
-              d="M113.36 46.3C116.8 46.3 120.16 47 123.44 48.4C126.72 49.8 129.42 52.02 131.54 55.06C133.66 58.06 134.72 62.02 134.72 66.94V97H116.48V69.94C116.48 66.42 115.68 63.78 114.08 62.02C112.52 60.22 110.38 59.32 107.66 59.32C105.86 59.32 104.14 59.8 102.5 60.76C100.86 61.68 99.52 63 98.48 64.72C97.48 66.4 96.98 68.34 96.98 70.54V97H78.68V14.44H96.98V55C97.42 53.68 98.4 52.36 99.92 51.04C101.48 49.68 103.42 48.56 105.74 47.68C108.1 46.76 110.64 46.3 113.36 46.3Z"
-              fill="#0070F3"
-              />
+              id="curved-h-mask"
+              d="M112.342 33.3C115.782 33.3 119.142 34 122.422 35.4C125.702 36.8 128.402 39.02 130.522 42.06C132.642 45.06 133.702 49.02 133.702 53.94V84H115.462V56.94C115.462 53.42 114.662 50.78 113.062 49.02C111.502 47.22 109.362 46.32 106.642 46.32C104.842 46.32 103.122 46.8 101.482 47.76C99.8421 48.68 98.5021 50 97.4621 51.72C96.4621 53.4 95.9621 55.34 95.9621 57.54L96.1169 55.5L95.9621 42C96.4021 40.68 97.3821 39.36 98.9021 38.04C100.462 36.68 102.402 35.56 104.722 34.68C107.082 33.76 109.622 33.3 112.342 33.3Z"
+            />
           </g>
-          <animated.mask
+          <mask
             id="mask1_1_2"
-            style={{maskType: 'alpha', ...springs[0]}}
+            style={{ maskType: "alpha" }}
             maskUnits="userSpaceOnUse"
-            x="3"
-            y="14"
-            width="71"
-            height="86"
-            >
-            <path
-              id="c"
-              d="M69 31L61.5 28L55 26.5L48.5 25C43 24 27.4139 24.7721 19 38.5C9.50001 54 13.1275 66.845 17.5 74C23 83 40.5 98.5 69 83"
-              stroke="black"
-              strokeWidth="20"
-              />
-          </animated.mask>
+            x="77"
+            y="1"
+            width="20"
+            height="83"
+          >
+            <a.path
+              id="vertical-h"
+              style={verticalHSpring}
+              d="M86.9821 1V84"
+              stroke="#0070F3"
+              stroke-width="19"
+            />
+          </mask>
           <g mask="url(#mask1_1_2)">
             <path
+              id="vertical-h-mask"
+              d="M86.9821 1V84"
+              stroke-width="19"
+            />
+          </g>
+          <mask
+            id="mask2_1_2"
+            style={{ maskType: "alpha" }}
+            maskUnits="userSpaceOnUse"
+            x="1"
+            y="1"
+            width="72"
+            height="86"
+          >
+            <a.path
+              id="c"
+              style={cSpring}
+              d="M67.9821 18L60.4821 15L53.9821 13.5L47.4821 12C41.9821 11 26.396 11.7721 17.9821 25.5C8.48211 41 12.1096 53.845 16.4821 61C21.9821 70 39.4821 85.5 67.9821 70"
+              stroke="black"
+              stroke-width="20"
+            />
+          </mask>
+          <g mask="url(#mask2_1_2)">
+            <path
               id="c-mask"
-              d="M46.92 80.68C50.6 80.68 53.94 80.14 56.94 79.06C59.98 77.98 62.24 76.92 63.72 75.88L71.4 91.12C69.52 92.72 66.3 94.34 61.74 95.98C57.22 97.62 51.84 98.44 45.6 98.44C39.76 98.44 34.28 97.42 29.16 95.38C24.04 93.34 19.52 90.48 15.6 86.8C11.72 83.08 8.66 78.74 6.42 73.78C4.22 68.78 3.12 63.36 3.12 57.52C3.12 51.68 4.22 46.26 6.42 41.26C8.62 36.22 11.66 31.84 15.54 28.12C19.46 24.4 23.98 21.52 29.1 19.48C34.26 17.4 39.76 16.36 45.6 16.36C51.84 16.36 57.22 17.18 61.74 18.82C66.3 20.46 69.52 22.08 71.4 23.68L63.72 38.92C62.24 37.84 59.98 36.78 56.94 35.74C53.94 34.66 50.6 34.12 46.92 34.12C42.84 34.12 39.28 34.76 36.24 36.04C33.2 37.28 30.66 39 28.62 41.2C26.58 43.4 25.06 45.88 24.06 48.64C23.06 51.4 22.56 54.3 22.56 57.34C22.56 60.42 23.06 63.36 24.06 66.16C25.06 68.92 26.58 71.4 28.62 73.6C30.66 75.8 33.2 77.54 36.24 78.82C39.28 80.06 42.84 80.68 46.92 80.68Z"
+              d="M45.9021 67.68C49.5821 67.68 52.9221 67.14 55.9221 66.06C58.9621 64.98 61.2221 63.92 62.7021 62.88L70.3821 78.12C68.5021 79.72 65.2821 81.34 60.7221 82.98C56.2021 84.62 50.8221 85.44 44.5821 85.44C38.7421 85.44 33.2621 84.42 28.1421 82.38C23.0221 80.34 18.5021 77.48 14.5821 73.8C10.7021 70.08 7.64211 65.74 5.40211 60.78C3.20211 55.78 2.10211 50.36 2.10211 44.52C2.10211 38.68 3.20211 33.26 5.40211 28.26C7.60211 23.22 10.6421 18.84 14.5221 15.12C18.4421 11.4 22.9621 8.52 28.0821 6.48C33.2421 4.4 38.7421 3.36 44.5821 3.36C50.8221 3.36 56.2021 4.18 60.7221 5.82C65.2821 7.46 68.5021 9.08 70.3821 10.68L62.7021 25.92C61.2221 24.84 58.9621 23.78 55.9221 22.74C52.9221 21.66 49.5821 21.12 45.9021 21.12C41.8221 21.12 38.2621 21.76 35.2221 23.04C32.1821 24.28 29.6421 26 27.6021 28.2C25.5621 30.4 24.0421 32.88 23.0421 35.64C22.0421 38.4 21.5421 41.3 21.5421 44.34C21.5421 47.42 22.0421 50.36 23.0421 53.16C24.0421 55.92 25.5621 58.4 27.6021 60.6C29.6421 62.8 32.1821 64.54 35.2221 65.82C38.2621 67.06 41.8221 67.68 45.9021 67.68Z"
               fill="#0070F3"
             />
           </g>

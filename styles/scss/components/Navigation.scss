@@ -26,9 +26,12 @@
 
   .logo {
     margin-right: auto;
+    position: relative;
     
     svg {
-      height: 35px;
+      position: absolute;
+      top: 0;
+      height: 40px;
       width: 60px;
     }
   }
