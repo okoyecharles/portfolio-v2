@@ -98,7 +98,7 @@ const projects = [
   },
   {
     title: 'Portfolio v1',
-    note: 'A website where you can learn about Okoye Charles and what he does',
+    note: 'A website where you can learn about Okoye Charles and what he does (My first portfolio)',
     image: '/projects/portolio-v1.webp',
     imgDims: {
       width: '2751 ',
