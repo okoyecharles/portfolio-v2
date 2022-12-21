@@ -6,7 +6,7 @@ const Projects = () => {
 
   return (
     <ul className="projects__grid">
-      {projects.slice(3).map((project) => (
+      {projects.slice(4).map((project) => (
         <ProjectCard key={project.title} project={project} />
       ))}
     </ul>

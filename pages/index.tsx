@@ -145,7 +145,7 @@ const Home = () => {
             <h2>Featured Projects</h2>
           </header>
           <div className="featuredProjects">
-            {projects.slice(0, 3).map((projectProp) => (
+            {projects.slice(0, 4).map((projectProp) => (
               <FeaturedProject key={projectProp.title} {...projectProp} />
             ))}
           </div>
