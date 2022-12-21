@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://okoyecharles-msxyju0yy-okoyecharles.vercel.app/">
-    <img src="./public/logo.svg" alt="portfolio-logo" height="40">
+    <img src="./public/assets/logo.svg" alt="portfolio-logo" height="40">
   </a>
 
 
@@ -51,7 +51,7 @@
 This website serves as a collection of my most recent, expertly crafted, and innovative projects as well as a base of knowlegde concerning the abouts of the creator... **Okoye Charles**.
 
 <div align="center">
-  <img  width="1000" alt="portfolio" src="./public/app-screenshot.webp">
+  <img  width="1000" alt="portfolio" src="./public/assets/app-screenshot.webp">
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

@@ -24,7 +24,7 @@ const Logo = () => {
   }));
 
   const [dotSpring, api3] = useSpring(() => ({
-    y: -100,
+    y: -110,
     config: {
       tension: 200,
       friction: 15
