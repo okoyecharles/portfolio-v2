@@ -10,16 +10,13 @@
 
 .projectCard {
   list-style: none;
-  overflow: hidden;
-  transition: box-shadow 0.25s ease;
   position: relative;
   background-color: $line;
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 0 0.25rem $shadow-light, 0 0 0 0.05rem $shadow;
-  
   transition: box-shadow 0.25s ease;
-  
+
   &:hover {
     box-shadow: 0 0 0.75rem $shadow-light, 0 0 0 0.05rem $shadow;
   }
@@ -33,7 +30,6 @@
   grid-template-rows: repeat(2, 1fr);
   position: relative;
   isolation: isolate;
-
   transition: background-color 0.25s ease;
 }
 
@@ -43,7 +39,7 @@
   display: flex;
   gap: 0.75rem;
   margin-top: 1rem;
-  
+
   li {
     font-size: 0.9rem !important;
   }
@@ -64,10 +60,12 @@
       &.ror {
         color: #a02a44;
       }
+
       &.js {
         color: #f7d803;
         background-color: rgb(4, 15, 22);
       }
+
       &.react {
         color: #27b6de;
       }
@@ -88,13 +86,13 @@
         :nth-of-type(1) {
           padding: 0.2rem;
           border-radius: 0.25rem;
-
           transition: 0.15s ease;
         }
       }
 
       a:hover {
         color: $text-highlight;
+
         :nth-of-type(1) {
           background: linear-gradient($theme-light, 80%, $highlight);
           box-shadow: $inspect;
@@ -137,6 +135,7 @@
 
   .projectCard__container {
     isolation: isolate;
+
     &::before {
       z-index: -1;
       content: "";
@@ -147,19 +146,20 @@
       left: 0;
       top: 0;
       opacity: 0;
-      background: radial-gradient(
-        800px circle at var(--mouse-x) var(--mouse-y),
-        $accent-light,
-        transparent 40%
-      );
-  
+      background:
+        radial-gradient(
+          800px circle at var(--mouse-x) var(--mouse-y),
+          $accent-light,
+          transparent 40%
+        );
       transition: 500ms;
     }
-  
+
     &:hover::before {
       opacity: 0.1;
     }
   }
+
   .projectCard__wrapper1 {
     header {
       .project__links {

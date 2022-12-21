@@ -1,9 +1,10 @@
 @use '../abstracts' as *;
 
 .hero {
-  margin-top: 0rem;
+  margin-top: 0;
   padding-top: 5rem;
   min-height: calc(100vh - 8rem);
+
   > {
     h1 {
       font-weight: 600;
@@ -17,6 +18,7 @@
 
     h2 {
       --min-fs: 37.5px;
+
       background: linear-gradient(to right, $accent-dark, $accent, $accent-dark);
       background-size: 200%;
       background-clip: text;
@@ -30,13 +32,15 @@
 
     h3 {
       --min-fs: 35px;
+
       line-height: 1.1;
     }
 
-    h2, h3 {
+    h2,
+    h3 {
       font-size: clamp(var(--min-fs), 6vw, 4rem);
     }
-    
+
     p {
       margin-top: 2rem;
       margin-bottom: 3rem;
@@ -45,7 +49,6 @@
     }
   }
 }
-
 
 @media screen and (max-width: 600px) {
   .hero {

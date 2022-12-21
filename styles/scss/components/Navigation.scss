@@ -1,8 +1,11 @@
 @use "../abstracts" as *;
 
 .header {
-  transition: top 0.15s ease-in, background-color 0.15s ease-in,
-    display 0.15s ease-in 2s ease, box-shadow 0.35s ease-in;
+  transition:
+    top 0.15s ease-in,
+    background-color 0.15s ease-in,
+    display 0.15s ease-in 2s ease,
+    box-shadow 0.35s ease-in;
   z-index: 100;
 }
 
@@ -27,7 +30,7 @@
   .logo {
     margin-right: auto;
     position: relative;
-    
+
     svg {
       position: absolute;
       top: 0;
@@ -35,18 +38,16 @@
       width: 60px;
     }
   }
-
-  .navigation__links {
-    display: flex;
-    gap: 0.75rem;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-  }
 }
 
 .navigation__links {
+  display: flex;
+  gap: 0.75rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+
   li {
     cursor: pointer;
     padding: 0 0.15rem;
@@ -71,6 +72,7 @@
 
     a {
       opacity: 1;
+
       button {
         color: #fff;
         border: none;
@@ -79,9 +81,7 @@
         background-color: $accent;
         cursor: pointer;
         opacity: 1;
-        border: 1px solid $accent;
         margin: 0;
-
         transition: background-color 0.25s ease, box-shadow 0.25s ease;
       }
 

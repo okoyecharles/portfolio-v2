@@ -4,12 +4,10 @@
   background-color: $theme-light;
   box-shadow: $inspect;
   border-radius: 0.25rem;
-
   position: fixed;
   transform: translateY(-50%);
   top: 50%;
   left: 0.5rem;
-
   transition: background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -35,22 +33,18 @@
     background-color 0.25s ease,
     color 0.25s ease,
     scale 0.15s ease,
-    box-shadow 0.15s ease
-  ;
+    box-shadow 0.15s ease;
 
   &:active {
     background-color: $highlight-active;
     scale: 0.95;
   }
 
-  &:hover, &:has(a:focus-within) {
+  &:hover,
+  &:has(a:focus-within) {
     background: linear-gradient(to top, $highlight, $theme-light);
     box-shadow: $inspect;
     color: $text-highlight;
-  }
-
-  &:has(a:focus-within) a {
-    outline: none;
   }
 
   a {
@@ -64,6 +58,10 @@
       display: none;
     }
   }
+
+  &:has(a:focus-within) a {
+    outline: none;
+  }
 }
 
 :root.dark {
@@ -74,7 +72,8 @@
   .sidebar__item {
     color: $text;
 
-    &:hover, &:has(a:focus-within) {
+    &:hover,
+    &:has(a:focus-within) {
       background: none;
       box-shadow: none;
       color: $text-highlight;

@@ -8,7 +8,6 @@
   overflow: hidden;
   isolation: isolate;
   margin-inline: auto;
-
   transition: background-color 0.25s ease, box-shadow 0.25s ease;
 
   &__content {
@@ -52,7 +51,6 @@
       right: 0.5rem;
       transform: translateY(50%);
       box-shadow: 0 0 0 0.15rem $accent;
-
       transition: box-shadow 0.25s ease;
 
       &:hover {
@@ -72,6 +70,8 @@
 
     div {
       color: $theme;
+      font-size: 0.75rem;
+      font-family: $nunito-sans;
     }
 
     h3 {
@@ -81,11 +81,6 @@
     div,
     h3 {
       transition: color 0.25s ease;
-    }
-
-    div {
-      font-size: 0.75rem;
-      font-family: $nunito-sans;
     }
   }
 
@@ -121,6 +116,7 @@
         p {
           color: $text;
         }
+
         p:first-of-type::before {
           color: $accent;
           opacity: 1;

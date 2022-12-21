@@ -70,7 +70,7 @@ const Logo = () => {
               style={curvedHSpring}
               d="M94.4821 53C97.4821 41.5 124.482 35 124.482 54.5C124.482 61 124.482 77 124.482 84"
               stroke="black"
-              stroke-width="19"
+              strokeWidth={19}
             />
           </mask>
           <g mask="url(#mask0_1_2)">
@@ -93,14 +93,14 @@ const Logo = () => {
               style={verticalHSpring}
               d="M86.9821 1V84"
               stroke="#0070F3"
-              stroke-width="19"
+              strokeWidth={19}
             />
           </mask>
           <g mask="url(#mask1_1_2)">
             <path
               id="vertical-h-mask"
               d="M86.9821 1V84"
-              stroke-width="19"
+              strokeWidth={19}
             />
           </g>
           <mask
@@ -117,7 +117,7 @@ const Logo = () => {
               style={cSpring}
               d="M67.9821 18L60.4821 15L53.9821 13.5L47.4821 12C41.9821 11 26.396 11.7721 17.9821 25.5C8.48211 41 12.1096 53.845 16.4821 61C21.9821 70 39.4821 85.5 67.9821 70"
               stroke="black"
-              stroke-width="20"
+              strokeWidth={20}
             />
           </mask>
           <g mask="url(#mask2_1_2)">

@@ -16,7 +16,7 @@ const PageHead = () => {
         content="Okoye Charles, Okoye, Kaosisochukwu, Resume, Portfolio, Charles, Software Developer, Full Stack Software Engineer, React Developer, Next.js Developer"
       />
       <meta name="robots" content="index, follow" />
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="language" content="English" />
       <meta name="author" content="Okoye Charles" />
       <meta name="image" content="https://okoyecharles.vercel.app/og.png" />
@@ -83,10 +83,7 @@ const PageHead = () => {
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:creator" content="@OkoyeCharles_" />
       <meta property="twitter:url" content="https://okoyecharles.vercel.app" />
-      <meta
-        property="twitter:title"
-        content="Okoye Charles"
-      />
+      <meta property="twitter:title" content="Okoye Charles" />
       <meta
         property="twitter:description"
         content="Okoye Charles is a software developer who specializes in creating and designing appealing user interfaces and websites."
