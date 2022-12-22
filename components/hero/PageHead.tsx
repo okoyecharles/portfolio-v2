@@ -23,6 +23,12 @@ const PageHead = () => {
       <link rel="icon" href="/assets/logo.svg"></link>
       <link rel="canonical" href="https://okoyecharles.vercel.app/" />
 
+      {/* Google Verification */}
+      <meta
+        name="google-site-verification"
+        content="z5SFKw4krYcywUCQGVVNYW1F2NpGL-9BNDt0en4iwfM"
+      />
+
       {/* Apple touch icons */}
       <link
         rel="apple-touch-icon"
