@@ -95,7 +95,7 @@ const Home = () => {
                   href="https://www.microverse.org/?grsf=wtedvt"
                   target="_blank"
                 >
-                  microverse
+                  Microverse
                 </a>{" "}
                 through collaborating and pair programming with other students
                 from all over the world.
