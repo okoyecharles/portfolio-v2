@@ -124,22 +124,20 @@ const ContactForm = () => {
       setEmailError(true);
       return;
     }
-
-    const submitResponse = await submitData({ name, email, message });
-    if (submitResponse.success) {
-      setSuccess(true);
-      setName("");
-      setEmail("");
-      setMessage("");
-
-      clearTimeout(successTimeoutID);
-      const timeoutID = setTimeout(() => {
-        setSuccess(false);
-      }, 3000);
-      setSuccessTimeoutID(timeoutID);
-
-      raiseError(null);
-    }
+    
+    setSuccess(true);
+    setName("");
+    setEmail("");
+    setMessage("");
+    
+    clearTimeout(successTimeoutID);
+    const timeoutID = setTimeout(() => {
+      setSuccess(false);
+    }, 3000);
+    setSuccessTimeoutID(timeoutID);
+    
+    raiseError(null);
+    await submitData({ name, email, message });
   };
 
   const errorSprings = useSpring({
