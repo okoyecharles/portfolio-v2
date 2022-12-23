@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import { AiOutlineFolder } from "react-icons/ai";
 import { projectType } from "../../db/projects";
 import { FaReact } from "react-icons/fa";
 import { SiJavascript, SiRubyonrails } from "react-icons/si";
+import { a, useSpring } from "@react-spring/web";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
 const ProjectCard: React.FC<{ project: projectType }> = ({ project }) => {
   const handleMouseMove = (event: any) => {
@@ -17,8 +19,29 @@ const ProjectCard: React.FC<{ project: projectType }> = ({ project }) => {
     target.style.setProperty("--mouse-y", `${y}px`);
   };
 
+  const projectRef = useRef(null);
+  const [spring, api] = useSpring(() => ({
+    from: {
+      y: 50,
+      opacity: 0,
+      scale: 0.99
+    },
+    config: {
+      tension: 200,
+      friction: 50,
+    },
+  }));
+
+  useIntersectionObserver(projectRef, () => {
+    api.start({
+      y: 0,
+      opacity: 1,
+      scale: 1
+    })
+  }, "15%");
+
   return (
-    <li className="projectCard">
+    <a.li className="projectCard" ref={projectRef} style={spring} >
       <div className="projectCard__container" onMouseMove={handleMouseMove}>
         <div className="projectCard__wrapper1">
           <header>
@@ -63,7 +86,7 @@ const ProjectCard: React.FC<{ project: projectType }> = ({ project }) => {
           </div>
         </a>
       </div>
-    </li>
+    </a.li>
   );
 };
 

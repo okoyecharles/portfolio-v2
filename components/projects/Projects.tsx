@@ -1,15 +1,38 @@
-import React from "react";
-import projects from "../../db/projects";
-import ProjectCard from "./ProjectCard";
+import React, { useRef } from "react";
+import Section from "../main/Section";
+import ProjectsGrid from "./ProjectsGrid";
+import { a, useSpring } from "@react-spring/web";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
-const Projects = () => {
+interface ProjectsRef {
+  projectsRef: React.MutableRefObject<null>;
+}
+
+const Projects: React.FC<ProjectsRef> = ({ projectsRef }) => {
+  const headerRef = useRef(null);
+  const [springs, api] = useSpring(() => ({
+    from: {
+      opacity: 0,
+    },
+    config: {
+      tension: 200,
+      friction: 40,
+    },
+  }));
+
+  useIntersectionObserver(headerRef, () => {
+    api.start({
+      opacity: 1
+    })
+  })
 
   return (
-    <ul className="projects__grid">
-      {projects.slice(4).map((project) => (
-        <ProjectCard key={project.title} project={project} />
-      ))}
-    </ul>
+    <Section label="projects" sectionRef={projectsRef}>
+      <a.header ref={headerRef} style={springs}>
+        <h2>More Projects</h2>
+      </a.header>
+      <ProjectsGrid />
+    </Section>
   );
 };
 

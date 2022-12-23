@@ -5,7 +5,7 @@ import FeaturedProject from "../components/projects/FeaturedProject";
 import Layout from "../components/main/Layout";
 import Section from "../components/main/Section";
 import projects from "../db/projects";
-import Projects from "../components/projects/Projects";
+import ProjectsGrid from "../components/projects/ProjectsGrid";
 import ContactForm from "../components/contact/ContactForm";
 import SkipToContent from "../components/anchors/SkipToContent";
 import TestimonialsSwiper from "../components/testimonials/TestimonialsSwiper";
@@ -14,6 +14,7 @@ import PageHead from "../components/hero/PageHead";
 import useIntersectionObservers from "../hooks/useIntersectionObservers";
 import About from "../components/about/About";
 import FeaturedProjects from "../components/projects/FeaturedProjects";
+import Projects from "../components/projects/Projects";
 
 const Home = () => {
   const heroRef = useRef(null);
@@ -40,12 +41,7 @@ const Home = () => {
         <Hero heroRef={heroRef} />
         <About aboutRef={aboutRef} />
         <FeaturedProjects featuredRef={featuredRef} />
-        <Section label="projects" sectionRef={projectsRef}>
-          <header>
-            <h2>More Projects</h2>
-          </header>
-          <Projects />
-        </Section>
+        <Projects projectsRef={projectsRef} />
         <Section label="testimonials" sectionRef={recomendationRef}>
           <header>
             <h2>Testimonials</h2>
