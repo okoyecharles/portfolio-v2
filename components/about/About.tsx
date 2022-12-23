@@ -35,15 +35,15 @@ const About: React.FC<AboutProps> = ({ aboutRef }) => {
       <a.div className="about__container" style={springs[1]}>
         <article className="about__content">
           <p>
-            Hello! My name is <b>Okoye Charles Kaosisochukwu</b> and I'm a
+            Hello! My name is <b>Okoye Charles Kaosisochukwu</b> and I&apos;m a
             creative developer who loves to work on appealing websites with a
             passion for User Interfaces and Experience. I love spending my time
             coding, creating things for the web and learning new things.
           </p>
 
           <p>
-            I'm relatively new to the software development world and since May
-            2022 I've been building my technical, leadership, and collaborative
+            I&apos;m relatively new to the software development world and since May
+            2022 I&apos;ve been building my technical, leadership, and collaborative
             skills at{" "}
             <a href="https://www.microverse.org/?grsf=wtedvt" target="_blank">
               Microverse
@@ -73,7 +73,7 @@ const About: React.FC<AboutProps> = ({ aboutRef }) => {
           </ul>
 
           <span className="extra-info">
-            HAVE A COOL WEBSITE OR APPLICATION IN MIND? I'D LOVE TO{" "}
+            HAVE A COOL WEBSITE OR APPLICATION IN MIND? I&apos;D LOVE TO{" "}
             <a href="#contact">HEAR ABOUT IT</a>
           </span>
         </article>

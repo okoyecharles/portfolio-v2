@@ -35,7 +35,7 @@ const Contact: React.FC<ContactProps> = ({ contactRef }) => {
       </a.header>
       <a.p style={springs}>
         If you have an application you are interested in <b>developing</b>, a
-        feature that you need built or a project that needs <b>coding</b>. I'd
+        feature that you need built or a project that needs <b>coding</b>. I&apos;d
         love to help with it.
       </a.p>
       <ContactForm />

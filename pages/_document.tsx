@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <Script strategy='beforeInteractive'>
+        <Script id="light-dark-enabler" strategy='beforeInteractive'>
           {`
             const webConfig = JSON.parse(localStorage.getItem('okoye-charles-web-config') || '{}'),root=document.querySelector(':root');
             webConfig.darkMode && root?.classList.add('dark');

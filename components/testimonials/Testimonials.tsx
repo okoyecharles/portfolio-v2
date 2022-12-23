@@ -40,7 +40,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ recomendationRef }) => {
             organizational, and collaborative skills.
           </a.p>
           <a.p style={springs}>
-            Here are a couple commendations I've recieved from previous
+            Here are a couple commendations I&apos;ve recieved from previous
             co-workers:
           </a.p>
           <TestimonialsSwiper />

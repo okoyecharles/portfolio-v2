@@ -1,7 +1,7 @@
 import { useSpring, animated } from "@react-spring/web";
 import { useState } from "react";
 
-const skipToContent = () => {
+const SkipToContent = () => {
   const [focus, setFocus] = useState(false);
   const springs = useSpring({
     x: focus ? 5 : -200,
@@ -23,4 +23,4 @@ const skipToContent = () => {
   )
 }
 
-export default skipToContent
+export default SkipToContent

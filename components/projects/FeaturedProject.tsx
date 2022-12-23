@@ -25,7 +25,7 @@ const FeaturedProject: React.FC<projectType> = (props) => {
     if (rect) {
       contentRef.current?.style.setProperty("--height", `${(rect.height / 1.05) * -1}px`);
     }
-  }, [contentRef.current]);
+  }, []);
 
   const [spring, api] = useSpring(() => ({
     from: {
