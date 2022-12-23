@@ -2,9 +2,12 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import { projectType } from "../../db/projects";
+import { a, useSpring } from "@react-spring/web";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
 const FeaturedProject: React.FC<projectType> = (props) => {
   const contentRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef(null);
 
   const handleMouseMove = (event: any) => {
     const { currentTarget: target } = event;
@@ -24,8 +27,26 @@ const FeaturedProject: React.FC<projectType> = (props) => {
     }
   }, [contentRef.current]);
 
+  const [spring, api] = useSpring(() => ({
+    from: {
+      y: 50,
+      opacity: 0,
+    },
+    config: {
+      tension: 200,
+      friction: 50,
+    },
+  }));
+
+  useIntersectionObserver(containerRef, () => {
+    api.start({
+      y: 0,
+      opacity: 1
+    })
+  }, "20%");
+
   return (
-    <article className="featuredProject__container">
+    <a.article className="featuredProject__container" ref={containerRef} style={spring}>
       <div className="featuredProject__content" ref={contentRef}>
         <h3>{props.title}</h3>
         <p onMouseMove={handleMouseMove} dangerouslySetInnerHTML={{__html: props.description}} />
@@ -58,7 +79,7 @@ const FeaturedProject: React.FC<projectType> = (props) => {
           />
         </a>
       </div>
-    </article>
+    </a.article>
   );
 };
 

@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 
 const useIntersectionObserver = (
   elementRef: React.MutableRefObject<null>,
-  callback: () => void
+  callback: () => void,
+  margin = "35%"
   ) => {
   const [viewed, setViewed] = useState<boolean>(false);
 
@@ -10,7 +11,7 @@ const useIntersectionObserver = (
   const options: IntersectionObserverInit = {
     threshold: 0,
     root: null,
-    rootMargin: "0px 0px -35%",
+    rootMargin: `0px 0px -${margin}`,
   };
 
   useEffect(() => {

@@ -13,6 +13,7 @@ import Hero from "../components/hero/Hero";
 import PageHead from "../components/hero/PageHead";
 import useIntersectionObservers from "../hooks/useIntersectionObservers";
 import About from "../components/about/About";
+import FeaturedProjects from "../components/projects/FeaturedProjects";
 
 const Home = () => {
   const heroRef = useRef(null);
@@ -38,16 +39,7 @@ const Home = () => {
       <Layout>
         <Hero heroRef={heroRef} />
         <About aboutRef={aboutRef} />
-        <Section label="featured" sectionRef={featuredRef}>
-          <header>
-            <h2>Featured Projects</h2>
-          </header>
-          <div className="featuredProjects">
-            {projects.slice(0, 4).map((projectProp) => (
-              <FeaturedProject key={projectProp.title} {...projectProp} />
-            ))}
-          </div>
-        </Section>
+        <FeaturedProjects featuredRef={featuredRef} />
         <Section label="projects" sectionRef={projectsRef}>
           <header>
             <h2>More Projects</h2>
