@@ -80,7 +80,7 @@
       scale: 1.05;
     }
 
-    &:has(a:focus-within) {
+    a:focus-visible {
       outline: 2px dashed $accent;
       outline-offset: 2.5px;
       border-radius: 0;

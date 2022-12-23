@@ -93,7 +93,7 @@ const projects = [
     stack: ['JavaScript', 'HTML5'],
     links: {
       github: 'https://github.com/okoyecharles/Todo-List',
-      live: 'https://okoyecharles.github.io/Todo-Lis',
+      live: 'https://okoyecharles.github.io/Todo-List',
     },
   },
   {

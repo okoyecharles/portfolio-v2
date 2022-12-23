@@ -17,6 +17,7 @@ const TestimonialCard: React.FC<testimonialType> = (testimonial) => {
           target="_blank"
           rel="noreferrer noopener"
           className="testimonialCard__image"
+          tabIndex={-1}
         >
           <Image
             src={`/testimonials/${testimonial.image}`}

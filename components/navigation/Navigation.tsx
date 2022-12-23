@@ -5,6 +5,7 @@ import { storeType } from "../../redux/configureStore";
 import toggleDarkMode from "../../utils/darkModeHelper";
 import Logo from "./Logo";
 import { a, useTrail } from "@react-spring/web";
+import Link from "next/link";
 
 const Navigation = () => {
   const [sticky, setSticky] = useState<boolean>(false);
@@ -16,27 +17,28 @@ const Navigation = () => {
   );
   const sectionActiveFor = (arr: any[]) =>
     arr.includes(currentSection.name) ? "active" : "";
-  
-  const springs = useTrail(6, {
-    from: {
-      opacity: 0,
-      y: -50
-    },
-    to: {
-      opacity: 1,
-      y: 0
-    },
+
+  const [springs, api] = useTrail(6, () => ({
+    opacity: 0,
+    y: -50,
     config: {
-      tension: 370,
+      tension: 350,
       friction: 40,
     },
-  });
+  }));
 
   useEffect(() => {
+    // Set darkmode
     setDarkMode(
       !!JSON.parse(localStorage?.getItem("okoye-charles-web-config") || "{}")
         ?.darkMode
     );
+    // Start navlinks animation
+    api.start({
+      opacity: 1,
+      y: 0,
+    });
+
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
@@ -49,6 +51,7 @@ const Navigation = () => {
 
     return function () {
       if (headerRef.current) observer.unobserve(headerRef.current);
+      api.stop();
     };
   }, []);
 
@@ -60,40 +63,59 @@ const Navigation = () => {
         </div>
         <ul className="navigation__links">
           <a.li style={springs[0]}>
-            <a href="#content" className={sectionActiveFor(["hero"])}>
+            <Link
+              href="#content"
+              className={sectionActiveFor(["hero"])}
+              scroll={false}
+            >
               Home
-            </a>
+            </Link>
           </a.li>
           <a.li style={springs[1]}>
-            <a href="#about" className={sectionActiveFor(["about"])}>
+            <Link
+              href="#about"
+              className={sectionActiveFor(["about"])}
+              scroll={false}
+            >
               About
-            </a>
+            </Link>
           </a.li>
           <a.li style={springs[2]}>
-            <a
+            <Link
               href="#featured"
               className={sectionActiveFor(["featured", "projects"])}
+              scroll={false}
             >
               Projects
-            </a>
+            </Link>
           </a.li>
           <a.li style={springs[3]}>
-            <a
+            <Link
               href="#testimonials"
               className={sectionActiveFor(["testimonials"])}
+              scroll={false}
             >
               Testimonials
-            </a>
+            </Link>
           </a.li>
           <a.li style={springs[4]}>
-            <a href="#contact" className={sectionActiveFor(["contact"])}>
+            <Link
+              href="#contact"
+              className={sectionActiveFor(["contact"])}
+              scroll={false}
+            >
               Contact
-            </a>
+            </Link>
           </a.li>
           <a.li className="navigation__linkResume" style={springs[5]}>
-            <a href="/assets/resume.pdf" rel="noreferrer noopener" target={"_blank"} download>
+            <Link
+              href="/assets/resume.pdf"
+              rel="noreferrer noopener"
+              target={"_blank"}
+              download
+            >
               <button tabIndex={-1}>Resume</button>
-            </a>
+            </Link>
           </a.li>
           <li aria-label="Toggle dark mode">
             <DarkModeSwitch
