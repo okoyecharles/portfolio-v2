@@ -2,8 +2,11 @@
 
 .hero {
   margin-top: 0;
-  padding-top: 5rem;
-  min-height: calc(100vh - 8rem);
+  min-height: calc(100vh - 7rem);
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   > {
     h1 {

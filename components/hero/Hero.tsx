@@ -18,7 +18,7 @@ const Hero: React.FC<heroProps> = ({ heroRef }) => {
     },
   }));
 
-  // Start animation after a second
+  // Start hero animation after a second
   useEffect(() => {
     setTimeout(() => {
       api.start({

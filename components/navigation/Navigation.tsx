@@ -19,8 +19,10 @@ const Navigation = () => {
     arr.includes(currentSection.name) ? "active" : "";
 
   const [springs, api] = useTrail(6, () => ({
-    opacity: 0,
-    y: -50,
+    from: {
+      opacity: 0,
+      y: -50,
+    },
     config: {
       tension: 350,
       friction: 40,
