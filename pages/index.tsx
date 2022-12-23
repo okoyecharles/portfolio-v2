@@ -15,6 +15,7 @@ import useIntersectionObservers from "../hooks/useIntersectionObservers";
 import About from "../components/about/About";
 import FeaturedProjects from "../components/projects/FeaturedProjects";
 import Projects from "../components/projects/Projects";
+import Testimonials from "../components/testimonials/Testimonials";
 
 const Home = () => {
   const heroRef = useRef(null);
@@ -42,22 +43,7 @@ const Home = () => {
         <About aboutRef={aboutRef} />
         <FeaturedProjects featuredRef={featuredRef} />
         <Projects projectsRef={projectsRef} />
-        <Section label="testimonials" sectionRef={recomendationRef}>
-          <header>
-            <h2>Testimonials</h2>
-          </header>
-          <p>
-            I work with people from places all over the world through{" "}
-            <b>remote pair-programming</b>... on amazing, high-end applications
-            and websites. Continuosly improving my communicative,
-            organizational, and collaborative skills.
-          </p>
-          <p>
-            Here are a couple commendations I've recieved from previous
-            co-workers:
-          </p>
-          <TestimonialsSwiper />
-        </Section>
+        <Testimonials recomendationRef={recomendationRef} />
         <Section label="contact" sectionRef={contactRef}>
           <header>
             <h2>Contact Me</h2>

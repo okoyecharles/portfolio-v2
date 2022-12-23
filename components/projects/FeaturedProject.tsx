@@ -31,7 +31,7 @@ const FeaturedProject: React.FC<projectType> = (props) => {
     from: {
       y: 50,
       opacity: 0,
-      scale: 0.99
+      scale: 0.98
     },
     config: {
       tension: 200,

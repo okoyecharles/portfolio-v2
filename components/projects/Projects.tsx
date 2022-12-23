@@ -16,7 +16,7 @@ const Projects: React.FC<ProjectsRef> = ({ projectsRef }) => {
     },
     config: {
       tension: 200,
-      friction: 40,
+      friction: 50,
     },
   }));
 
