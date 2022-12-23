@@ -16,6 +16,7 @@ import About from "../components/about/About";
 import FeaturedProjects from "../components/projects/FeaturedProjects";
 import Projects from "../components/projects/Projects";
 import Testimonials from "../components/testimonials/Testimonials";
+import Contact from "../components/contact/Contact";
 
 const Home = () => {
   const heroRef = useRef(null);
@@ -44,17 +45,7 @@ const Home = () => {
         <FeaturedProjects featuredRef={featuredRef} />
         <Projects projectsRef={projectsRef} />
         <Testimonials recomendationRef={recomendationRef} />
-        <Section label="contact" sectionRef={contactRef}>
-          <header>
-            <h2>Contact Me</h2>
-          </header>
-          <p>
-            If you have an application you are interested in <b>developing</b>,
-            a feature that you need built or a project that needs <b>coding</b>.
-            I'd love to help with it.
-          </p>
-          <ContactForm />
-        </Section>
+        <Contact contactRef={contactRef} />
       </Layout>
     </>
   );

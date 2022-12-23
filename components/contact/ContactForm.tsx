@@ -1,11 +1,13 @@
 import axios, { AxiosError } from "axios";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { emailVerificationKey, formSubmissionKey } from "../../config/apiKeys";
 import { IoSend } from "react-icons/io5";
-import { useSpring, animated } from "@react-spring/web";
+import { useSpring, a } from "@react-spring/web";
 import { ThreeDots } from "react-loader-spinner";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
 const ContactForm = () => {
+  const formRef = useRef(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -158,10 +160,30 @@ const ContactForm = () => {
     },
   });
 
+  const [spring, api] = useSpring(() => ({
+    from: {
+      y: 50,
+      opacity: 0,
+      scale: 0.98
+    },
+    config: {
+      tension: 250,
+      friction: 50,
+    },
+  }));
+
+  useIntersectionObserver(formRef, () => {
+    api.start({
+      y: 0,
+      opacity: 1,
+      scale: 1
+    })
+  });
+
   return (
-    <div className="contactForm__container">
+    <a.div className="contactForm__container" ref={formRef} style={spring}>
       <form className="contactForm" action="" onSubmit={handleSubmission}>
-        <animated.div
+        <a.div
           className="error"
           style={{
             zIndex: "-1",
@@ -171,9 +193,9 @@ const ContactForm = () => {
           }}
         >
           {error}
-        </animated.div>
+        </a.div>
 
-        <animated.div
+        <a.div
           className="success"
           style={{
             zIndex: "-1",
@@ -183,7 +205,7 @@ const ContactForm = () => {
           }}
         >
           {success ? "Message sent successfully" : ""}
-        </animated.div>
+        </a.div>
 
         <div>
           <label htmlFor="contactForm__name">
@@ -258,7 +280,7 @@ const ContactForm = () => {
           )}
         </button>
       </form>
-    </div>
+    </a.div>
   );
 };
 
