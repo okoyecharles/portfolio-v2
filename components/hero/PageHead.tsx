@@ -13,20 +13,20 @@ const PageHead = () => {
       <meta name="theme-color" content="#2b353f" />
       <meta
         name="keywords"
-        content="Okoye Charles, Okoye, Kaosisochukwu, Resume, Portfolio, Charles, Software Developer, Full Stack Software Engineer, React Developer, Next.js Developer"
+        content="Okoye Charles, Charles, Okoye, Resume, Portfolio, Charles, Software Developer, Full Stack Software Engineer, React Developer, Next.js Developer"
       />
       <meta name="robots" content="index, follow" />
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="language" content="English" />
       <meta name="author" content="Okoye Charles" />
-      <meta name="image" content="https://okoyecharles.vercel.app/og.png" />
+      <meta name="image" content="https://okoyecharles.com/og.png" />
       <link rel="icon" href="/assets/logo.svg"></link>
-      <link rel="canonical" href="https://okoyecharles.vercel.app/" />
+      <link rel="canonical" href="https://okoyecharles.com/" />
 
       {/* Google Verification */}
       <meta
         name="google-site-verification"
-        content="z5SFKw4krYcywUCQGVVNYW1F2NpGL-9BNDt0en4iwfM"
+        content="gMDLAgN62FdAkPVtCW3uNdL_gED0DwDLzqsXIyMpI8Q"
       />
 
       {/* Apple touch icons */}
@@ -74,7 +74,7 @@ const PageHead = () => {
       {/* Open Graph / Facebook */}
       <meta property="og:title" content="Okoye Charles" />
       <meta property="og:site_name" content="Okoye Charles" />
-      <meta property="og:url" content="https://okoyecharles.vercel.app" />
+      <meta property="og:url" content="https://okoyecharles.com" />
       <meta
         property="og:description"
         content="Okoye Charles is a software developer who specializes in creating and designing appealing user interfaces and websites."
@@ -82,13 +82,13 @@ const PageHead = () => {
       <meta property="og:type" content="website" />
       <meta
         property="og:image"
-        content="https://okoyecharles.vercel.app/og.png"
+        content="https://okoyecharles.com/og.png"
       />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:creator" content="@OkoyeCharles_" />
-      <meta property="twitter:url" content="https://okoyecharles.vercel.app" />
+      <meta property="twitter:url" content="https://okoyecharles.com" />
       <meta property="twitter:title" content="Okoye Charles" />
       <meta
         property="twitter:description"
@@ -96,7 +96,7 @@ const PageHead = () => {
       />
       <meta
         property="twitter:image"
-        content="https://okoyecharles.vercel.app/og.png"
+        content="https://okoyecharles.com/og.png"
       />
     </Head>
   );

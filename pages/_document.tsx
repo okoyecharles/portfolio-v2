@@ -1,11 +1,11 @@
-import { Html, Head, Main, NextScript } from 'next/document'
-import Script from 'next/script'
+import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default function Document() {
   return (
     <Html>
       <Head>
-        <Script id="light-dark-enabler" strategy='beforeInteractive'>
+        <Script id="light-dark-enabler" strategy="beforeInteractive">
           {`
             const webConfig = JSON.parse(localStorage.getItem('okoye-charles-web-config') || '{}'),root=document.querySelector(':root');
             webConfig.darkMode && root?.classList.add('dark');
@@ -30,5 +30,5 @@ export default function Document() {
         <NextScript />
       </body>
     </Html>
-  )
+  );
 }
