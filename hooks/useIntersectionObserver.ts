@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const useIntersectionObserver = (
   elementRef: React.MutableRefObject<null>,
   callback: () => void,
   margin = "35%"
   ) => {
-  const [viewed, setViewed] = useState<boolean>(false);
+  const viewed = useRef(false);
 
   // Define options that modifies behaviour of observer
   const options: IntersectionObserverInit = {
@@ -17,8 +17,8 @@ const useIntersectionObserver = (
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       // call callback function when component enters screen
-      if (entry.isIntersecting && !viewed) {
-        setViewed(true);
+      if (entry.isIntersecting && !viewed?.current) {
+        viewed.current = true;
         callback();
       }
     }, options);

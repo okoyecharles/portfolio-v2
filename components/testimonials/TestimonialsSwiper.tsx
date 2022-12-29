@@ -34,6 +34,7 @@ const TestimonialsSwiper = () => {
       opacity: 1,
       scale: 1
     });
+    console.log('api started')
     if (swiperRef.current) {
       swiperRef.current.swiper.slideTo(0);
     };

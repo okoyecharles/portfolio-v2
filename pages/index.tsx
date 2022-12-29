@@ -1,14 +1,6 @@
-import Head from "next/head";
-import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
-import FeaturedProject from "../components/projects/FeaturedProject";
+import React, { useRef } from "react";
 import Layout from "../components/main/Layout";
-import Section from "../components/main/Section";
-import projects from "../db/projects";
-import ProjectsGrid from "../components/projects/ProjectsGrid";
-import ContactForm from "../components/contact/ContactForm";
 import SkipToContent from "../components/anchors/SkipToContent";
-import TestimonialsSwiper from "../components/testimonials/TestimonialsSwiper";
 import Hero from "../components/hero/Hero";
 import PageHead from "../components/hero/PageHead";
 import useIntersectionObservers from "../hooks/useIntersectionObservers";

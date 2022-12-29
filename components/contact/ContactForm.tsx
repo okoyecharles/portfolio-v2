@@ -5,6 +5,7 @@ import { IoSend } from "react-icons/io5";
 import { useSpring, a } from "@react-spring/web";
 import { ThreeDots } from "react-loader-spinner";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
+import { isEmptyString, isTooShort, isValidEmail } from "../../utils/formHelper";
 
 const ContactForm = () => {
   const formRef = useRef(null);
@@ -42,7 +43,6 @@ const ContactForm = () => {
       clearTimeout(errorTimeoutID);
     }
 
-    // Stop if no error was specified
     if (error === null) return;
 
     setSuccess(false);
@@ -52,6 +52,20 @@ const ContactForm = () => {
     }, 3000);
     setErrorTimeoutID(timeOutID);
   };
+
+  const raiseSuccess = async () => {
+    setSuccess(true);
+    setName("");
+    setEmail("");
+    setMessage("");
+    
+    clearTimeout(successTimeoutID);
+    const timeoutID = setTimeout(() => {
+      setSuccess(false);
+    }, 3000);
+    setSuccessTimeoutID(timeoutID);
+    raiseError(null);
+  }
 
   const verifyEmail = async (email: string) => {
     try {
@@ -73,46 +87,43 @@ const ContactForm = () => {
   };
 
   const submitData = async (formData: any) => {
-    const { data } = await axios.post(
+    axios.post(
       `https://getform.io/f/${formSubmissionKey}`,
       formData,
       { headers: { Accept: "application/json" } }
     );
-    return data;
   };
 
   const handleSubmission = async (submitEvent: any) => {
     submitEvent.preventDefault();
     setProcessing(true);
 
-    if (name.trim().length < 1) {
+    if (isEmptyString(name)) {
       raiseError("Name cannot be blank");
       setNameError(true);
       return;
     }
 
-    if (email.trim().length < 1) {
+    if (isEmptyString(email)) {
       raiseError("Email cannot be blank");
       setEmailError(true);
       return;
     }
 
-    // Manual verification using regex
-    const EMAIL_REGEX =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!EMAIL_REGEX.test(email)) {
+    // Manual verification
+    if (!isValidEmail(email)) {
       raiseError("Please enter a valid email address");
       setEmailError(true);
       return;
     }
 
-    if (message.trim().length < 1) {
+    if (isEmptyString(message)) {
       raiseError("Message cannot be blank");
       setMessageError(true);
       return;
     }
 
-    if (message.length < 5) {
+    if (isTooShort(message, 10)) {
       raiseError("The message is too short");
       setMessageError(true);
       return;
@@ -126,20 +137,10 @@ const ContactForm = () => {
       setEmailError(true);
       return;
     }
-    
-    setSuccess(true);
-    setName("");
-    setEmail("");
-    setMessage("");
-    
-    clearTimeout(successTimeoutID);
-    const timeoutID = setTimeout(() => {
-      setSuccess(false);
-    }, 3000);
-    setSuccessTimeoutID(timeoutID);
-    
-    raiseError(null);
-    await submitData({ name, email, message });
+
+    raiseSuccess();
+
+    submitData({ name, email, message });
   };
 
   const errorSprings = useSpring({
@@ -164,7 +165,6 @@ const ContactForm = () => {
     from: {
       y: 50,
       opacity: 0,
-      scale: 0.98
     },
     config: {
       tension: 250,
@@ -175,8 +175,7 @@ const ContactForm = () => {
   useIntersectionObserver(formRef, () => {
     api.start({
       y: 0,
-      opacity: 1,
-      scale: 1
+      opacity: 1
     })
   });
 
