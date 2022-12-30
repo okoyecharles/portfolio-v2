@@ -167,7 +167,7 @@ const ContactForm = () => {
       opacity: 0,
     },
     config: {
-      tension: 250,
+      tension: 200,
       friction: 50,
     },
   }));

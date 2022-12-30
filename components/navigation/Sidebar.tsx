@@ -28,8 +28,8 @@ const SideBar: React.FC = () => {
       style={spring}
     >
       <ul className="sidebar__links">
-        {socialLinks.map((link) => (
-          <li className="sidebar__item">
+        {socialLinks.map((link, index) => (
+          <li className="sidebar__item" key={index}>
             <a
               title={link.title}
               target="_blank"

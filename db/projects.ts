@@ -4,7 +4,7 @@ const projects = [
     title: 'Amazon Clone',
     note: 'A full-stack e-commerce website inspired by the Amazon website',
     image: '/projects/amazon-clone.webp',
-    imgDims: { width: '2760', height: '1577' },
+    imgDims: { width: '1380', height: '788.5' },
     description: 'A Responsive Full-stack e-commerce website inspired by <a href="https://amazon.com" rel="noreferrer noopener" target="_blank">the amazon website</a>. Built with React, Redux, and Firebase. Including functionalities such as Creating/Signing in to an account, Adding items to the cart, Making payments and so on',
     stack: ['React', 'Redux', 'Firebase'],
     links: {

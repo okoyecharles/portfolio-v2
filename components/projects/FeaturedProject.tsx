@@ -30,8 +30,7 @@ const FeaturedProject: React.FC<projectType> = (props) => {
   const [spring, api] = useSpring(() => ({
     from: {
       y: 50,
-      opacity: 0,
-      scale: 0.98
+      opacity: 0
     },
     config: {
       tension: 200,
@@ -42,8 +41,7 @@ const FeaturedProject: React.FC<projectType> = (props) => {
   useIntersectionObserver(containerRef, () => {
     api.start({
       y: 0,
-      opacity: 1,
-      scale: 1
+      opacity: 1
     })
   }, "15%");
 

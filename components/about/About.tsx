@@ -80,9 +80,9 @@ const About: React.FC<AboutProps> = ({ aboutRef }) => {
         <div className="about__image">
           <Image
             src="/OkoyeCharles.webp"
-            width={2960}
-            height={2960}
-            alt="portrait"
+            width={500}
+            height={500}
+            alt="Headshot"
           />
         </div>
       </a.div>
