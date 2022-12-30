@@ -2,6 +2,7 @@ import { useSpring, a } from "@react-spring/web";
 import React, { useEffect } from "react";
 import { FaAngellist, FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import socialLinks from "../../db/social_links";
 
 const SideBar: React.FC = () => {
   const [spring, api] = useSpring(() => ({
@@ -21,58 +22,24 @@ const SideBar: React.FC = () => {
   }, []);
 
   return (
-    <a.aside className="sidebar" aria-roledescription="social links" style={spring}>
+    <a.aside
+      className="sidebar"
+      aria-roledescription="social links"
+      style={spring}
+    >
       <ul className="sidebar__links">
-        <li className="sidebar__item">
-          <a
-            title="Twitter"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://twitter.com/OkoyeCharles_"
-          >
-            <FaTwitter />
-          </a>
-        </li>
-        <li className="sidebar__item">
-          <a
-            title="Github"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/okoyecharles"
-          >
-            <FaGithub />
-          </a>
-        </li>
-        <li className="sidebar__item">
-          <a
-            title="LinkedIn"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.linkedin.com/in/charles-k-okoye/"
-          >
-            <FaLinkedinIn />
-          </a>
-        </li>
-        <li className="sidebar__item">
-          <a
-            title="AngelList"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://angel.co/u/charles-k-okoye"
-          >
-            <FaAngellist />
-          </a>
-        </li>
-        <li className="sidebar__item">
-          <a
-            title="Gmail"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="mailto:okoyecharles509@gmail.com"
-          >
-            <SiGmail />
-          </a>
-        </li>
+        {socialLinks.map((link) => (
+          <li className="sidebar__item">
+            <a
+              title={link.title}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={link.href}
+            >
+              {link.icon}
+            </a>
+          </li>
+        ))}
       </ul>
     </a.aside>
   );
