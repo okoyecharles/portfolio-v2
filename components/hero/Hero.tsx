@@ -3,7 +3,7 @@ import Section from "../main/Section";
 import { useTrail, a, config } from "@react-spring/web";
 
 interface heroProps {
-  heroRef: React.MutableRefObject<null>;
+  heroRef?: React.MutableRefObject<null>;
 }
 
 const Hero: React.FC<heroProps> = ({ heroRef }) => {
