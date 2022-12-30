@@ -38,7 +38,7 @@ const SideBar: React.FC = () => {
             title="Github"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/OkoyeCharles"
+            href="https://github.com/okoyecharles"
           >
             <FaGithub />
           </a>
