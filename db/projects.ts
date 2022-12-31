@@ -108,7 +108,7 @@ const projects = [
     stack: ['React', 'TypeScript', 'Sass'],
     links: {
       github: 'https://github.com/okoyecharles/portfolio',
-      live: 'https://okoyecharles.netlify.app'
+      live: 'https://okoyecharles.github.io/portfolio'
     }
   },
   {
