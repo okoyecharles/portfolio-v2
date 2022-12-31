@@ -1,10 +1,12 @@
 import { useEffect, useRef } from "react";
 
 const useIntersectionObserver = (
-  elementRef: React.MutableRefObject<null>,
+  elementRef: React.MutableRefObject<null> | undefined,
   callback: () => void,
   margin = "35%"
   ) => {
+  if (!elementRef) return;
+
   const viewed = useRef(false);
 
   // Define options that modifies behaviour of observer
