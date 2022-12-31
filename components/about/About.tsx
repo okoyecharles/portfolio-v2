@@ -5,7 +5,7 @@ import { a, useTrail } from "@react-spring/web";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
 interface AboutProps {
-  aboutRef: React.MutableRefObject<null>;
+  aboutRef?: React.MutableRefObject<null>;
 }
 
 const About: React.FC<AboutProps> = ({ aboutRef }) => {
