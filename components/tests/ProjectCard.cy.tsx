@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectCard from './ProjectCard'
+import ProjectCard from '../projects/ProjectCard'
 import projects from '../../db/projects';
 
 const project = projects[0];

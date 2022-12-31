@@ -1,14 +1,15 @@
 import React from "react";
-import Navigation from "./Navigation";
+import MobileNavigation from "../navigation/MobileNavigation";
 import { Provider } from "react-redux";
 import store from "../../redux/configureStore";
+import socialLinks from "../../db/social_links";
 
-describe("<Navigation />", () => {
+describe("<MobileNavigation />", () => {
   it("renders", () => {
-    // Testing render
+    // see: https://on.cypress.io/mounting-react
     cy.mount(
       <Provider store={store}>
-        <Navigation />
+        <MobileNavigation />
       </Provider>
     );
 
@@ -25,7 +26,9 @@ describe("<Navigation />", () => {
       cy.contains(link.name).should('have.attr', 'href', `#${link.route}`);
     });
 
-    // Test resume link
-    cy.get('.navigation__linkResume a').should('have.attr', 'download').get('button').should("have.text", 'Resume')
+    // Test all social links
+    socialLinks.forEach(link => {
+      cy.get(`a[title="${link.title}"]`).should('have.attr', 'href', `${link.href}`);
+    })
   });
 });

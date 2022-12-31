@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "./Hero";
+import Hero from "../hero/Hero";
 
 describe("<Hero />", () => {
   it("renders", () => {

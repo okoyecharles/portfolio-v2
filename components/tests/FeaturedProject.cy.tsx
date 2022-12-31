@@ -1,5 +1,5 @@
 import React from 'react'
-import FeaturedProject from './FeaturedProject';
+import FeaturedProject from '../projects/FeaturedProject';
 import projects from '../../db/projects';
 
 const project = projects[0];

@@ -1,5 +1,5 @@
 import React from "react";
-import TestimonialCard from "./TestimonialCard";
+import TestimonialCard from "../testimonials/TestimonialCard";
 import testimonials from "../../db/testimonials";
 
 const testimonial = testimonials[1];

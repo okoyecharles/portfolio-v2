@@ -1,5 +1,5 @@
 import React from 'react'
-import SideBar from './Sidebar'
+import SideBar from '../navigation/Sidebar'
 import socialLinks from '../../db/social_links'
 
 describe('<SideBar />', () => {
