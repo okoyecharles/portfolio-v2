@@ -1,0 +1,89 @@
+@use "../abstracts" as *;
+
+.sidebar {
+  background-color: $theme-light;
+  box-shadow: $inspect;
+  border-radius: 0.25rem;
+  position: fixed;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 0.5rem;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sidebar__links {
+  margin: 0;
+  padding: 0.35rem;
+  list-style-type: none;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar__item {
+  padding-inline: 0.25rem;
+  display: flex;
+  border-radius: 0.25rem;
+  align-items: center;
+  justify-content: center;
+  color: $text;
+  transition:
+    background 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    scale 0.15s ease,
+    box-shadow 0.15s ease;
+
+  &:active {
+    background-color: $highlight-active;
+    scale: 0.95;
+  }
+
+  &:hover,
+  &:has(a:focus-within) {
+    background: linear-gradient(to top, $highlight, $theme-light);
+    box-shadow: $inspect;
+    color: $text-highlight;
+  }
+
+  a {
+    // sidebar icons
+    &:nth-child(1) {
+      font-size: 1.5rem;
+      color: currentColor;
+    }
+
+    .sidebar__label {
+      display: none;
+    }
+  }
+
+  &:has(a:focus-within) a {
+    outline: none;
+  }
+}
+
+:root.dark {
+  .sidebar {
+    box-shadow: none;
+  }
+
+  .sidebar__item {
+    color: $text;
+
+    &:hover,
+    &:has(a:focus-within) {
+      background: none;
+      box-shadow: none;
+      color: $text-highlight;
+      scale: 1.05;
+    }
+
+    a:focus-visible {
+      outline: 2px dashed $accent;
+      outline-offset: 2.5px;
+      border-radius: 0;
+    }
+  }
+}

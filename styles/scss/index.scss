@@ -1,0 +1,23 @@
+@use "./abstracts" as *;
+@use "./components/KeyboardFocus";
+@use "./components/Navigation";
+@use "./components/MobileNavigation";
+@use "./components/Sidebar";
+@use "./components/Section";
+@use "./components/Home";
+@use "./components/FeaturedProjects";
+@use "./components/ProjectCard";
+@use "./components/About";
+@use "./components/Contact";
+@use "./components/ContactForm";
+@use "./components/SkipToContent";
+@use "./components/TestimonialCard";
+@use "./components/TestimonialSwiper";
+@use "./components/Logo";
+
+@media screen and (max-width: 768px) {
+  .navigation,
+  .sidebar {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,62 @@
+@use '../abstracts' as *;
+
+.hero {
+  margin-top: 0;
+  min-height: calc(100vh - 7rem);
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  > {
+    h1 {
+      font-weight: 600;
+      font-family: $nunito-sans;
+      font-size: 18px;
+      padding: 0;
+      margin: 0;
+      color: $text;
+      line-height: 0.9;
+    }
+
+    h2 {
+      --min-fs: 37.5px;
+
+      background: linear-gradient(to right, $accent-dark, $accent, $accent-dark);
+      background-size: 200%;
+      background-clip: text;
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      white-space: nowrap;
+      width: fit-content;
+      animation: background-pan 10s linear infinite;
+    }
+
+    h3 {
+      --min-fs: 35px;
+
+      line-height: 1.1;
+    }
+
+    h2,
+    h3 {
+      font-size: clamp(var(--min-fs), 6vw, 4rem);
+    }
+
+    p {
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+      font-size: 1rem !important;
+      width: min(500px, 100%);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero {
+    > h1 {
+      font-size: 16px;
+    }
+  }
+}

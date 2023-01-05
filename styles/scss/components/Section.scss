@@ -1,0 +1,72 @@
+@use "../abstracts" as *;
+
+section {
+  max-width: calc(1000px + 5rem);
+  margin-top: 5rem;
+  padding-top: 5rem;
+  margin-inline: auto;
+  padding-right: 3.75rem;
+  padding-left: 4rem;
+
+  p,
+  li,
+  span {
+    color: $text-light;
+    font-size: clamp(15px, 2.5vw, 16px) !important;
+  }
+
+  b {
+    color: $text;
+  }
+
+  p {
+    margin-top: 1rem;
+    line-height: 1.6;
+    font-size: 1.05rem;
+  }
+
+  h2 {
+    color: $text;
+    font-size: 1.75rem;
+  }
+
+  :is(h3, h4, h5) {
+    color: $text;
+  }
+
+  :is(h1, h2, h3, h4, h5) {
+    font-family: $nunito-sans;
+    font-weight: 800;
+  }
+
+  > header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    h2 {
+      width: max-content;
+    }
+
+    &::after {
+      content: "";
+      background-color: $highlight-active;
+      height: 0.05rem;
+      flex: 1;
+      max-width: 30rem;
+      transition: background-color 0.25s ease;
+    }
+  }
+}
+
+:root.dark {
+  section header::after {
+    background-color: $theme-light;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    padding-inline: 2rem;
+  }
+}

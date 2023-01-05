@@ -1,0 +1,107 @@
+@use "../abstracts" as *;
+
+.about__container {
+  --content-ratio: 7;
+  --image-ratio: 3;
+
+  display: flex;
+  gap: 1rem;
+
+  .about__content {
+    flex: var(--content-ratio);
+  }
+
+  .about__techList {
+    list-style-type: none;
+  }
+
+  .about__techList li {
+    position: relative;
+    cursor: default;
+    transition: color 0.1s ease, scale 0.2s ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 45%;
+      aspect-ratio: 1 / 1;
+      left: -1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      box-shadow: inset 0 0 0 0.1rem $accent;
+    }
+
+    &:hover {
+      color: $text-highlight;
+      scale: 1.0025;
+
+      &::before {
+        box-shadow: inset 0 0 0 0.1rem $accent-dark;
+      }
+    }
+  }
+
+  .about__image {
+    flex: var(--image-ratio);
+
+    img {
+      height: max-content;
+      box-shadow: 0 0 0 0.025rem $line, 0 0.25rem 0.5rem 0 $shadow;
+      background-color: $theme-light;
+      border-radius: 0.25rem;
+      object-fit: contain;
+      transition: box-shadow 0.15s ease, scale 0.25s ease;
+
+      &:hover {
+        scale: 1.0025;
+        box-shadow: 0 0 0 0.025rem $line, 0 0.25rem 1rem 0 $shadow;
+      }
+    }
+  }
+}
+
+:root.dark {
+  .about__container {
+    .about__image {
+      img {
+        box-shadow: 0 0 0 0.05rem $theme-light, 0 0 0.5rem $shadow;
+        background: linear-gradient($theme, 40%, $theme-light);
+
+        &:hover {
+          box-shadow: 0 0 0 0.05rem $accent, 0 0 0.5rem $shadow;
+        }
+      }
+    }
+
+    .about__techList li {
+      &:hover::before {
+        box-shadow: inset 0 0 0 0.1rem $accent-light;
+        background-color: $btn-active;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .about__container {
+    --content-ratio: 6;
+    --image-ratio: 4;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about__container {
+    flex-direction: column;
+    gap: 2.5rem;
+
+    .about__image {
+      display: flex;
+      justify-content: center;
+      padding-inline: 2rem;
+
+      img {
+        max-width: 20rem;
+      }
+    }
+  }
+}

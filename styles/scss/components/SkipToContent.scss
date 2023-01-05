@@ -1,0 +1,27 @@
+@use "../abstracts" as *;
+
+#skip-to-content {
+  color: $theme;
+  background-color: $accent;
+  text-decoration: none;
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.25rem;
+  top: 0.1rem;
+  left: 0.1rem;
+  outline: none;
+  position: fixed;
+  z-index: 120;
+  transition: scale 0.25 ease;
+}
+
+#skip-to-content:active {
+  scale: 0.1;
+}
+
+:root.dark {
+  #skip-to-content {
+    color: $accent;
+    box-shadow: 0 0 0 0.1rem $accent;
+    background-color: $theme;
+  }
+}

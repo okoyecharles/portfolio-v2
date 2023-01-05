@@ -1,0 +1,302 @@
+@use '../abstracts' as *;
+
+.featuredProjects {
+  margin-top: 3rem;
+}
+
+.featuredProject__container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.75rem;
+  position: relative;
+  isolation: isolate;
+
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
+  --left-grid-pos: 1 / 8;
+  --right-grid-pos: 7 / 13;
+
+  .featuredProject__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-row: -1 / 1;
+    grid-column: var(--left-grid-pos);
+
+    h3 {
+      font-size: 25px;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, $text, $text-highlight);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    p {
+      --dynamic-fade-color: var(--accent-light);
+
+      background-color: $theme-light;
+      padding: 1rem;
+      border-radius: 0.25rem;
+      position: relative;
+      transition: box-shadow 0.15s ease, background-color 0.25s ease;
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 500ms;
+        background:
+          radial-gradient(
+            800px circle at var(--mouse-x) var(--mouse-y),
+            var(--dynamic-fade-color),
+            transparent 30%
+          );
+      }
+
+      &:hover::before {
+        opacity: 0.1;
+      }
+    }
+  }
+
+  .featuredProject__techStack {
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      font-family: $nunito-sans;
+      color: $accent-light;
+    }
+  }
+
+  .featuredProject__links {
+    display: flex;
+    gap: 1rem;
+
+    a {
+      font-size: 1.25rem;
+      color: $text;
+      transition: color 0.25s ease;
+      outline-offset: 3px;
+    }
+
+    a:hover {
+      color: $accent;
+    }
+  }
+
+  .featuredProject__image {
+    grid-row: -1 / 1;
+    grid-column: var(--right-grid-pos);
+    position: relative;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.25rem 0.5rem $shadow-light;
+    overflow: hidden;
+    z-index: -2;
+    height: fit-content;
+    transition: box-shadow 0.25s ease;
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      opacity: 0.75;
+      mix-blend-mode: multiply;
+      height: 100%;
+      width: 100%;
+      background: $accent;
+      border-radius: 0.25rem;
+      transition: opacity 0.25s 0.15s ease;
+    }
+
+    img {
+      height: fit-content;
+      opacity: 0.9;
+      filter: grayscale(90%);
+      transition: filter 0.25s 0s ease;
+    }
+
+    a::before {
+      content: '';
+      z-index: 1;
+      position: absolute;
+      inset: 0;
+    }
+
+    &:hover {
+      &::after {
+        transition: opacity 0.25s 0.15s ease;
+        opacity: 0;
+      }
+
+      img {
+        transition: filter 0.25s 0s ease;
+        filter: grayscale(0%);
+      }
+    }
+  }
+
+  &:nth-child(odd) {
+    .featuredProject__content {
+      grid-column: var(--right-grid-pos);
+
+      h3,
+      p {
+        text-align: right;
+      }
+    }
+
+    .featuredProject__techStack {
+      flex-direction: row-reverse;
+    }
+
+    .featuredProject__links {
+      align-self: flex-end;
+    }
+
+    .featuredProject__image {
+      grid-column: var(--left-grid-pos);
+    }
+  }
+}
+
+/*
+I styled the dark mode initially due to its simplicity
+Below are the styles for the light mode
+*/
+
+:root:not(.dark) {
+  .featuredProject__container {
+    .featuredProject__content {
+      p {
+        --dynamic-border-color: var(--accent);
+        --dynamic-fade-color: transparent;
+
+        box-shadow: 0 0 0 0.05rem $shadow;
+        background: $theme-light;
+
+        &:hover {
+          box-shadow: 0 0 0 0.05rem $shadow, 0 0 0.75rem $shadow-light;
+        }
+      }
+
+      .featuredProject__techStack li {
+        color: $accent;
+      }
+    }
+
+    .featuredProject__image {
+      &::after {
+        background: none !important;
+      }
+
+      img {
+        filter: grayscale(0%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featuredProject__container {
+    --left-grid-pos: 1 / 9;
+    --right-grid-pos: 5 / 13;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .featuredProject__container:is(:nth-child(even), :nth-child(odd)) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, minmax(1fr));
+    gap: 0;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    margin-bottom: 5rem;
+    max-width: 500px;
+    margin-inline: auto;
+    box-shadow: $inspect;
+
+    .featuredProject__content {
+      grid-column: -1 / 1;
+      grid-row: 3 / span 5;
+      padding: 1rem;
+      box-shadow: inset 0 var(--height, -255px) 2.5rem $theme;
+      backdrop-filter: blur(1px);
+      transition: box-shadow 0.25s ease;
+
+      h3 {
+        width: fit-content;
+      }
+
+      h3,
+      p {
+        text-align: left;
+        margin-bottom: 0;
+      }
+
+      p {
+        background: none !important;
+        border-radius: 0;
+        box-shadow: unset !important;
+        padding: 0;
+      }
+
+      p::after,
+      p::before {
+        display: none;
+      }
+    }
+
+    .featuredProject__techStack {
+      flex-direction: row;
+      margin-block: 0.5rem;
+
+      li {
+        font-weight: 600;
+      }
+    }
+
+    .featuredProject__links {
+      align-self: flex-start;
+    }
+
+    .featuredProject__image {
+      grid-column: -1 / 1;
+      grid-row: 1 / span 3;
+
+      &::after {
+        opacity: 0;
+      }
+
+      img {
+        filter: grayscale(0%);
+        opacity: 0.9;
+      }
+    }
+  }
+
+  :root:not(.dark) {
+    .featuredProject__container {
+      box-shadow: 0 0 0 0.05rem $shadow, 0 0 1rem $shadow-light;
+
+      .featuredProject__content {
+        box-shadow: inset 0 var(--height, -240px) 2.5rem $theme-light;
+      }
+
+      img {
+        opacity: 1;
+      }
+    }
+  }
+}

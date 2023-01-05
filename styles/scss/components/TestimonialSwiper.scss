@@ -1,0 +1,78 @@
+@use "../abstracts" as *;
+
+.testimonials__swiper {
+  overflow: hidden;
+  padding-bottom: 2rem;
+  margin-top: 1rem;
+  position: relative;
+  height: 500px;
+
+  &::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    box-shadow: inset 0 0.2rem 0.5rem 0.5rem $theme;
+    transition: box-shadow 0.25s ease;
+  }
+}
+
+.swiper {
+  margin-top: 1rem;
+  pointer-events: all;
+  overflow: visible !important;
+}
+
+.swiper-slide {
+  margin-block: auto;
+  display: flex;
+  border-radius: 0.25rem !important;
+  width: fit-content !important;
+}
+
+.swiper-pagination {
+  bottom: -2rem !important;
+}
+
+.swiper-pagination-bullet {
+  transition: background-color 0.25s ease;
+}
+
+.swiper-slide-shadow-left {
+  background-image:
+    linear-gradient(
+      to left,
+      $carousel-shadow,
+      40%,
+      rgba(0, 0, 0, 0)
+    ) !important;
+}
+
+.swiper-slide-shadow-right {
+  background-image:
+    linear-gradient(
+      to right,
+      $carousel-shadow,
+      40%,
+      rgba(0, 0, 0, 0)
+    ) !important;
+}
+
+:root.dark {
+  .swiper-pagination-bullet {
+    background-color: $accent !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .testimonials__swiper {
+    overflow: visible;
+
+    &::before {
+      display: none;
+    }
+  }
+}

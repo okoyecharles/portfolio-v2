@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+
+#curved-h-mask,
+#c-mask,
+#period,
+#vertical-h-mask {
+  fill: $accent;
+  stroke: $accent;
+  transition: fill 0.25s ease;
+}

@@ -1,0 +1,146 @@
+@use "../abstracts" as *;
+
+.testimonialCard {
+  width: 20rem;
+  box-shadow: $inspect;
+  background-color: $theme-light;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  isolation: isolate;
+  margin-inline: auto;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+
+  &__content {
+    padding: 1.5rem 1.5rem 3.5rem;
+    position: relative;
+    z-index: 2;
+
+    blockquote {
+      position: relative;
+
+      p {
+        font-size: 0.9rem !important;
+        font-family: $nunito-sans;
+        line-height: 1.4;
+        margin-top: 0.5rem;
+      }
+    }
+
+    blockquote p:first-of-type {
+      &::before {
+        color: $accent;
+        content: open-quote;
+        font-size: 5em;
+        line-height: 0.09em;
+        margin-right: 0.05em;
+        vertical-align: -0.4em;
+        opacity: 0.5;
+      }
+
+      &::after {
+        content: close-quote;
+        opacity: 0;
+      }
+    }
+
+    .testimonialCard__image {
+      position: absolute;
+      border-radius: 50%;
+      overflow: hidden;
+      bottom: 0;
+      right: 0.5rem;
+      transform: translateY(50%);
+      box-shadow: 0 0 0 0.15rem $accent;
+      transition: box-shadow 0.25s ease;
+
+      &:hover {
+        box-shadow: 0 0 0 0.15rem $accent-light;
+      }
+
+      img {
+        aspect-ratio: 1;
+      }
+    }
+  }
+
+  &__header {
+    padding: 2rem 1rem 1rem;
+    position: relative;
+    isolation: isolate;
+
+    div {
+      color: $theme;
+      font-size: 0.75rem;
+      font-family: $nunito-sans;
+    }
+
+    h3 {
+      color: $theme-light;
+    }
+
+    div,
+    h3 {
+      transition: color 0.25s ease;
+    }
+  }
+
+  &__wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: calc(100% + 3rem);
+    display: block;
+    z-index: -1;
+
+    path {
+      fill: $accent;
+      transition: fill 0.25s ease;
+    }
+  }
+}
+
+:root.dark {
+  .testimonialCard {
+    box-shadow: none;
+
+    &__content {
+      .testimonialCard__image {
+        box-shadow: 0 0 0 0.15rem $accent-light;
+
+        &:hover {
+          box-shadow: 0 0 0 0.15rem $accent;
+        }
+      }
+
+      blockquote {
+        p {
+          color: $text;
+        }
+
+        p:first-of-type::before {
+          color: $accent;
+          opacity: 1;
+        }
+      }
+    }
+
+    &__header {
+      h3,
+      div {
+        color: $theme;
+      }
+    }
+
+    &__wave {
+      path {
+        fill: $accent-light;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .testimonialCard {
+    width: 17.5rem;
+  }
+}
