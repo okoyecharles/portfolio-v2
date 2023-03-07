@@ -12,9 +12,9 @@
     <br />
     <a href="https://okoyecharles.com/" target="_blank">View Live</a>
     ·
-    <a href="https://github.com/OkoyeCharles/portfolio/issues/new" target="_blank">Report Bug</a>
+    <a href="https://github.com/OkoyeCharles/portfolio-v2/issues/new" target="_blank">Report Bug</a>
     ·
-    <a href="https://github.com/OkoyeCharles/portfolio/issues/new" target="_blank">Request Feature</a>
+    <a href="https://github.com/OkoyeCharles/portfolio-v2/issues/new" target="_blank">Request Feature</a>
   </h5>
 </div>
 
