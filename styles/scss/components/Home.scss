@@ -50,6 +50,10 @@
       font-size: 1rem !important;
       width: min(500px, 100%);
     }
+
+    a {
+      width: fit-content;
+    }
   }
 }
 

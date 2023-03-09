@@ -1,6 +1,18 @@
 // Image dimension ratios => 1.75
 const projects = [
   {
+    title: 'Buggo',
+    note: 'An issue tracking software used to track the progress of tasks, bugs, and issues in a project.',
+    image: '/projects/buggo.webp',
+    imgDims: { width: '2496 ', height: '1427' },
+    description: 'An intuitive issue tracking software is used by development teams to manage and track software bugs, issues, and feature requests throughout their software and project development lifecycles.',
+    stack: ['Next.js', 'Redux', 'Express', 'MongoDB'],
+    links: {
+      github: 'https://github.com/okoyecharles/buggo',
+      live: 'https://buggo.vercel.app',
+    },
+  },
+  {
     title: 'Amazon Clone',
     note: 'A full-stack e-commerce website inspired by the Amazon website',
     image: '/projects/amazon-clone.webp',
@@ -12,18 +24,6 @@ const projects = [
       live: 'https://clone-f50ae.web.app',
     },
   },
-  // {
-  //   title: 'Recipe App',
-  //   note: 'A full-stack application that allows users to create and manage recipes',
-  //   image: '/projects/recipe-app.webp',
-  //   imgDims: { width: '2465', height: '1409' },
-  //   description: 'The Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe.',
-  //   stack: ['Rails', 'Ruby', 'JavaScript'],
-  //   links: {
-  //     github: 'https://github.com/okoyecharles/rails-recipe-app',
-  //     live: 'https://frozen-mesa-28960.herokuapp.com/',
-  //   },
-  // },
   {
     title: 'Lavish Cuisine',
     note: 'A meal-based website that gives you all the information you need about your favourite meals',
