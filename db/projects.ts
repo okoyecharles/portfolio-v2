@@ -5,7 +5,7 @@ const projects = [
     note: 'An issue tracking software used to track the progress of tasks, bugs, and issues in a project.',
     image: '/projects/buggo.webp',
     imgDims: { width: '2496 ', height: '1427' },
-    description: 'An intuitive issue tracking software is used by development teams to manage and track software bugs, issues, and feature requests throughout their software and project development lifecycles.',
+    description: 'A realtime issue tracking software used by development teams to manage and track software bugs, issues, and feature requests throughout their software and project development lifecycles.',
     stack: ['Next.js', 'Redux', 'Express', 'MongoDB'],
     links: {
       github: 'https://github.com/okoyecharles/buggo',
