@@ -5,7 +5,11 @@ import { IoSend } from "react-icons/io5";
 import { useSpring, a } from "@react-spring/web";
 import { ThreeDots } from "react-loader-spinner";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
-import { isEmptyString, isTooShort, isValidEmail } from "../../utils/formHelper";
+import {
+  isEmptyString,
+  isTooShort,
+  isValidEmail,
+} from "../../utils/formHelper";
 
 const ContactForm = () => {
   const formRef = useRef(null);
@@ -58,22 +62,33 @@ const ContactForm = () => {
     setName("");
     setEmail("");
     setMessage("");
-    
+
     clearTimeout(successTimeoutID);
     const timeoutID = setTimeout(() => {
       setSuccess(false);
     }, 3000);
     setSuccessTimeoutID(timeoutID);
     raiseError(null);
-  }
+  };
 
   const verifyEmail = async (email: string) => {
+    const encodedParams = new URLSearchParams();
+    encodedParams.set("email", email);
+
+    const options = {
+      method: "POST",
+      url: "https://email-validator8.p.rapidapi.com/api/v2.0/email",
+      headers: {
+        "content-type": "application/x-www-form-urlencoded",
+        "X-RapidAPI-Key": emailVerificationKey,
+        "X-RapidAPI-Host": "email-validator8.p.rapidapi.com",
+      },
+      data: encodedParams,
+    };
+
     try {
-      const { data: AxiosData } = await axios.get(
-        `https://api.apilayer.com/email_verification/${email}`,
-        { headers: { apikey: emailVerificationKey } }
-      );
-      return AxiosData;
+      const { data } = await axios.request(options);
+      return data;
     } catch (error: any) {
       if (error.response) {
         raiseError("Internal Server Error");
@@ -87,11 +102,9 @@ const ContactForm = () => {
   };
 
   const submitData = async (formData: any) => {
-    axios.post(
-      `https://getform.io/f/${formSubmissionKey}`,
-      formData,
-      { headers: { Accept: "application/json" } }
-    );
+    axios.post(`https://getform.io/f/${formSubmissionKey}`, formData, {
+      headers: { Accept: "application/json" },
+    });
   };
 
   const handleSubmission = async (submitEvent: any) => {
@@ -129,10 +142,13 @@ const ContactForm = () => {
       return;
     }
 
-    // Verify email using API Layer's email-auth provider
+    // Verify email using email-auth provider
     const emailVerification = await verifyEmail(email);
-    if (!emailVerification) return;
-    if (emailVerification.can_connect_smtp === false) {
+    if (emailVerification === null) return;
+    if (
+      emailVerification.mx_records === false ||
+      emailVerification.valid === false
+    ) {
       raiseError("The email you entered doesn't exist");
       setEmailError(true);
       return;
@@ -175,8 +191,8 @@ const ContactForm = () => {
   useIntersectionObserver(formRef, () => {
     api.start({
       y: 0,
-      opacity: 1
-    })
+      opacity: 1,
+    });
   });
 
   return (
