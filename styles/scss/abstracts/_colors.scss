@@ -1,5 +1,5 @@
 :root {
-  --theme: rgb(240, 250, 250);
+  --theme: #fdffff;
   --theme-light: rgb(253, 255, 255);
   --accent-light: rgb(86, 203, 249);
   --accent: #0070f3;
@@ -17,15 +17,15 @@
   --highlight: rgb(219, 243, 251);
   --highlight-active: rgb(192, 237, 255);
   --line: rgb(168, 180, 183);
-  --shadow: #00479725;
-  --shadow-light: rgba(148, 160, 163, 0.074);
+  --shadow: #6a7a8b25;
+  --shadow-light: rgba(192, 198, 200, 0.074);
   --carousel-shadow: #001a383f;
   --loading: rgb(253, 255, 255);
 }
 
 :root.dark {
-  --theme: rgb(4, 15, 22);
-  --theme-light: rgb(11, 32, 43);
+  --theme: rgb(15, 17, 19);
+  --theme-light: rgb(21, 32, 38);
   --accent-light: rgb(0, 173, 231);
   --accent: rgb(0, 148, 198);
   --accent-dark: rgb(0, 120, 160);
