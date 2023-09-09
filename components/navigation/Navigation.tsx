@@ -4,7 +4,7 @@ import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { storeType } from "../../redux/configureStore";
 import toggleDarkMode from "../../utils/darkModeHelper";
 import Logo from "./Logo";
-import { a, useTrail } from "@react-spring/web";
+import { a, useSpring, useTrail, useTransition } from "@react-spring/web";
 import Link from "next/link";
 
 const Navigation = () => {
@@ -18,16 +18,60 @@ const Navigation = () => {
   const sectionActiveFor = (arr: any[]) =>
     arr.includes(currentSection.name) ? "active" : "";
 
-  const [springs, api] = useTrail(6, () => ({
-    from: {
+  const navItems = [
+    <Link href="#content" className={sectionActiveFor(["hero"])} scroll={false} key={1}>
+      Home
+    </Link>,
+    <Link href="#about" className={sectionActiveFor(["about"])} scroll={false} key={2}>
+      About
+    </Link>,
+    <Link
+      href="#featured"
+      className={sectionActiveFor(["featured", "projects"])}
+      scroll={false}
+      key={3}
+    >
+      Projects
+    </Link>,
+    <Link
+      href="#testimonials"
+      className={sectionActiveFor(["testimonials"])}
+      scroll={false}
+      key={4}
+    >
+      Testimonials
+    </Link>,
+    <Link
+      href="#contact"
+      className={sectionActiveFor(["contact"])}
+      scroll={false}
+      key={5}
+    >
+      Contact
+    </Link>,
+  ];
+
+  // const [springs, api] = useTrail(6, () => ({
+  //   from: {
+  //     opacity: 0,
+  //     y: -50,
+  //   },
+  //   config: {
+  //     tension: 350,
+  //     friction: 40,
+  //   },
+  // }));
+
+  const [spring, api] = useSpring(
+    () => ({
       opacity: 0,
-      y: -50,
-    },
-    config: {
-      tension: 350,
-      friction: 40,
-    },
-  }));
+      config: {
+        tension: 350,
+        friction: 40,
+      },
+    }),
+    []
+  );
 
   useEffect(() => {
     // Set darkmode
@@ -35,11 +79,8 @@ const Navigation = () => {
       !!JSON.parse(localStorage?.getItem("okoye-charles-web-config") || "{}")
         ?.darkMode
     );
-    // Start navlinks animation
-    api.start({
-      opacity: 1,
-      y: 0,
-    });
+    // Start navItems animation
+    api({ opacity: 1 });
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -64,52 +105,12 @@ const Navigation = () => {
           <Logo />
         </div>
         <ul className="navigation__links">
-          <a.li style={springs[0]}>
-            <Link
-              href="#content"
-              className={sectionActiveFor(["hero"])}
-              scroll={false}
-            >
-              Home
-            </Link>
-          </a.li>
-          <a.li style={springs[1]}>
-            <Link
-              href="#about"
-              className={sectionActiveFor(["about"])}
-              scroll={false}
-            >
-              About
-            </Link>
-          </a.li>
-          <a.li style={springs[2]}>
-            <Link
-              href="#featured"
-              className={sectionActiveFor(["featured", "projects"])}
-              scroll={false}
-            >
-              Projects
-            </Link>
-          </a.li>
-          <a.li style={springs[3]}>
-            <Link
-              href="#testimonials"
-              className={sectionActiveFor(["testimonials"])}
-              scroll={false}
-            >
-              Testimonials
-            </Link>
-          </a.li>
-          <a.li style={springs[4]}>
-            <Link
-              href="#contact"
-              className={sectionActiveFor(["contact"])}
-              scroll={false}
-            >
-              Contact
-            </Link>
-          </a.li>
-          <a.li className="navigation__linkResume" style={springs[5]}>
+          {navItems.map((item, i) => (
+            <a.li style={spring} key={i}>
+              {item}
+            </a.li>
+          ))}
+          <a.li style={spring} className='navigation__linkResume'>
             <Link
               href="/assets/resume.pdf"
               rel="noreferrer noopener"
