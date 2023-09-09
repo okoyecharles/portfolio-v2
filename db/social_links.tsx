@@ -1,11 +1,16 @@
-import { FaAngellist, FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
+import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { SiGmail, SiWellfound } from "react-icons/si";
 
 const socialLinks = [
   {
     title: "Twitter",
-    href: "https://twitter.com/OkoyeCharles_",
+    href: "https://twitter.com/okoyecharlesk",
     icon: <FaTwitter />,
+  },
+  {
+    title: "Gmail",
+    href: "mailto:okoyecharles509@gmail.com",
+    icon: <SiGmail />,
   },
   {
     title: "Github",
@@ -14,18 +19,13 @@ const socialLinks = [
   },
   {
     title: "LinkedIn",
-    href: "https://www.linkedin.com/in/charles-k-okoye/",
+    href: "https://www.linkedin.com/in/okoyecharles",
     icon: <FaLinkedinIn />,
   },
   {
-    title: "AngelList",
-    href: "https://angel.co/u/charles-k-okoye",
-    icon: <FaAngellist />,
-  },
-  {
-    title: "Gmail",
-    href: "mailto:okoyecharles509@gmail.com",
-    icon: <SiGmail />,
+    title: "Wellfound",
+    href: "https://wellfound.com/u/okoyecharles",
+    icon: <SiWellfound />,
   },
 ];
 export default socialLinks;
