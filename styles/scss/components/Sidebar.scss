@@ -22,8 +22,9 @@
 }
 
 .sidebar__item {
-  padding-inline: 0.25rem;
+  padding: 0.25rem;
   display: flex;
+  align-items: center;
   border-radius: 0.25rem;
   align-items: center;
   justify-content: center;
@@ -48,6 +49,7 @@
   }
 
   a {
+    display: flex;
     // sidebar icons
     &:nth-child(1) {
       font-size: 1.5rem;
