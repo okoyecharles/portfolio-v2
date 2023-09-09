@@ -7,7 +7,6 @@ const testimonials = [
       "We are from different countries and cultures, but we communicated effectively without blockers. If you are looking for a developer with both technical and soft skills, don't hesitate to contact him."
     ],
     location: 'Vojvodina, Serbia',
-    link: 'https://linkedin.com/in/aleksandraujvari'
   },
   {
     author: 'Clifford Owusu',
@@ -16,14 +15,12 @@ const testimonials = [
       "Charles and I worked together on a couple of projects, and I appreciate his skills and discipline. He consistently gave 100% effort to our work and played a significant role in ensuring that we completed assignments on time.",
       "He has the focus and skills that keep him and his team productive during intense crunch periods. I couldn’t recommend him more for any business looking for new talent."],
     location: 'Accra, Ghana',
-    link: 'https://linkedin.com/in/sireclifford'
   },
   {
     author: 'Dorian Urem',
     image: 'Dorian.jpeg',
     text: ["Charles is a great guy. His attitude and approach to work are really good. I would love to have him as a part of my team since he is hard-working, smart, and also technically competent. To see a young individual as driven as him is inspiring. He definitely has a bright future ahead of him."],
     location: 'Dubrovnik, Croatia',
-    link: 'https://linkedin.com/in/dorian-urem'
   },
   {
     author: 'Elizabeth Ojesanmi',
@@ -33,7 +30,6 @@ const testimonials = [
       "Charles is a great guy for any position needing a full-stack developer and has my highest recommendation."
     ],
     location: 'Lagos, Nigeria',
-    link: 'https://linkedin.com/in/oyinlade-ojesanmi'
   },
   {
     author: 'Ishpaul Singh',
@@ -43,7 +39,6 @@ const testimonials = [
       "I would recommend Okoye Charles for immediate full-stack jobs as he can also handle pressure well."
     ],
     location: 'New Delhi, India',
-    link: 'https://linkedin.com/in/ishpaul777'
   },
   {
     author: 'Mohamed Aachour',
@@ -53,7 +48,6 @@ const testimonials = [
       "He is a strong and goal-oriented team player; with every problem, there was a solution. Highly recommended."
     ],
     location: 'Kenitra, Morocco',
-    link: 'https://linkedin.com/in/mohamed-aachour'
   },
   {
     author: 'Sidney Kaguli',
@@ -63,7 +57,6 @@ const testimonials = [
       "I was particularly impressed by Charles' ability to handle challenges, whether it's getting to the root of buggy code or getting people on board with ideas."
     ],
     location: 'Nairobi, Kenya',
-    link: 'https://linkedin.com/in/sidney-kaguli'
   },
   {
     author: 'Tracey Kadenyi',
@@ -73,7 +66,6 @@ const testimonials = [
       "He is always willing to help a teammate facing a code blocker without being condescending about it. Such generosity with knowledge and skill is what makes him easy and fun to work with. Trust me, you'd be lucky to have him on your team."
     ],
     location: 'Nairobi County, Kenya',
-    link: 'https://linkedin.com/in/tracey-kadenyi'
   }
 ];
 

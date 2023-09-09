@@ -12,12 +12,8 @@ const TestimonialCard: React.FC<testimonialType> = (testimonial) => {
             <p key={paragraph}>{paragraph}</p>
           ))}
         </blockquote>
-        <a
-          href={testimonial.link}
-          target="_blank"
-          rel="noreferrer noopener"
+        <div
           className="testimonialCard__image"
-          tabIndex={-1}
         >
           <Image
             src={`/testimonials/${testimonial.image}`}
@@ -25,7 +21,7 @@ const TestimonialCard: React.FC<testimonialType> = (testimonial) => {
             height={100}
             alt={`${testimonial.author}'s profile image`}
           />
-        </a>
+        </div>
       </div>
       <header className="testimonialCard__header">
         <Wave
