@@ -101,7 +101,7 @@ const Navigation = () => {
           ))}
           <a.li style={spring} className='navigation__linkResume'>
             <Link
-              href="/assets/resume.pdf"
+              href="https://docs.google.com/document/u/0/export?format=pdf&id=1HPTjzeOiol5kBT6HqDzHMYCGdFKZMU3NXzy-ZvtjMr4"
               rel="noreferrer noopener"
               target={"_blank"}
               download
