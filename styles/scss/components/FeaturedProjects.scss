@@ -1,7 +1,9 @@
 @use '../abstracts' as *;
 
 .featuredProjects {
-  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
 }
 
 .featuredProject__container {
@@ -10,10 +12,6 @@
   gap: 0.75rem;
   position: relative;
   isolation: isolate;
-
-  &:not(:last-child) {
-    margin-bottom: 5rem;
-  }
 
   --left-grid-pos: 1 / 8;
   --right-grid-pos: 7 / 13;
@@ -222,7 +220,6 @@ Below are the styles for the light mode
     gap: 0;
     border-radius: 0.25rem;
     overflow: hidden;
-    margin-bottom: 5rem;
     max-width: 500px;
     margin-inline: auto;
     box-shadow: $inspect;

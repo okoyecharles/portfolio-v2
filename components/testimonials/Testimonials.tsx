@@ -33,14 +33,16 @@ const Testimonials: React.FC<TestimonialsProps> = ({ recomendationRef }) => {
       <a.header ref={headerRef} style={springs}>
         <h2>Testimonials</h2>
       </a.header>
-      <a.p style={springs}>
-        I work with developers from countries around the world. While
-        collaborating, I focus on improving my technical and communicative
-        skills through pair programming.
-      </a.p>
-      <a.p style={springs}>
-        Here are some testimonials I have received from colleagues:
-      </a.p>
+      <div className="testimonials__content">
+        <a.p style={springs}>
+          I work with developers from countries around the world. While
+          collaborating, I focus on improving my technical and communicative
+          skills through pair programming.
+        </a.p>
+        <a.p style={springs}>
+          Here are some testimonials I have received from colleagues:
+        </a.p>
+      </div>
       <TestimonialsSwiper />
     </Section>
   );

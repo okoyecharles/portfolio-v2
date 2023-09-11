@@ -9,10 +9,14 @@
 
   .about__content {
     flex: var(--content-ratio);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .about__techList {
     list-style-type: none;
+    margin: 0;
   }
 
   .about__techList li {

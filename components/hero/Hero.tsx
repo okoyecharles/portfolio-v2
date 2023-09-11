@@ -34,7 +34,8 @@ const Hero: React.FC<heroProps> = ({ heroRef }) => {
       <a.h2 style={springs[0]}>Okoye Charles.</a.h2>
       <a.h3 style={springs[1]}>I embrace the digital world.</a.h3>
       <a.p style={springs[2]}>
-        I can help you build a product, feature, or website. Look through my work and experience! If you are interested and need help on a project, I am available for hire.
+        I can help you build a product, feature, or website.
+        Look through my work and experience! If you are interested and need help on a project, I am available for hire.
       </a.p>
       <a.a href="#featured" style={springs[3]}>
         <button tabIndex={-1}>Check out my work!</button>

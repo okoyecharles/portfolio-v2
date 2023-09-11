@@ -13,7 +13,7 @@ const Contact: React.FC<ContactProps> = ({ contactRef }) => {
   const [springs, api] = useSpring(() => ({
     from: {
       opacity: 0,
-      y: 20
+      y: 20,
     },
     config: {
       tension: 200,
@@ -24,9 +24,9 @@ const Contact: React.FC<ContactProps> = ({ contactRef }) => {
   useIntersectionObserver(headerRef, () => {
     api.start({
       opacity: 1,
-      y: 0
-    })
-  })
+      y: 0,
+    });
+  });
 
   return (
     <Section label="contact" sectionRef={contactRef}>
@@ -34,9 +34,8 @@ const Contact: React.FC<ContactProps> = ({ contactRef }) => {
         <h2>Contact Me</h2>
       </a.header>
       <a.p style={springs}>
-        If you have an application you are interested in <b>developing</b>, a
-        feature that you need built or a project that needs <b>coding</b>. I&apos;d
-        love to help with it.
+        Need to develop a website, feature, or discuss anything related? <br />Please
+        leave a message below.
       </a.p>
       <ContactForm />
     </Section>

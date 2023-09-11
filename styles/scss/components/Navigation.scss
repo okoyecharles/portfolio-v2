@@ -1,25 +1,25 @@
 @use "../abstracts" as *;
 
+.header * {
+  color: $text;
+}
+
 .header {
   transition:
     top 0.15s ease-in,
     background-color 0.15s ease-in,
     display 0.15s ease-in 2s ease,
-    box-shadow 0.35s ease-in;
+    box-shadow 0.5s ease;
   z-index: 100;
-}
 
-.header * {
-  color: $text;
-}
-
-.header.sticky {
-  position: sticky;
-  top: -0.1px;
-  background-color: $header-scroll;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 0 0.5rem $shadow;
-  transition: background-color 0.25s ease;
+  &.sticky {
+    position: sticky;
+    top: -0.1px;
+    background-color: $header-scroll;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 0.5rem $shadow;
+    transition: background-color 0.25s ease;
+  }
 }
 
 .navigation {

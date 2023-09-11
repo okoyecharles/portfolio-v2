@@ -2,11 +2,14 @@
 
 section {
   max-width: calc(1000px + 5rem);
-  margin-top: 5rem;
-  padding-top: 5rem;
+  padding-block: 5rem;
   margin-inline: auto;
-  padding-right: 3.75rem;
   padding-left: 4rem;
+  padding-right: 3.75rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 
   p,
   li,
@@ -20,9 +23,11 @@ section {
   }
 
   p {
-    margin-top: 1rem;
-    line-height: 1.6;
-    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  h1, h2 {
+    line-height: 1.3;
   }
 
   h2 {

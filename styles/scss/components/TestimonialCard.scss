@@ -1,5 +1,13 @@
 @use "../abstracts" as *;
 
+.testimonials {
+  .testimonials__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
 .testimonialCard {
   width: 20rem;
   box-shadow: $inspect;
