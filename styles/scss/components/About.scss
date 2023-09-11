@@ -42,6 +42,8 @@
   }
 
   .about__image {
+    display: flex;
+    align-items: center;
     flex: var(--image-ratio);
 
     img {
@@ -50,7 +52,7 @@
       background-color: $theme-light;
       border-radius: 0.25rem;
       object-fit: contain;
-      transition: box-shadow 0.15s ease, scale 0.25s ease;
+      transition: box-shadow 0.15s ease, scale 0.25s ease, background-color 0.25s ease;
 
       &:hover {
         scale: 1.0025;
