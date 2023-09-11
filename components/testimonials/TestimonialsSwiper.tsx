@@ -62,7 +62,7 @@ const TestimonialsSwiper = () => {
         }}
         modules={[Pagination, Autoplay, EffectCoverflow, Navigation]}
         autoplay={{
-          delay: 3000,
+          delay: 6000,
           disableOnInteraction: false
         }}
       >
