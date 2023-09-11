@@ -100,14 +100,14 @@ const Navigation = () => {
             </a.li>
           ))}
           <a.li style={spring} className='navigation__linkResume'>
-            <Link
+            <a
               href="https://docs.google.com/document/u/0/export?format=pdf&id=1HPTjzeOiol5kBT6HqDzHMYCGdFKZMU3NXzy-ZvtjMr4"
               rel="noreferrer noopener"
               target={"_blank"}
               download
             >
               <button tabIndex={-1}>Resume</button>
-            </Link>
+            </a>
           </a.li>
           <li aria-label="Toggle dark mode">
             <DarkModeSwitch
