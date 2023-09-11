@@ -2,10 +2,10 @@
 const projects = [
   {
     title: 'Buggo',
-    note: 'An issue tracking software used to track the progress of tasks, bugs, and issues in a project.',
+    note: 'A real-time issue tracking software. For efficient management and tracking of software issues.',
     image: '/projects/buggo.webp',
     imgDims: { width: '2496 ', height: '1427' },
-    description: 'A realtime issue tracking software used by development teams to manage and track software bugs, issues, and feature requests throughout their software and project development lifecycles.',
+    description: 'A real-time issue tracking software. For efficient management and tracking of software issues.',
     stack: ['Next.js', 'Redux', 'Express', 'MongoDB'],
     links: {
       github: 'https://github.com/okoyecharles/buggo',
@@ -14,10 +14,10 @@ const projects = [
   },
   {
     title: 'Amazon Clone',
-    note: 'A full-stack e-commerce website inspired by the Amazon website',
+    note: 'An extensively-featured, full-stack Amazon clone.',
     image: '/projects/amazon-clone.webp',
     imgDims: { width: '1380', height: '788.5' },
-    description: 'A Responsive Full-stack e-commerce website inspired by <a href="https://amazon.com" rel="noreferrer noopener" target="_blank">the amazon website</a>. Built with React, Redux, and Firebase. Including functionalities such as Creating/Signing in to an account, Adding items to the cart, Making payments and so on',
+    description: 'A full-stack Amazon clone. Including functionalities such as user authentication, managing state using the cart, and payments.',
     stack: ['React', 'Redux', 'Firebase'],
     links: {
       github: 'https://github.com/okoyecharles/amazon-clone',
@@ -26,13 +26,13 @@ const projects = [
   },
   {
     title: 'Lavish Cuisine',
-    note: 'A meal-based website that gives you all the information you need about your favourite meals',
+    note: 'A food-based website, which presents you with all the information you need about your favourite meals.',
     image: '/projects/lavish-cuisine.webp',
     imgDims: {
       width: '2377',
       height: '1358',
     },
-    description: 'A meal-based website that gives you all the information you need about your favourite breakfast, lunch and dinner. built with react-typescript & redux.',
+    description: 'A food-based website, which presents you with all the information you need about your favourite meals.',
     stack: ['React', 'Redux', 'TypeScript'],
     links: {
       github: 'https://github.com/okoyecharles/lavish-cuisine',
@@ -41,40 +41,28 @@ const projects = [
   },
   {
     title: 'Nethub',
-    note: 'A Movie application that extracts information from the TV Maze API',
+    note: 'An informational movie website. A categorised grid of movie titles, ratings, descriptions, and more.',
     image: '/projects/nethub.webp',
     imgDims: {
       width: '2337',
       height: '1335',
     },
-    description: 'A Movie website that displays an arranged list of movies and related information on each one. A place to go when you need to get extra info and discuss with others on a movie.',
+    description: 'An informational movie website. A categorised grid of movie titles, ratings, descriptions, and more.',
     stack: ['Webpack', 'JavaScript', 'TV Maze API'],
     links: {
       github: 'https://github.com/okoyecharles/Nethub',
       live: 'https://okoyecharles.github.io/Nethub',
     },
   },
-  // {
-  //   title: 'Wallet Detective',
-  //   note: 'A full-stack application where you can manage your budget',
-  //   image: '/projects/wallet-inspector.webp',
-  //   imgDims: { width: '2742', height: '1576' },
-  //   description: 'A full-stack application where you can manage your budget: you have a list of payments associated with a category, so you can see how much money you spent and on what',
-  //   stack: ['Rails', 'Ruby', 'Javascript'],
-  //   links: {
-  //     github: 'https://github.com/okoyecharles/rails-budget-app',
-  //     live: 'https://sleepy-hamlet-84522.herokuapp.com/',
-  //   },
-  // },
   {
     title: 'Save A Child',
-    note: 'A website focused on preserving the life of sick children',
+    note: 'A project built on the theme of supporting children around the world. Children who have suffered injuries, diseases, and poverty.',
     image: '/projects/save-a-child.webp',
     imgDims: {
       width: '2337',
       height: '1335',
     },
-    description: 'Save The Child is a project I built around the theme of a non-profit organization brought together solely for giving the youth from different continents who have been inflicted mentally, physically or psychologically by the COVID-19 Pandemeic.',
+    description: 'A project built on the theme of supporting children around the world. Children who have suffered injuries, diseases, and poverty.',
     stack: ['Webpack', 'JavaScript'],
     links: {
       github: 'https://github.com/okoyecharles/save-a-child',
@@ -82,14 +70,14 @@ const projects = [
     },
   },
   {
-    title: 'Todo List',
-    note: 'A Todo list website that saves user\'s tasks in Local Storage',
+    title: 'To-do List',
+    note: 'A fully functional to-do list. It utilises local storage, and the drag-and-drop API in saving, and reordering todos.',
     image: '/projects/todo-list.webp',
     imgDims: {
       width: '2345',
       height: '1340',
     },
-    description: 'A Todo list website created with HTML, Sass and JavaScript that saves user\'s tasks in Local Storage. This app also allows swapping/reordering of tasks implemented utilizing the Javascript Drag & Drop API',
+    description: 'A fully functional to-do list. It utilises local storage, and the drag-and-drop API in saving, and reordering todos.',
     stack: ['JavaScript', 'HTML5'],
     links: {
       github: 'https://github.com/okoyecharles/Todo-List',
@@ -98,13 +86,13 @@ const projects = [
   },
   {
     title: 'Portfolio v1',
-    note: 'A website where you can learn about Okoye Charles and what he does (My first portfolio)',
+    note: 'My first portfolio.',
     image: '/projects/portolio-v1.webp',
     imgDims: {
       width: '2751 ',
       height: '1572',
     },
-    description: 'This is the first version of my portfolio, it served as a collection of my most recent, expertly crafted, and innovative projects, as well as a base of knowledge concerning the things I do.',
+    description: 'My first portfolio.',
     stack: ['React', 'TypeScript', 'Sass'],
     links: {
       github: 'https://github.com/okoyecharles/portfolio',
@@ -113,13 +101,13 @@ const projects = [
   },
   {
     title: 'Space Traveler Hub',
-    note: 'A web application that provides commercial and scientific space travel services',
+    note: 'A web application that provides commercial and scientific space travel services.',
     image: '/projects/space-traveler-hub.webp',
     imgDims: {
       width: '2835',
       height: '1620'
     },
-    description: 'A web application for a company that provides commercial and scientific space travel services, utilizing information from the SpaceX API.',
+    description: 'A web application that provides commercial and scientific space travel services.',
     stack: ['React', 'Redux', 'SpaceX API'],
     links: {
       github: 'https://github.com/okoyecharles/space-travelers-hub',
@@ -128,13 +116,13 @@ const projects = [
   },
   {
     title: 'Type Effect Library',
-    note: 'A light-weight, open-source typing-effect library that enables users to add typing effects to DOM elements',
+    note: 'A light-weight, open-source typing-effect library. It enables users to add typing effects to DOM elements.',
     image: '/projects/type-effect-library.webp',
     imgDims: {
       width: '2300',
       height: '1314'
     },
-    description: 'A light-weight, open-source typing-effect library that enables potential users to add a typing effect to mere DOM elements, including features for optimizing typing behavior and speed',
+    description: 'A light-weight, open-source typing-effect library that enables users to add typing effects to DOM elements.',
     stack: ['JavaScript', 'HTML5'],
     links: {
       github: 'https://github.com/okoyecharles/Type-Effect-Library',
@@ -143,13 +131,13 @@ const projects = [
   },
   {
     title: 'Decrypt',
-    note: 'A crypto-based application that displays real-time data on cryptocurrencies and stocks',
+    note: 'An informational crypto application. It displays the latest data—retrieved from an API—on crypto-currencies.',
     image: '/projects/decrypt.webp',
     imgDims: {
       width: '2880',
       height: '1645'
     },
-    description: 'A crypto-API based mobile application that displays real-time data on all crypto-currencies and stocks, also including a display page that gets main information for a single crypto currency.',
+    description: 'AAn informational crypto application. It displays the latest data—retrieved from an API—on crypto-currencies.',
     stack: ['React', 'Redux', 'Sass'],
     links: {
       github: 'https://github.com/okoyecharles/decrypt',
