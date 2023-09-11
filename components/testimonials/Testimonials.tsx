@@ -1,8 +1,8 @@
-import React, { useRef } from 'react'
-import Section from '../main/Section';
-import TestimonialsSwiper from './TestimonialsSwiper';
-import useIntersectionObserver from '../../hooks/useIntersectionObserver';
-import { a, useSpring } from '@react-spring/web';
+import React, { useRef } from "react";
+import Section from "../main/Section";
+import TestimonialsSwiper from "./TestimonialsSwiper";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
+import { a, useSpring } from "@react-spring/web";
 
 interface TestimonialsProps {
   recomendationRef: React.MutableRefObject<null>;
@@ -13,7 +13,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ recomendationRef }) => {
   const [springs, api] = useSpring(() => ({
     from: {
       opacity: 0,
-      y: 20
+      y: 20,
     },
     config: {
       tension: 200,
@@ -24,28 +24,26 @@ const Testimonials: React.FC<TestimonialsProps> = ({ recomendationRef }) => {
   useIntersectionObserver(headerRef, () => {
     api.start({
       opacity: 1,
-      y: 0
-    })
-  })
+      y: 0,
+    });
+  });
 
   return (
     <Section label="testimonials" sectionRef={recomendationRef}>
-          <a.header ref={headerRef} style={springs}>
-            <h2>Testimonials</h2>
-          </a.header>
-          <a.p style={springs}>
-            I work with people from places all over the world through{" "}
-            <b>remote pair-programming</b>... on amazing, high-end applications
-            and websites. Continuosly improving my communicative,
-            organizational, and collaborative skills.
-          </a.p>
-          <a.p style={springs}>
-            Here are a couple commendations I&apos;ve recieved from previous
-            co-workers:
-          </a.p>
-          <TestimonialsSwiper />
-        </Section>
-  )
-}
+      <a.header ref={headerRef} style={springs}>
+        <h2>Testimonials</h2>
+      </a.header>
+      <a.p style={springs}>
+        I work with developers from countries around the world. While
+        collaborating, I focus on improving my technical and communicative
+        skills through pair programming.
+      </a.p>
+      <a.p style={springs}>
+        Here are some testimonials I have received from colleagues:
+      </a.p>
+      <TestimonialsSwiper />
+    </Section>
+  );
+};
 
-export default Testimonials
+export default Testimonials;
