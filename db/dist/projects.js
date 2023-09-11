@@ -14,18 +14,6 @@ var projects = [
             live: 'https://clone-f50ae.web.app'
         }
     },
-    // {
-    //   title: 'Recipe App',
-    //   note: 'A full-stack application that allows users to create and manage recipes',
-    //   image: '/projects/recipe-app.webp',
-    //   imgDims: { width: '2465', height: '1409' },
-    //   description: 'The Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe.',
-    //   stack: ['Rails', 'Ruby', 'JavaScript'],
-    //   links: {
-    //     github: 'https://github.com/okoyecharles/rails-recipe-app',
-    //     live: 'https://frozen-mesa-28960.herokuapp.com/',
-    //   },
-    // },
     {
         title: 'Lavish Cuisine',
         note: 'A meal-based website that gives you all the information you need about your favourite meals',
@@ -56,18 +44,6 @@ var projects = [
             live: 'https://okoyecharles.github.io/Nethub'
         }
     },
-    // {
-    //   title: 'Wallet Detective',
-    //   note: 'A full-stack application where you can manage your budget',
-    //   image: '/projects/wallet-inspector.webp',
-    //   imgDims: { width: '2742', height: '1576' },
-    //   description: 'A full-stack application where you can manage your budget: you have a list of payments associated with a category, so you can see how much money you spent and on what',
-    //   stack: ['Rails', 'Ruby', 'Javascript'],
-    //   links: {
-    //     github: 'https://github.com/okoyecharles/rails-budget-app',
-    //     live: 'https://sleepy-hamlet-84522.herokuapp.com/',
-    //   },
-    // },
     {
         title: 'Save A Child',
         note: 'A website focused on preserving the life of sick children',

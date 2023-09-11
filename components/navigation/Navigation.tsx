@@ -51,17 +51,6 @@ const Navigation = () => {
     </Link>,
   ];
 
-  // const [springs, api] = useTrail(6, () => ({
-  //   from: {
-  //     opacity: 0,
-  //     y: -50,
-  //   },
-  //   config: {
-  //     tension: 350,
-  //     friction: 40,
-  //   },
-  // }));
-
   const [spring, api] = useSpring(
     () => ({
       opacity: 0,
