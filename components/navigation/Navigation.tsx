@@ -6,6 +6,7 @@ import toggleDarkMode from "../../utils/darkModeHelper";
 import Logo from "./Logo";
 import { a, useSpring, useTrail, useTransition } from "@react-spring/web";
 import Link from "next/link";
+import resumeDownloadLink from "../../db/resume";
 
 const Navigation = () => {
   const [sticky, setSticky] = useState<boolean>(false);
@@ -101,7 +102,7 @@ const Navigation = () => {
           ))}
           <a.li style={spring} className='navigation__linkResume'>
             <a
-              href="https://docs.google.com/document/u/0/export?format=pdf&id=1HPTjzeOiol5kBT6HqDzHMYCGdFKZMU3NXzy-ZvtjMr4"
+              href={resumeDownloadLink("pdf")}
               rel="noreferrer noopener"
               target={"_blank"}
               download

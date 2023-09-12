@@ -6,6 +6,7 @@ import socialLinks from "../../db/social_links";
 import { storeType } from "../../redux/configureStore";
 import toggleDarkMode from "../../utils/darkModeHelper";
 import Logo from "./Logo";
+import resumeDownloadLink from "../../db/resume";
 
 const MobileNavigation = () => {
   const [isDarkMode, setDarkMode] = useState<boolean>(false);
@@ -15,8 +16,8 @@ const MobileNavigation = () => {
   const currentSection = useSelector(
     (store: storeType) => store.currentSection
   );
-  const sectionActiveFor = (arr: any[]) => 
-    arr.includes(currentSection.name) ? 'active' : '';
+  const sectionActiveFor = (arr: any[]) =>
+    arr.includes(currentSection.name) ? "active" : "";
 
   function handleNavToggle() {
     setIsActive(!isActive);
@@ -25,21 +26,21 @@ const MobileNavigation = () => {
   const [trails, api] = useTrail(socialLinks.length, () => ({
     opacity: 0,
     y: 25,
-    rotateX: '45deg',
+    rotateX: "45deg",
     config: {
       mass: 5,
       tension: 2000,
-      friction: 130
-    }
-  }))
+      friction: 130,
+    },
+  }));
 
   api.start({
     to: {
-      opacity: isActive ? 1: 0,
+      opacity: isActive ? 1 : 0,
       y: isActive ? 0 : 15,
-      rotateX: isActive ? '0deg' : '45deg'
-    }
-  })
+      rotateX: isActive ? "0deg" : "45deg",
+    },
+  });
 
   useEffect(() => {
     setDarkMode(
@@ -64,7 +65,9 @@ const MobileNavigation = () => {
   return (
     <header className={sticky ? "header sticky" : "header"} ref={headerRef}>
       <nav className="m_navigation" aria-label="Navigation">
-        <div className="logo"><Logo /></div>
+        <div className="logo">
+          <Logo />
+        </div>
         <DarkModeSwitch
           checked={isDarkMode}
           onChange={(checked) => {
@@ -81,41 +84,75 @@ const MobileNavigation = () => {
           <div className="hamburger"></div>
         </button>
         <ul className="m_navigation__links">
-          <li className="social-links" aria-label="social-links">{
-            trails.map((style, i) => (
+          <li className="social-links" aria-label="social-links">
+            {trails.map((style, i) => (
               <animated.a
-              key={i}
-              title={socialLinks[i].title}
-              target="_blank"
-              rel="noopener noreferrer"
-              href={socialLinks[i].href}
-              style={{
-                perspective: '3d',
-                ...style
-              }}
+                key={i}
+                title={socialLinks[i].title}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={socialLinks[i].href}
+                style={{
+                  perspective: "3d",
+                  ...style,
+                }}
               >
                 {socialLinks[i].icon}
               </animated.a>
-            ))
-          }
+            ))}
           </li>
           <li>
-            <a href="#content" className={sectionActiveFor(['hero'])} onClick={handleNavToggle}>Home</a>
+            <a
+              href="#content"
+              className={sectionActiveFor(["hero"])}
+              onClick={handleNavToggle}
+            >
+              Home
+            </a>
           </li>
           <li>
-            <a href="#about" className={sectionActiveFor(['about'])} onClick={handleNavToggle}>About</a>
+            <a
+              href="#about"
+              className={sectionActiveFor(["about"])}
+              onClick={handleNavToggle}
+            >
+              About
+            </a>
           </li>
           <li>
-            <a href="#featured" className={sectionActiveFor(['featured', 'projects'])} onClick={handleNavToggle}>Projects</a>
+            <a
+              href="#featured"
+              className={sectionActiveFor(["featured", "projects"])}
+              onClick={handleNavToggle}
+            >
+              Projects
+            </a>
           </li>
           <li>
-            <a href="#testimonials" className={sectionActiveFor(['testimonials'])} onClick={handleNavToggle}>Testimonials</a>
+            <a
+              href="#testimonials"
+              className={sectionActiveFor(["testimonials"])}
+              onClick={handleNavToggle}
+            >
+              Testimonials
+            </a>
           </li>
           <li>
-            <a href="#contact" className={sectionActiveFor(['contact'])} onClick={handleNavToggle}>Contact</a>
+            <a
+              href="#contact"
+              className={sectionActiveFor(["contact"])}
+              onClick={handleNavToggle}
+            >
+              Contact
+            </a>
           </li>
           <li className="navigation__linkResume">
-            <a href="/assets/resume.pdf" rel="noreferrer noopener" download target={'_blank'}>
+            <a
+              href={resumeDownloadLink("pdf")}
+              rel="noreferrer noopener"
+              download
+              target={"_blank"}
+            >
               <button tabIndex={-1}>Resume</button>
             </a>
           </li>
